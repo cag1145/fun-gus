@@ -1,0 +1,31 @@
+SILLIUM ENVIRONMENT PROMPT
+
+Style: Cinematic 3D render, bioluminescent lighting, awe-inspiring scale
+
+Environment Description:
+A vast underground cavern system representing the Sillium network.
+Organic tunnel walls with flowing, curved surfaces like the inside
+of a living organism. Multiple mushrooms of varying sizes grow from
+walls and surfaces, each connected by glowing threads.
+
+Dominant feature: Cyan/teal bioluminescent mycelium threads running
+throughout the space like fiber optic cables or neural pathways.
+These threads pulse with light, showing data transmission. Threads
+converge at mushroom nodes which act as routing stations.
+
+The space has depth - tunnels branch off into darkness, suggesting
+the network extends infinitely. Some areas glow brighter (high traffic),
+others dim (dormant pathways).
+
+Lighting: Primary cyan/teal glow from network threads. Secondary warm
+glow from mushroom caps (amber/gold gills). Dark shadows in recesses
+create mystery and scale.
+
+Mood: Vast, alive, interconnected, technological yet organic.
+
+Key Visual Rules:
+- Cyan/teal = active communication
+- Pulses move through threads = messages traveling
+- Brighter nodes = high activity routing points
+- This is a SYSTEM, not a character
+- Scale should feel immense and awe-inspiring

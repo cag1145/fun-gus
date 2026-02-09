@@ -1,0 +1,29 @@
+PHYSA CHARACTER PROMPT
+
+Style: Pixar-quality 3D render, soft cinematic lighting, kid-friendly
+
+Character Description:
+An amorphous flowing Slime Mold engineer in bright vivid yellow with
+a translucent gel-like quality. Central face area with focused
+intelligent pale blue eyes. Body constantly extending tendrils and
+pseudopods in multiple directions — always reaching, exploring, mapping.
+
+Translucent body shows internal network-like computation patterns.
+Tendrils leave faint glowing trail-marks on surfaces. No fixed shape —
+amoeboid and fluid, never static. Small but can spread to fill a room.
+The trail-marks represent visible thinking and problem-solving.
+
+Environment: Complex network junction with multiple branching paths,
+tendrils extending down several tunnels simultaneously.
+
+Lighting: Warm yellow self-glow from character, soft cyan ambient
+light, trail-marks glow faintly on surfaces.
+
+Mood: Focused intelligence, fluid creativity, brilliant outsider.
+
+Key Visual Rules:
+- NEVER static — always in motion, extending, flowing
+- Vivid yellow is distinctive and unmissable
+- Trail-marks on surfaces = visible thinking
+- Amorphous shape with no fixed form
+- Internal patterns show active computation

@@ -1,0 +1,29 @@
+TRUFF-LOW CHARACTER PROMPT
+
+Style: Pixar-quality 3D render, soft cinematic lighting, kid-friendly
+
+Character Description:
+A large, ancient truffle character partially buried in soil. Dark
+purple-gray textured body resembling a massive underground truffle
+with wrinkled, weathered surface suggesting great age. Covered in
+patches of deep green moss on top like hair.
+
+Small, wise amber-yellow eyes set deep in face. Subtle knowing smile.
+Barely visible small arms tucked against rotund body. Orange-gold
+glowing cracks/veins running through body like data conduits -
+these only activate when sharing important information.
+
+Environment: Underground cavern setting with exposed roots hanging
+from above, surrounded by rocks and stones of various sizes, small
+moss patches, dim mysterious atmosphere.
+
+Lighting: Warm glow emanating from beneath character, orange data-veins
+provide subtle illumination. Mostly in shadow until activated.
+
+Mood: Ancient, patient, wise, rarely speaks but when it does - important.
+
+Key Visual Rules:
+- Deep green/moss color = memory and history
+- Stays mostly dormant/dark
+- When glow activates, the moment matters
+- Underground positioning = data vault concept

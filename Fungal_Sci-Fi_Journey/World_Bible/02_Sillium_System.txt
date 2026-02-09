@@ -1,0 +1,10 @@
+SILLIUM is a living, planet-wide fungal network.
+
+Visual Rules:
+- Glowing threads = data paths
+- Pulses = messages
+- Nodes = routing intelligence
+- Color shifts = urgency or learning
+
+Sillium is not a character.
+It is a system.

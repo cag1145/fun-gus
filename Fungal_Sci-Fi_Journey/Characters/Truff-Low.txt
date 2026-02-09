@@ -1,0 +1,8 @@
+ROLE:
+Underground data vault and nutrient storage.
+
+TRAITS:
+Slow, quiet, ancient.
+
+RULE:
+When Truff-Low activates, it matters.
