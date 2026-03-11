@@ -126,6 +126,81 @@
       padding: 3rem;
       text-align: center;
     }
+    /* Portfolio Section */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 900px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 540px) { .portfolio-grid { grid-template-columns: 1fr; } }
+    .portfolio-card {
+      background: var(--soil-600);
+      border: 1px solid var(--border-accent);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      display: flex;
+      flex-direction: column;
+    }
+    .portfolio-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 0 35px var(--sillium-dim);
+      transform: translateY(-4px);
+    }
+    .portfolio-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+    .portfolio-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.25rem;
+    }
+    .portfolio-card .portfolio-subtitle {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+    .portfolio-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      flex: 1;
+    }
+    .portfolio-card .portfolio-footer {
+      margin-top: 1rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border-accent);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .portfolio-link {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.85rem;
+      color: var(--sillium);
+    }
+    .portfolio-link:hover { color: var(--sillium-light); }
+    .portfolio-section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .portfolio-section-header h2 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      margin-bottom: 0.5rem;
+    }
+    .portfolio-section-header p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
   </style>
 </head>
 <body>
@@ -157,7 +232,7 @@
           <span class="stat-label">Characters</span>
         </div>
         <div class="stat-item">
-          <span class="stat-number">7</span>
+          <span class="stat-number">6</span>
           <span class="stat-label">Media Products</span>
         </div>
         <div class="stat-item">
@@ -230,20 +305,98 @@
 
   <div class="glow-divider"></div>
 
-  <!-- TRANSMEDIA OVERVIEW -->
-  <section class="section container reveal" style="text-align: center;">
-    <h2 style="margin-bottom: 0.5rem;">Seven Media Products</h2>
-    <p style="color: var(--text-secondary); margin-bottom: 2rem;">A universe built to live everywhere</p>
-    <div class="grid-3" style="text-align: left;">
-      <div class="card"><div class="card-body"><span class="badge badge-a">List A</span><h3 style="margin-top: 0.75rem; font-size: 1.1rem;">Digital Story</h3><p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Full 4-minute animated screenplay</p></div></div>
-      <div class="card"><div class="card-body"><span class="badge badge-a">List A</span><h3 style="margin-top: 0.75rem; font-size: 1.1rem;">Explainer Video</h3><p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">90-second science bridge script</p></div></div>
-      <div class="card"><div class="card-body"><span class="badge badge-a">List A</span><h3 style="margin-top: 0.75rem; font-size: 1.1rem;">Podcast Episode</h3><p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">8-minute audio drama script</p></div></div>
-      <div class="card"><div class="card-body"><span class="badge badge-b">List B</span><h3 style="margin-top: 0.75rem; font-size: 1.1rem;">Trading Cards</h3><p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">12-card character set with stats</p></div></div>
-      <div class="card"><div class="card-body"><span class="badge badge-b">List B</span><h3 style="margin-top: 0.75rem; font-size: 1.1rem;">Fake Reviews</h3><p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Critic, parent &amp; kid reviews</p></div></div>
-      <div class="card"><div class="card-body"><span class="badge badge-b">List B</span><h3 style="margin-top: 0.75rem; font-size: 1.1rem;">Newsletter</h3><p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">The Sillium Dispatch Issue #1</p></div></div>
-      <div class="card"><div class="card-body"><span class="badge badge-b">List B</span><h3 style="margin-top: 0.75rem; font-size: 1.1rem;">Comic</h3><p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">10-page "The Thirsty Tree" script</p></div></div>
+  <!-- MEDIA PORTFOLIO — CENTERPIECE -->
+  <section class="section container" style="padding-top: 4rem; padding-bottom: 4rem;">
+    <div class="portfolio-section-header reveal">
+      <h2 class="shimmer-text">The Transmedia Portfolio</h2>
+      <p>Six media products &mdash; two from List A, four from List B &mdash; proving this universe is built to live everywhere.</p>
     </div>
-    <a href="media.html" class="btn btn-primary" style="margin-top: 2rem;">Explore All Media</a>
+
+    <div class="portfolio-grid">
+
+      <!-- 1. Digital Story -->
+      <a href="media.html#digital-story" class="portfolio-card reveal">
+        <div class="portfolio-icon" style="background: var(--sillium-dim); color: var(--sillium);">&#9654;</div>
+        <span class="badge badge-a" style="align-self: flex-start;">List A &mdash; Digital Story</span>
+        <h3 style="margin-top: 0.75rem;">"My Fungal Adventure"</h3>
+        <div class="portfolio-subtitle">Full animated screenplay &bull; 3&ndash;4 minutes &bull; 8 voices</div>
+        <p>A complete production-ready screenplay. Two kids shrink into the Sillium, meet Fun-Gus, tour the network, and help Spora send her first message. Full dialogue, visual directions, and sound design.</p>
+        <div class="portfolio-footer">
+          <span class="badge badge-a" style="font-size: 0.65rem;">9 Scenes</span>
+          <span class="portfolio-link">Read script &rarr;</span>
+        </div>
+      </a>
+
+      <!-- 2. Explainer Video -->
+      <a href="media.html#explainer-video" class="portfolio-card reveal">
+        <div class="portfolio-icon" style="background: var(--amber-dim); color: var(--amber);">&#9881;</div>
+        <span class="badge badge-a" style="align-self: flex-start;">List A &mdash; Explainer Video</span>
+        <h3 style="margin-top: 0.75rem;">"The Real Science of Sillium"</h3>
+        <div class="portfolio-subtitle">Animated explainer &bull; 90 seconds &bull; Classroom-ready</div>
+        <p>Transitions from the fictional Fun-Gus world to real microscopy footage and back. All facts verified against peer-reviewed research. Designed with four built-in classroom pause points.</p>
+        <div class="portfolio-footer">
+          <span class="badge badge-a" style="font-size: 0.65rem;">4 Pause Points</span>
+          <span class="portfolio-link">Read script &rarr;</span>
+        </div>
+      </a>
+
+      <!-- 3. Trading Cards -->
+      <a href="media.html#trading-cards" class="portfolio-card reveal">
+        <div class="portfolio-icon" style="background: rgba(139,92,246,0.15); color: #8b5cf6;">&#9733;</div>
+        <span class="badge badge-b" style="align-self: flex-start;">List B &mdash; Trading Cards</span>
+        <h3 style="margin-top: 0.75rem;">Sillium Network Card Set</h3>
+        <div class="portfolio-subtitle">12 collectible cards &bull; Stats &amp; abilities &bull; Real science facts</div>
+        <p>Each card features five rated stats, a named special ability, a verified science fact, and a signature quote. Includes rarity tiers, set bonuses for gameplay, and full print specs.</p>
+        <div class="portfolio-footer">
+          <span class="badge badge-b" style="font-size: 0.65rem;">12 Cards</span>
+          <span class="portfolio-link">View set &rarr;</span>
+        </div>
+      </a>
+
+      <!-- 4. Fake Reviews -->
+      <a href="media.html#reviews" class="portfolio-card reveal">
+        <div class="portfolio-icon" style="background: rgba(236,72,153,0.15); color: #ec4899;">&#9998;</div>
+        <span class="badge badge-b" style="align-self: flex-start;">List B &mdash; Fake Reviews</span>
+        <h3 style="margin-top: 0.75rem;">Critical Reception</h3>
+        <div class="portfolio-subtitle">NYT, IGN, parents, kids &bull; 94% Rotten Tomatoes</div>
+        <p>Fictional reviews from professional critics, parents, kids (ages 4&ndash;10), an NSTA educator review, and social media reactions &mdash; demonstrating how the series would land across every demographic.</p>
+        <div class="portfolio-footer">
+          <span class="badge badge-b" style="font-size: 0.65rem;">16 Reviews</span>
+          <span class="portfolio-link">Read reviews &rarr;</span>
+        </div>
+      </a>
+
+      <!-- 5. Newsletter -->
+      <a href="media.html#newsletter" class="portfolio-card reveal">
+        <div class="portfolio-icon" style="background: var(--amber-dim); color: var(--gold);">&#9993;</div>
+        <span class="badge badge-b" style="align-self: flex-start;">List B &mdash; Newsletter</span>
+        <h3 style="margin-top: 0.75rem;">"The Sillium Dispatch" #1</h3>
+        <div class="portfolio-subtitle">In-universe monthly newsletter &bull; 7 sections</div>
+        <p>A complete first issue written by fungal characters. Features a story by Chanty, Spora's journal, science facts by Birdie, an "Ask Fun-Gus" Q&A, and a hands-on network-building activity.</p>
+        <div class="portfolio-footer">
+          <span class="badge badge-b" style="font-size: 0.65rem;">7 Sections</span>
+          <span class="portfolio-link">Read issue &rarr;</span>
+        </div>
+      </a>
+
+      <!-- 6. Comic -->
+      <a href="media.html#comic" class="portfolio-card reveal">
+        <div class="portfolio-icon" style="background: var(--sillium-dim); color: var(--sillium-light);">&#9998;</div>
+        <span class="badge badge-b" style="align-self: flex-start;">List B &mdash; Comic</span>
+        <h3 style="margin-top: 0.75rem;">"The Thirsty Tree"</h3>
+        <div class="portfolio-subtitle">10-page full-color comic &bull; 37 panels &bull; Full art directions</div>
+        <p>Spora discovers a dying tree, can't save it alone, and rallies the entire network. Features a full-page splash of the cast converging to save a seedling. Complete with dialogue, SFX, and panel descriptions.</p>
+        <div class="portfolio-footer">
+          <span class="badge badge-b" style="font-size: 0.65rem;">10 Pages</span>
+          <span class="portfolio-link">Read script &rarr;</span>
+        </div>
+      </a>
+
+    </div>
+
+    <div style="text-align: center; margin-top: 2.5rem;">
+      <a href="media.html" class="btn btn-primary">View Full Scripts &amp; Details</a>
+    </div>
   </section>
 
   <!-- CTA -->
