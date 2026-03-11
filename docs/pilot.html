@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pilot Script — Fun-Gus: The Forest Has WiFi</title>
+  <meta name="description" content="First Contact — a 7-minute broadcast-ready pilot script for Fun-Gus: The Forest Has WiFi.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .video-placeholder {
+      width: 100%;
+      max-width: 800px;
+      margin: 2rem auto;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, var(--soil-700), var(--soil-500));
+      border-radius: 16px;
+      border: 1px solid var(--border-accent);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .play-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--sillium-dim);
+      border: 2px solid var(--sillium);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .play-icon::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 20px solid var(--sillium);
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      margin-left: 4px;
+    }
+    .script-section {
+      background: var(--soil-600);
+      border: 1px solid var(--border-accent);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    .script-heading {
+      font-family: 'Fredoka', sans-serif;
+      color: var(--sillium);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+    .script-text {
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      white-space: pre-wrap;
+    }
+    .script-text .char-name {
+      color: var(--text-primary);
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .script-text .direction {
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    .episode-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 640px) { .episode-grid { grid-template-columns: 1fr; } }
+    .episode-item {
+      background: var(--soil-600);
+      border: 1px solid var(--border-accent);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .episode-num {
+      font-family: 'Fredoka', sans-serif;
+      color: var(--sillium);
+      font-size: 0.8rem;
+      opacity: 0.5;
+      min-width: 24px;
+    }
+    .episode-item h4 {
+      font-size: 0.95rem;
+      margin-bottom: 0.2rem;
+    }
+    .episode-item p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-nav"></header>
+
+  <section class="page-hero container">
+    <h1>"First Contact"</h1>
+    <p class="subtitle">A 7-minute broadcast-ready pilot episode &mdash; full script with production notes.</p>
+  </section>
+
+  <!-- VIDEO AREA -->
+  <section class="container">
+    <div class="video-placeholder">
+      <div class="play-icon"></div>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Character reel &mdash; coming soon</p>
+    </div>
+  </section>
+
+  <!-- PILOT OVERVIEW -->
+  <section class="section container">
+    <div class="grid-2 reveal">
+      <div>
+        <h2 style="margin-bottom: 1rem;">The Pilot Episode</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+          "First Contact" is a complete, production-ready pilot script for a 7-minute animated episode.
+          It introduces the full premise: Birch and Fern on a nature walk with Ms. Hawthorn, the fairy ring discovery,
+          the shrinking, meeting Fun-Gus and Spora, and the first tour of the Sillium network.
+        </p>
+        <p style="color: var(--text-secondary);">
+          Written in broadcast format with full dialogue, action lines, visual directions, sound design cues,
+          and educational integration. Ready for animation production.
+        </p>
+      </div>
+      <div>
+        <div class="book-meta" style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem; background: var(--soil-600); border-radius: 12px; padding: 1.5rem; border: 1px solid var(--border-accent);">
+          <div class="book-meta-item"><strong>7 min</strong><span>Runtime</span></div>
+          <div class="book-meta-item"><strong>3</strong><span>Acts</span></div>
+          <div class="book-meta-item"><strong>8</strong><span>Characters</span></div>
+          <div class="book-meta-item"><strong>22</strong><span>Episodes Planned</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-divider"></div>
+
+  <!-- SCRIPT EXCERPT -->
+  <section class="section container reveal">
+    <h2 style="text-align: center; margin-bottom: 2rem;">Script Excerpt</h2>
+
+    <div class="script-section">
+      <div class="script-heading">Cold Open</div>
+      <div class="script-text"><span class="direction">[FADE IN: A forest trail. Late afternoon. Golden light through the canopy. Three figures walk the path.]</span>
+
+<span class="direction">[BIRCH runs ahead, magnifying glass raised. FERN walks carefully, writing in her nature journal. MS. HAWTHORN follows, smiling. A robin sits on her shoulder.]</span>
+
+<span class="char-name">BIRCH</span>
+Ms. Hawthorn! What's that mushroom? The red
+one with the spots!
+
+<span class="char-name">MS. HAWTHORN</span>
+          <span class="direction">(warmly)</span>
+That's an amanita, Birch. Beautiful, isn't
+it? Fungi are some of the oldest living
+things on Earth.
+
+<span class="char-name">FERN</span>
+          <span class="direction">(not looking up from journal)</span>
+How old?
+
+<span class="char-name">MS. HAWTHORN</span>
+Older than trees. Older than flowers. They
+were here before almost everything else.
+
+<span class="direction">[BEAT. FERN looks up. Impressed.]</span>
+
+<span class="char-name">FERN</span>
+That's... really old.
+
+<span class="char-name">MS. HAWTHORN</span>
+          <span class="direction">(glancing toward a clearing, smiling)</span>
+And they've been busy the whole time.</div>
+    </div>
+
+    <div class="script-section">
+      <div class="script-heading">The Fairy Ring</div>
+      <div class="script-text"><span class="direction">[BIRCH pushes through a fern frond and STOPS. His magnifying glass drops to his chest.]</span>
+
+<span class="char-name">BIRCH</span>
+          <span class="direction">(whispered)</span>
+Fern. Come look at this.
+
+<span class="direction">[A PERFECT CIRCLE OF MUSHROOMS in a forest clearing. Each cap glows faintly at its edges — warm white light, pulsing like breathing. The grass inside is impossibly green.]</span>
+
+<span class="char-name">FERN</span>
+A fairy ring. They're real.
+
+<span class="direction">[They look back at MS. HAWTHORN. She stands at the edge of the clearing, smiling. She does NOT step closer.]</span>
+
+<span class="char-name">MS. HAWTHORN</span>
+Go ahead. Some things you have to discover
+for yourselves.
+
+<span class="direction">[BIRCH and FERN step inside. The glow INTENSIFIES. A deep, resonant TONE — like a singing bowl. Golden light envelops them.]</span></div>
+    </div>
+  </section>
+
+  <div class="glow-divider"></div>
+
+  <!-- EPISODE MAP -->
+  <section class="section container reveal">
+    <h2 style="text-align: center; margin-bottom: 0.5rem;">Season 1 Episode Map</h2>
+    <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">8 episodes planned for Season 1, with 22 total across 3 seasons.</p>
+
+    <div class="episode-grid">
+      <div class="episode-item">
+        <span class="episode-num">01</span>
+        <div><h4>First Contact</h4><p>Kids discover the fairy ring, meet Fun-Gus and Spora</p></div>
+      </div>
+      <div class="episode-item">
+        <span class="episode-num">02</span>
+        <div><h4>The Thirsty Tree</h4><p>Spora learns cooperation saves what individuals can't</p></div>
+      </div>
+      <div class="episode-item">
+        <span class="episode-num">03</span>
+        <div><h4>Lumos Goes First</h4><p>The scout faces the darkest tunnel in Sillium</p></div>
+      </div>
+      <div class="episode-item">
+        <span class="episode-num">04</span>
+        <div><h4>The Delivery</h4><p>Puff and Birdie race to deliver critical nutrients</p></div>
+      </div>
+      <div class="episode-item">
+        <span class="episode-num">05</span>
+        <div><h4>What Truff-Low Remembers</h4><p>Deep time and the forest's ancient memory</p></div>
+      </div>
+      <div class="episode-item">
+        <span class="episode-num">06</span>
+        <div><h4>Stench's Friends</h4><p>Why difference is strength — the insect alliance</p></div>
+      </div>
+      <div class="episode-item">
+        <span class="episode-num">07</span>
+        <div><h4>Inky's Last Page</h4><p>Sacrifice, preservation, and the cost of creation</p></div>
+      </div>
+      <div class="episode-item">
+        <span class="episode-num">08</span>
+        <div><h4>The Warning</h4><p>Blight arrives — the network faces its first real threat</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAST -->
+  <section class="section container reveal">
+    <h2 style="text-align: center; margin-bottom: 2rem;">Pilot Cast</h2>
+    <table class="styled-table">
+      <thead><tr><th>Character</th><th>Voice Type</th><th>Description</th></tr></thead>
+      <tbody>
+        <tr><td>Fun-Gus</td><td>Warm baritone</td><td>Patient, funny, kind &mdash; like a favorite uncle</td></tr>
+        <tr><td>Spora</td><td>High, soft</td><td>Uncertain child's voice, growing more confident</td></tr>
+        <tr><td>Birch</td><td>Energetic boy</td><td>Bold, adventurous, always first through the door</td></tr>
+        <tr><td>Fern</td><td>Thoughtful girl</td><td>Cautious, observant, asks the right questions</td></tr>
+        <tr><td>Ms. Hawthorn</td><td>Warm alto</td><td>Gentle, knowing, ageless quality</td></tr>
+        <tr><td>Narrator</td><td>Female, warm</td><td>Wonder, not lecture &mdash; nature documentary for kids</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer id="site-footer"></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

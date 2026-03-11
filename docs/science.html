@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Real Science — Fun-Gus: The Forest Has WiFi</title>
+  <meta name="description" content="Every character in Fun-Gus is based on real science. Mycorrhizal networks, bioluminescence, chemical signaling — all verified against peer-reviewed research.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .science-hero-img {
+      width: 100%;
+      max-height: 350px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-top: 2rem;
+      box-shadow: 0 0 40px rgba(34, 211, 184, 0.1);
+    }
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+    }
+    .compare-table th {
+      padding: 1rem;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1rem;
+      text-align: center;
+    }
+    .compare-table th:nth-child(1) { color: var(--sillium); }
+    .compare-table th:nth-child(2) { color: var(--text-muted); }
+    .compare-table th:nth-child(3) { color: var(--amber); }
+    .compare-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--border-accent);
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    .compare-table td:nth-child(2) {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+    .concept-card {
+      background: var(--soil-600);
+      border: 1px solid var(--border-accent);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .concept-card h4 {
+      color: var(--sillium);
+      margin-bottom: 0.5rem;
+      font-size: 1.05rem;
+    }
+    .concept-card .character-link {
+      font-size: 0.8rem;
+      color: var(--amber);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .concept-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .fact-callout {
+      background: var(--sillium-dim);
+      border: 1px solid rgba(34, 211, 184, 0.2);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .fact-callout .big-number {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 3rem;
+      color: var(--sillium);
+      line-height: 1;
+    }
+    .fact-callout p {
+      color: var(--text-secondary);
+      margin-top: 0.5rem;
+    }
+    .source-list {
+      list-style: none;
+      padding: 0;
+    }
+    .source-list li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border-accent);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .source-list li strong {
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-nav"></header>
+
+  <section class="page-hero container">
+    <h1>Every Character is Real Science</h1>
+    <p class="subtitle">Fun-Gus doesn't approximate science. It embeds it. Every character, every ability, every story beat grows from verified biology.</p>
+    <img src="images/scenes/tree-network.webp" alt="Mycorrhizal tree network visualization" class="science-hero-img" loading="eager">
+  </section>
+
+  <!-- NATURE'S INTERNET COMPARISON -->
+  <section class="section container reveal">
+    <h2 style="text-align: center; margin-bottom: 0.5rem;">Nature's Internet vs. Human Internet</h2>
+    <p style="text-align: center; color: var(--text-muted); margin-bottom: 1rem;">Who did it first?</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Fungal Network</th>
+          <th>vs.</th>
+          <th>Human Internet</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Mycelium threads</td><td>&harr;</td><td>Fiber optic cables</td></tr>
+        <tr><td>Tree root connections</td><td>&harr;</td><td>Computers &amp; servers</td></tr>
+        <tr><td>Chemical signals</td><td>&harr;</td><td>Data packets</td></tr>
+        <tr><td>Nutrient sharing</td><td>&harr;</td><td>File sharing</td></tr>
+        <tr><td>Warning messages</td><td>&harr;</td><td>Alert notifications</td></tr>
+        <tr><td>Mother trees (hubs)</td><td>&harr;</td><td>Data centers</td></tr>
+        <tr><td>Spores</td><td>&harr;</td><td>Wireless signals</td></tr>
+        <tr><td><strong style="color: var(--sillium);">450+ million years old</strong></td><td>&harr;</td><td><strong style="color: var(--amber);">~50 years old</strong></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- KEY FACTS -->
+  <section class="container">
+    <div class="grid-3 reveal">
+      <div class="fact-callout">
+        <div class="big-number">90%</div>
+        <p>of all plants connected by fungal networks</p>
+      </div>
+      <div class="fact-callout">
+        <div class="big-number">40%</div>
+        <p>of a tree's carbon shared through the network</p>
+      </div>
+      <div class="fact-callout">
+        <div class="big-number">6 mi</div>
+        <p>of mycelium in one teaspoon of soil</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-divider"></div>
+
+  <!-- SCIENCE CONCEPTS -->
+  <section class="section container reveal">
+    <h2 style="text-align: center; margin-bottom: 0.5rem;">Science-to-Story Translation</h2>
+    <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">Real biology becomes unforgettable through character and narrative.</p>
+
+    <div class="grid-3">
+      <div class="concept-card">
+        <h4>The Wood Wide Web</h4>
+        <span class="character-link">Characters: Fun-Gus, Rhiza</span>
+        <p>Mycorrhizal networks connect tree roots to fungal threads, enabling nutrient exchange and chemical communication across entire forests. This is the Sillium.</p>
+      </div>
+      <div class="concept-card">
+        <h4>Bioluminescence</h4>
+        <span class="character-link">Character: Lumos</span>
+        <p>Over 80 fungal species glow in the dark. The light likely attracts insects for spore dispersal. In Fun-Gus, Lumos gets brighter when scared — lighting the way for everyone.</p>
+      </div>
+      <div class="concept-card">
+        <h4>Spore Dispersal</h4>
+        <span class="character-link">Characters: Puff, Birdie, Spora</span>
+        <p>Fungi use dozens of methods to spread spores: explosive release (puffballs launch 7 trillion), raindrop catapults (bird's nest fungi), wind, water, and insect carriers.</p>
+      </div>
+      <div class="concept-card">
+        <h4>Autodigestion</h4>
+        <span class="character-link">Character: Inky</span>
+        <p>Ink cap mushrooms dissolve their own caps into black liquid to help disperse spores. This real process inspired Inky — who uses herself up to write down what matters.</p>
+      </div>
+      <div class="concept-card">
+        <h4>Predatory Fungi</h4>
+        <span class="character-link">Character: Snapper</span>
+        <p>Oyster mushrooms produce microscopic lasso-loops that capture nematodes. The loop tightens in under a second. The mushroom digests the worm for nitrogen.</p>
+      </div>
+      <div class="concept-card">
+        <h4>Chemical Signaling</h4>
+        <span class="character-link">Characters: Fun-Gus, Stench</span>
+        <p>Trees send chemical warnings through fungal threads when attacked. Neighbors produce defensive compounds before insects arrive. Stinkhorns use smell to attract insect spore-carriers.</p>
+      </div>
+      <div class="concept-card">
+        <h4>Mother Trees</h4>
+        <span class="character-link">Character: Chanty (stories), Rhiza (exchange)</span>
+        <p>Older trees send extra sugar and nutrients to struggling seedlings through the fungal network — especially their own offspring. Discovered by Dr. Suzanne Simard.</p>
+      </div>
+      <div class="concept-card">
+        <h4>Nitrogen Fixation</h4>
+        <span class="character-link">Character: Nitro</span>
+        <p>Rhizobium bacteria in root nodules convert atmospheric nitrogen into forms plants can use. Without them, most terrestrial ecosystems would collapse. ~200 million tons fixed per year.</p>
+      </div>
+      <div class="concept-card">
+        <h4>The Great Oxidation</h4>
+        <span class="character-link">Character: Cyano</span>
+        <p>Cyanobacteria created Earth's oxygen atmosphere 2.4 billion years ago. They are the reason aerobic life exists. Cyano is the most ancient character in Fun-Gus — 3.5 billion years old.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-divider"></div>
+
+  <!-- CURRICULUM -->
+  <section class="section container reveal">
+    <h2 style="text-align: center; margin-bottom: 0.5rem;">Curriculum Connections</h2>
+    <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">Fun-Gus aligns with NGSS standards across multiple grade bands.</p>
+    <table class="styled-table">
+      <thead><tr><th>Subject Area</th><th>Topics Covered</th><th>NGSS Alignment</th></tr></thead>
+      <tbody>
+        <tr><td>Life Science</td><td>Ecosystems, interdependent relationships, structure &amp; function</td><td>K-LS1, 2-LS4, 5-LS2</td></tr>
+        <tr><td>Earth Science</td><td>Soil composition, nutrient cycles, deep time</td><td>2-ESS1, 4-ESS2</td></tr>
+        <tr><td>Technology</td><td>Network systems, communication, signal processing</td><td>Cross-cutting: Systems</td></tr>
+        <tr><td>Social-Emotional</td><td>Cooperation, belonging, courage, identity</td><td>SEL integration</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="glow-divider"></div>
+
+  <!-- SOURCES -->
+  <section class="section container reveal">
+    <h2 style="margin-bottom: 1.5rem;">Research Sources</h2>
+    <ul class="source-list">
+      <li><strong>Simard, S. et al. (1997).</strong> "Net transfer of carbon between ectomycorrhizal tree species in the field." <em>Nature</em>, 388, 579-582.</li>
+      <li><strong>Simard, S. (2021).</strong> <em>Finding the Mother Tree.</em> Knopf.</li>
+      <li><strong>Babikova, Z. et al. (2013).</strong> "Underground signals carried through common mycelial networks warn neighbouring plants of aphid attack." <em>Ecology Letters</em>, 16(7), 835-843.</li>
+      <li><strong>Sheldrake, M. (2020).</strong> <em>Entangled Life: How Fungi Make Our Worlds.</em> Random House.</li>
+      <li><strong>Stamets, P. (2005).</strong> <em>Mycelium Running: How Mushrooms Can Help Save the World.</em> Ten Speed Press.</li>
+      <li><strong>Remy, W. et al. (1994).</strong> "Four hundred-million-year-old vesicular arbuscular mycorrhizae." <em>PNAS</em>, 91(25), 11841-11843.</li>
+      <li><strong>Brundrett, M. & Tedersoo, L. (2018).</strong> "Evolutionary history of mycorrhizal symbioses and global host plant diversity." <em>New Phytologist</em>, 220(4), 1108-1115.</li>
+    </ul>
+  </section>
+
+  <footer id="site-footer"></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

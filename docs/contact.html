@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Fun-Gus: The Forest Has WiFi</title>
+  <meta name="description" content="Interested in the Fun-Gus universe? We're seeking animation, publishing, and development partners.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .partner-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    @media (max-width: 768px) { .partner-grid { grid-template-columns: 1fr; } }
+    .partner-card {
+      background: var(--soil-600);
+      border: 1px solid var(--border-accent);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .partner-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 0 30px var(--sillium-dim);
+    }
+    .partner-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: var(--sillium-dim);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-size: 1.5rem;
+    }
+    .partner-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+    }
+    .partner-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .assets-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 640px) { .assets-grid { grid-template-columns: 1fr; } }
+    .asset-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: var(--soil-600);
+      border: 1px solid var(--border-accent);
+      border-radius: 8px;
+    }
+    .asset-check {
+      color: var(--sillium);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .asset-item span {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    .contact-box {
+      background: var(--soil-700);
+      border: 1px solid var(--border-hover);
+      border-radius: 16px;
+      padding: 3rem;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .contact-box h2 {
+      margin-bottom: 1rem;
+    }
+    .contact-box p {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+    .contact-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      background: var(--sillium);
+      color: var(--soil-900);
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      transition: all 0.3s;
+      box-shadow: 0 0 20px var(--sillium-dim);
+    }
+    .contact-email:hover {
+      background: var(--sillium-light);
+      box-shadow: 0 0 30px var(--sillium-glow);
+      color: var(--soil-900);
+      transform: translateY(-1px);
+    }
+    .inquiry-types {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    .inquiry-type {
+      padding: 0.35rem 0.75rem;
+      border-radius: 100px;
+      border: 1px solid var(--border-accent);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-nav"></header>
+
+  <section class="page-hero container">
+    <h1>Let's Grow Something Together</h1>
+    <p class="subtitle">Fun-Gus is production-ready and seeking partners across animation, publishing, and education.</p>
+  </section>
+
+  <!-- PARTNERSHIP TYPES -->
+  <section class="container">
+    <div class="partner-grid reveal">
+      <div class="partner-card">
+        <div class="partner-icon" style="color: var(--sillium);">&#9654;</div>
+        <h3>Animation</h3>
+        <p>Full pilot script, 22 episodes mapped across 3 seasons, character art and animation tests complete. Seeking production partnership for broadcast or streaming.</p>
+      </div>
+      <div class="partner-card">
+        <div class="partner-icon" style="color: var(--amber);">&#9733;</div>
+        <h3>Publishing</h3>
+        <p>32-page picture book manuscript finished. Illustration style guide established. 5-book series outlined. Ready for publisher partnership or KDP self-publishing.</p>
+      </div>
+      <div class="partner-card">
+        <div class="partner-icon" style="color: #8b5cf6;">&#9881;</div>
+        <h3>Licensing</h3>
+        <p>34+ characters with full profiles, visual assets, and story arcs. Ideal for merchandise, educational curriculum, museum exhibits, and interactive experiences.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-divider"></div>
+
+  <!-- WHAT EXISTS -->
+  <section class="section container reveal">
+    <h2 style="text-align: center; margin-bottom: 0.5rem;">What Exists Today</h2>
+    <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">This isn't just an idea. It's a built world with production-ready assets.</p>
+
+    <div class="assets-grid">
+      <div class="asset-item"><span class="asset-check">&#10003;</span><span>34+ character profiles with backstories</span></div>
+      <div class="asset-item"><span class="asset-check">&#10003;</span><span>28 AI-generated character images</span></div>
+      <div class="asset-item"><span class="asset-check">&#10003;</span><span>30+ character animation videos</span></div>
+      <div class="asset-item"><span class="asset-check">&#10003;</span><span>1,000+ line Project Bible</span></div>
+      <div class="asset-item"><span class="asset-check">&#10003;</span><span>7-minute pilot script (broadcast-ready)</span></div>
+      <div class="asset-item"><span class="asset-check">&#10003;</span><span>32-page picture book manuscript</span></div>
+      <div class="asset-item"><span class="asset-check">&#10003;</span><span>7 transmedia products (scripts)</span></div>
+      <div class="asset-item"><span class="asset-check">&#10003;</span><span>22 episode outlines (3 seasons)</span></div>
+      <div class="asset-item"><span class="asset-check">&#10003;</span><span>9 educational curriculum lessons</span></div>
+      <div class="asset-item"><span class="asset-check">&#10003;</span><span>Full-stack web application</span></div>
+      <div class="asset-item"><span class="asset-check">&#10003;</span><span>Investor pitch deck (30 slides)</span></div>
+      <div class="asset-item"><span class="asset-check">&#10003;</span><span>Competitive analysis complete</span></div>
+    </div>
+  </section>
+
+  <div class="glow-divider"></div>
+
+  <!-- THE ASK -->
+  <section class="section container reveal" style="text-align: center;">
+    <h2 style="margin-bottom: 1rem;">The Opportunity</h2>
+    <blockquote style="max-width: 700px; margin: 0 auto 2rem;">
+      Mycology is mainstream. STEM content demand is surging. And <strong>no children's IP owns this space</strong>. Fun-Gus is the first-mover in a wide-open market with 34+ characters ready, production materials complete, and a real science foundation that parents and educators trust.
+    </blockquote>
+  </section>
+
+  <div class="glow-divider"></div>
+
+  <!-- CONTACT -->
+  <section class="section container reveal">
+    <div class="contact-box">
+      <h2>Get in Touch</h2>
+      <p>Interested in Fun-Gus? We'd love to hear from you.</p>
+      <a href="mailto:contact@fungusbook.com?subject=Fun-Gus%20Partnership%20Inquiry" class="contact-email">
+        contact@fungusbook.com
+      </a>
+      <div class="inquiry-types">
+        <span class="inquiry-type">Animation</span>
+        <span class="inquiry-type">Publishing</span>
+        <span class="inquiry-type">Licensing</span>
+        <span class="inquiry-type">Education</span>
+        <span class="inquiry-type">Press</span>
+      </div>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

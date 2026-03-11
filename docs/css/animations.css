@@ -1,0 +1,119 @@
+/* Fun-Gus Transmedia Site — Animations */
+
+/* ===== Glow Pulse ===== */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 15px var(--sillium-dim); }
+  50% { box-shadow: 0 0 30px var(--sillium-glow); }
+}
+
+.glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* ===== Text Glow ===== */
+@keyframes text-glow {
+  0%, 100% { text-shadow: 0 0 10px var(--sillium-dim); }
+  50% { text-shadow: 0 0 25px var(--sillium-glow), 0 0 50px rgba(34, 211, 184, 0.15); }
+}
+
+.text-glow {
+  animation: text-glow 4s ease-in-out infinite;
+}
+
+/* ===== Float ===== */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ===== Thread Travel (a dot of light moving along a line) ===== */
+@keyframes thread-travel {
+  0% { left: -5%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { left: 105%; opacity: 0; }
+}
+
+.thread-line {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--sillium-dim) 20%, var(--sillium-dim) 80%, transparent 100%);
+  overflow: hidden;
+}
+
+.thread-line::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  width: 30px;
+  height: 5px;
+  background: radial-gradient(ellipse, var(--sillium), transparent);
+  border-radius: 50%;
+  animation: thread-travel 4s linear infinite;
+}
+
+/* ===== Fade In Up (for scroll reveal) ===== */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+/* ===== Shimmer (for hero backgrounds) ===== */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, var(--sillium), var(--sillium-light), var(--amber-light), var(--sillium));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 6s linear infinite;
+}
+
+/* ===== Network Dots Background ===== */
+@keyframes dot-pulse {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.5); }
+}
+
+.network-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.network-dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--sillium);
+  animation: dot-pulse 4s ease-in-out infinite;
+}
+
+/* ===== Stagger delays for grid items ===== */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }

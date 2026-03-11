@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Universe — Fun-Gus: The Forest Has WiFi</title>
+  <meta name="description" content="Enter the Sillium — the oldest, biggest network on the planet. A world of glowing fungal highways beneath every forest.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .about-hero-img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 16px;
+      margin-top: 2rem;
+      box-shadow: 0 0 40px rgba(34, 211, 184, 0.1);
+    }
+    .concept-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .concept-grid { grid-template-columns: 1fr; }
+    }
+    .concept-grid img {
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(34, 211, 184, 0.08);
+    }
+    .color-table td:first-child {
+      width: 40px;
+      height: 24px;
+      border-radius: 4px;
+    }
+    .location-card {
+      background: var(--soil-600);
+      border: 1px solid var(--border-accent);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .location-card h4 {
+      color: var(--sillium);
+      margin-bottom: 0.5rem;
+    }
+    .location-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    .hint-list {
+      list-style: none;
+      padding: 0;
+    }
+    .hint-list li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border-accent);
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+    .hint-list li::before {
+      content: '?';
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--amber-dim);
+      color: var(--amber);
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 600;
+      font-size: 0.75rem;
+      margin-right: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <header id="site-nav"></header>
+
+  <section class="page-hero container">
+    <h1>Enter the Sillium</h1>
+    <p class="subtitle">Shrink down. Log on. Explore the oldest network on the planet.</p>
+    <img src="images/scenes/sillium-cavern.webp" alt="The Sillium Cavern — underground fungal network" class="about-hero-img" loading="eager">
+  </section>
+
+  <!-- THE CONCEPT -->
+  <section class="section container">
+    <div class="concept-grid reveal">
+      <div>
+        <h2 style="margin-bottom: 1rem;">The Concept</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+          <strong style="color: var(--text-primary);">Fun-Gus: The Forest Has WiFi</strong> is a transmedia children's universe
+          (ages 4&ndash;9 with adult layers) that teaches real mycology, microbiology, and ecology through
+          Pixar-quality animated characters.
+        </p>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+          The core concept: fungi and trees form Earth's original intelligent communication network
+          called <strong style="color: var(--sillium);">SILLIUM</strong> &mdash; nature's internet that predates human
+          technology by 450 million years.
+        </p>
+        <p style="color: var(--text-secondary);">
+          Two kids &mdash; <strong>Birch</strong> (8) and <strong>Fern</strong> (7) &mdash; step into a glowing fairy ring,
+          shrink to spore-size, and discover a vast underground world of talking fungi, cooperative trees,
+          and ancient secrets. Their guide: <strong>Fun-Gus</strong>, a warm amanita mushroom who's been
+          running the network since before dinosaurs.
+        </p>
+      </div>
+      <img src="images/scenes/the-fairy-ring.webp" alt="The Fairy Ring — gateway to Sillium" loading="lazy">
+    </div>
+  </section>
+
+  <div class="glow-divider"></div>
+
+  <!-- COLOR LANGUAGE -->
+  <section class="section container reveal">
+    <h2 style="margin-bottom: 0.5rem;">The Color Language</h2>
+    <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+      In Sillium, light means something. Every glow carries meaning.
+    </p>
+    <table class="styled-table">
+      <thead>
+        <tr><th>Color</th><th>Meaning</th><th>Example</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span style="display:inline-block;width:24px;height:24px;border-radius:4px;background:#22d3b8;"></span></td>
+          <td>Communication &amp; active signals</td>
+          <td>Network messages, active threads, healthy connections</td>
+        </tr>
+        <tr>
+          <td><span style="display:inline-block;width:24px;height:24px;border-radius:4px;background:#f5a623;"></span></td>
+          <td>Warmth, nutrition &amp; growth</td>
+          <td>Sugar transfer, learning moments, Spora's first signal</td>
+        </tr>
+        <tr>
+          <td><span style="display:inline-block;width:24px;height:24px;border-radius:4px;background:#8b5cf6;"></span></td>
+          <td>Ancient knowledge &amp; memory</td>
+          <td>Truff-Low's glow, deep history, old network paths</td>
+        </tr>
+        <tr>
+          <td><span style="display:inline-block;width:24px;height:24px;border-radius:4px;background:#ef4444;"></span></td>
+          <td>Danger &amp; warning</td>
+          <td>Distress signals, Blight's corruption, network threats</td>
+        </tr>
+        <tr>
+          <td><span style="display:inline-block;width:24px;height:24px;border-radius:4px;background:#d4a843;"></span></td>
+          <td>Stories &amp; narrative memory</td>
+          <td>Chanty's story-dust, folklore connections</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="glow-divider"></div>
+
+  <!-- KEY LOCATIONS -->
+  <section class="section container reveal">
+    <h2 style="margin-bottom: 0.5rem;">Key Locations</h2>
+    <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+      The world of Sillium is vast, layered, and alive.
+    </p>
+    <div class="grid-3">
+      <div class="location-card">
+        <h4>The Fairy Ring</h4>
+        <p>Surface gateway. A circle of glowing mushrooms where Birch and Fern enter the underground world. Based on real fairy ring formations.</p>
+      </div>
+      <div class="location-card">
+        <h4>The Hub</h4>
+        <p>Central network junction where Fun-Gus coordinates. Threads from every direction converge here. The beating heart of Sillium.</p>
+      </div>
+      <div class="location-card">
+        <h4>The Nursery</h4>
+        <p>Where mother trees feed seedlings through the network. Rhiza manages the nutrient exchange. Warm amber light everywhere.</p>
+      </div>
+      <div class="location-card">
+        <h4>The Deep</h4>
+        <p>Truff-Low's domain. The oldest, darkest part of the network where ancient memories are stored. Purple-orange glow of deep time.</p>
+      </div>
+      <div class="location-card">
+        <h4>The Edges</h4>
+        <p>Where the network thins and threats emerge. Lumos scouts these dark paths. Snapper guards the perimeter. Stakes are highest here.</p>
+      </div>
+      <div class="location-card">
+        <h4>The Recycling Zone</h4>
+        <p>Where the Recyclers break down dead matter. "Nothing is wasted!" Cheerful decomposers turning endings into beginnings.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-divider"></div>
+
+  <!-- THE HIDDEN LAYER -->
+  <section class="section container reveal">
+    <div class="concept-grid">
+      <div>
+        <h2 style="margin-bottom: 1rem;">The Hidden Layer</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+          Fun-Gus is built for two audiences. Kids get a thrilling adventure underground. Adults notice
+          something else entirely about <strong style="color: var(--amber);">Ms. Hawthorn</strong>, the children's teacher.
+        </p>
+        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+          Is she... something more than human? A figure from Celtic folklore? An ancient being in human form
+          who's been tending the connection between children and nature for centuries?
+        </p>
+        <p style="color: var(--text-muted); font-style: italic;">
+          The show never confirms. Only hints. Never stated. Only wondered.
+        </p>
+      </div>
+      <div>
+        <h3 style="color: var(--amber); margin-bottom: 1rem;">The Hints (Hidden in the Art)</h3>
+        <ul class="hint-list">
+          <li>A robin sits on her shoulder and never flies away</li>
+          <li>Flowers lean toward her in every above-ground scene</li>
+          <li>She smiles <em>before</em> the fairy ring starts glowing</li>
+          <li>She never steps inside the ring &mdash; she doesn't need to</li>
+          <li>Old community members say she "hasn't changed a bit"</li>
+          <li>She hums melodies no one recognizes</li>
+          <li>Fun-Gus greets her like an ancient friend</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-divider"></div>
+
+  <!-- SERIES STRUCTURE -->
+  <section class="section container reveal" style="text-align: center;">
+    <h2 style="margin-bottom: 0.5rem;">Series Structure</h2>
+    <p style="color: var(--text-secondary); margin-bottom: 2rem;">22 episodes across 3 seasons, mapped and ready for production.</p>
+    <div class="grid-3" style="text-align: left;">
+      <div class="card"><div class="card-body">
+        <span class="badge badge-a">Season 1</span>
+        <h3 style="margin-top: 0.75rem; font-size: 1.1rem;">Discovery</h3>
+        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">
+          Birch and Fern discover Sillium. Meet the core fungal cast. Learn the network's power. Spora finds her signal. First hints about Ms. Hawthorn.
+        </p>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <span class="badge badge-b">Season 2</span>
+        <h3 style="margin-top: 0.75rem; font-size: 1.1rem;">Expansion</h3>
+        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">
+          Bacteria and insect kingdoms join. Three-kingdom alliance forms. Bigger threats emerge. Morel, Physa, and Russula debut. The network expands.
+        </p>
+      </div></div>
+      <div class="card"><div class="card-body">
+        <span style="display:inline-block;padding:0.25rem 0.75rem;border-radius:100px;font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;background:rgba(139,92,246,0.15);color:#8b5cf6;border:1px solid rgba(139,92,246,0.2);">Season 3</span>
+        <h3 style="margin-top: 0.75rem; font-size: 1.1rem;">Crisis</h3>
+        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">
+          Cordyceps arrives. The network faces its greatest threat. Everything the cast has learned is tested. The Ms. Hawthorn mystery deepens.
+        </p>
+      </div></div>
+    </div>
+    <a href="pilot.html" class="btn btn-primary" style="margin-top: 2rem;">Read the Pilot Script</a>
+  </section>
+
+  <footer id="site-footer"></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

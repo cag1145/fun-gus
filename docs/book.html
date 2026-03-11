@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Picture Book — Fun-Gus: The Forest Has WiFi</title>
+  <meta name="description" content="My Fungal Adventure — a 32-page picture book manuscript with Pixar-quality illustrations. Ages 4-8.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .cover-img {
+      max-width: 500px;
+      width: 100%;
+      margin: 2rem auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 40px var(--sillium-dim);
+    }
+    .book-meta {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: var(--soil-600);
+      border-radius: 12px;
+      border: 1px solid var(--border-accent);
+    }
+    .book-meta-item {
+      text-align: center;
+    }
+    .book-meta-item strong {
+      display: block;
+      color: var(--sillium);
+      font-family: 'Fredoka', sans-serif;
+      font-size: 1.2rem;
+    }
+    .book-meta-item span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .spread-viewer {
+      margin: 3rem 0;
+    }
+    .spread {
+      margin-bottom: 3rem;
+      background: var(--soil-600);
+      border-radius: 16px;
+      border: 1px solid var(--border-accent);
+      overflow: hidden;
+    }
+    .spread-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--soil-800);
+    }
+    @media (max-width: 640px) {
+      .spread-images { grid-template-columns: 1fr; }
+    }
+    .spread-images img {
+      width: 100%;
+      aspect-ratio: auto;
+    }
+    .spread-text {
+      padding: 1.5rem 2rem;
+    }
+    .spread-label {
+      font-family: 'Fredoka', sans-serif;
+      color: var(--sillium);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+    .spread-story {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-primary);
+    }
+    .spread-theme {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .manuscript-excerpt {
+      background: var(--soil-700);
+      border-radius: 12px;
+      padding: 2rem;
+      border-left: 3px solid var(--amber);
+    }
+    .manuscript-excerpt p {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+    .series-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 640px) { .series-grid { grid-template-columns: 1fr; } }
+    .series-card {
+      background: var(--soil-600);
+      border: 1px solid var(--border-accent);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .series-card h4 {
+      color: var(--amber);
+      margin-bottom: 0.5rem;
+    }
+    .series-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header id="site-nav"></header>
+
+  <section class="page-hero container">
+    <h1>My Fungal Adventure</h1>
+    <p class="subtitle">A 32-page picture book &mdash; manuscript complete, illustrations in progress.</p>
+    <img src="images/book/cover.webp" alt="My Fungal Adventure — Book Cover" class="cover-img" loading="eager">
+  </section>
+
+  <!-- BOOK METADATA -->
+  <section class="container">
+    <div class="book-meta">
+      <div class="book-meta-item"><strong>32</strong><span>Pages</span></div>
+      <div class="book-meta-item"><strong>636</strong><span>Words</span></div>
+      <div class="book-meta-item"><strong>10</strong><span>Characters</span></div>
+      <div class="book-meta-item"><strong>4&ndash;8</strong><span>Age Range</span></div>
+      <div class="book-meta-item"><strong>3.5 min</strong><span>Read-Aloud</span></div>
+      <div class="book-meta-item"><strong>10" &times; 8.5"</strong><span>Landscape</span></div>
+    </div>
+  </section>
+
+  <div class="glow-divider"></div>
+
+  <!-- SPREAD VIEWER -->
+  <section class="section container">
+    <h2 style="text-align: center; margin-bottom: 0.5rem;">Preview Spreads</h2>
+    <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2.5rem;">Three illustrated spreads from the manuscript.</p>
+
+    <div class="spread-viewer">
+      <!-- Spread 1 -->
+      <div class="spread reveal">
+        <div class="spread-images">
+          <img src="images/book/1-left.webp" alt="Spread 1 — Left page" loading="lazy">
+          <img src="images/book/1-right.webp" alt="Spread 1 — Right page" loading="lazy">
+        </div>
+        <div class="spread-text">
+          <div class="spread-label">Pages 4&ndash;5 &mdash; Into the Ring</div>
+          <div class="spread-story">
+            Birch spotted it first &mdash; a circle of mushrooms, glowing at the edges.<br>
+            "A fairy ring!" Fern whispered.<br>
+            Birch grabbed her hand. "Only one way to find out."<br>
+            They stepped inside &mdash; and the forest dropped away.
+          </div>
+          <div class="spread-theme">Theme: Wonder, courage, the call to adventure &bull; Science: Fairy rings are real &mdash; fungi growing outward in circles</div>
+        </div>
+      </div>
+
+      <!-- Spread 2 -->
+      <div class="spread reveal">
+        <div class="spread-images">
+          <img src="images/book/2-left.webp" alt="Spread 2 — Left page" loading="lazy">
+          <img src="images/book/2-right.webp" alt="Spread 2 — Right page" loading="lazy">
+        </div>
+        <div class="spread-text">
+          <div class="spread-label">Pages 6&ndash;7 &mdash; Down to Sillium</div>
+          <div class="spread-story">
+            The world grew BIGGER.<br>
+            Grass became trees. Pebbles became boulders.<br>
+            They fell through swirling golden light &mdash; and landed in a cavern of glowing blue threads.<br>
+            A warm voice echoed: "Welcome to the network!"
+          </div>
+          <div class="spread-theme">Theme: Transformation, scale, arriving somewhere extraordinary &bull; Science: Most of a fungus is underground</div>
+        </div>
+      </div>
+
+      <!-- Spread 3 -->
+      <div class="spread reveal">
+        <div class="spread-images">
+          <img src="images/book/3-left.webp" alt="Spread 3 — Left page" loading="lazy">
+          <img src="images/book/3-right.webp" alt="Spread 3 — Right page" loading="lazy">
+        </div>
+        <div class="spread-text">
+          <div class="spread-label">Pages 8&ndash;9 &mdash; The Guide</div>
+          <div class="spread-story">
+            "I'm Fun-Gus." He traced a glowing thread with his finger. "Every one of these is a conversation. Trees talking to each other. Sharing food. Sending warnings."<br><br>
+            He paused. "But today we have a problem."<br><br>
+            He pointed down a fading thread. "A little seedling is losing its connection. Want to help me find it?"
+          </div>
+          <div class="spread-theme">Theme: Cooperation, purpose, a mission to help &bull; Science: Mycorrhizal networks connect 90% of plants</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="glow-divider"></div>
+
+  <!-- CHARACTERS FEATURED -->
+  <section class="section container reveal">
+    <h2 style="text-align: center; margin-bottom: 2rem;">Characters Featured</h2>
+    <table class="styled-table">
+      <thead>
+        <tr><th>Character</th><th>Species</th><th>Role in Book</th><th>Spread</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Fun-Gus</td><td>Amanita</td><td>Guide &amp; Mentor</td><td>3 (Pages 8&ndash;9)</td></tr>
+        <tr><td>Spora</td><td>Newborn Spore</td><td>Audience Surrogate</td><td>4 (Pages 10&ndash;11)</td></tr>
+        <tr><td>Lumos</td><td>Bioluminescent Mycena</td><td>Scout</td><td>5 (Pages 12&ndash;13)</td></tr>
+        <tr><td>Puff</td><td>Giant Puffball</td><td>Messenger</td><td>6 (Pages 14&ndash;15)</td></tr>
+        <tr><td>Chanty</td><td>Golden Chanterelle</td><td>Storyteller</td><td>7 (Pages 16&ndash;17)</td></tr>
+        <tr><td>Rhiza</td><td>Mycorrhizal Interface</td><td>Translator</td><td>8 (Pages 18&ndash;19)</td></tr>
+        <tr><td>Inky</td><td>Ink Cap</td><td>Scribe</td><td>9 (Pages 20&ndash;21)</td></tr>
+        <tr><td>Stench</td><td>Stinkhorn</td><td>Diplomat</td><td>10 (Pages 22&ndash;23)</td></tr>
+        <tr><td>Birdie</td><td>Bird's Nest Fungus</td><td>Launcher</td><td>11 (Pages 24&ndash;25)</td></tr>
+        <tr><td>Snapper</td><td>Oyster Mushroom</td><td>Protector</td><td>12 (Pages 26&ndash;27)</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="glow-divider"></div>
+
+  <!-- SERIES POTENTIAL -->
+  <section class="section container reveal">
+    <h2 style="text-align: center; margin-bottom: 0.5rem;">Series Potential</h2>
+    <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">Five books planned, each introducing new characters and science concepts.</p>
+    <div class="series-grid">
+      <div class="series-card">
+        <h4>Book 2: The Thirsty Forest</h4>
+        <p>Birch and Fern return during a drought. Meet Morel the wanderer and the Recyclers. Learn about decomposition and water sharing.</p>
+      </div>
+      <div class="series-card">
+        <h4>Book 3: The Bright One</h4>
+        <p>Meet Russula, who learns that cracks don't make you broken. Meet Physa the engineer. Learn about fragility, identity, and problem-solving.</p>
+      </div>
+      <div class="series-card">
+        <h4>Book 4: The Impossible Path</h4>
+        <p>Meet Tardi the indestructible. Venture to the network's dangerous edges. Learn about extremophiles and the limits of life.</p>
+      </div>
+      <div class="series-card">
+        <h4>Book 5: The Old Enemy</h4>
+        <p>Cordyceps arrives. The whole network must work together. Learn about parasitism vs. cooperation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section container reveal" style="text-align: center;">
+    <div class="cta-banner" style="background: linear-gradient(135deg, var(--soil-700) 0%, var(--soil-600) 100%); border: 1px solid var(--border-accent); border-radius: 16px; padding: 3rem;">
+      <h2 style="margin-bottom: 0.75rem;">Interested in Publishing?</h2>
+      <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Complete 32-page manuscript ready. Illustration style guide established.</p>
+      <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

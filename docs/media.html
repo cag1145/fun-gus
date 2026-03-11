@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Products — Fun-Gus: The Forest Has WiFi</title>
+  <meta name="description" content="Seven media products spanning digital story, explainer video, podcast, trading cards, fake reviews, newsletter, and comic — a universe built to live everywhere.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .media-card {
+      background: var(--soil-600);
+      border: 1px solid var(--border-accent);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      transition: border-color 0.3s;
+    }
+    .media-card:hover {
+      border-color: var(--border-hover);
+    }
+    .media-card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .media-number {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--sillium);
+      opacity: 0.3;
+      line-height: 1;
+      min-width: 50px;
+    }
+    .media-meta { flex: 1; }
+    .media-meta h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.25rem;
+    }
+    .media-meta .format {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+    .media-desc {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+    .media-excerpt {
+      background: var(--soil-700);
+      border-radius: 8px;
+      padding: 1.5rem;
+      border-left: 3px solid var(--sillium);
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      max-height: 200px;
+      overflow: hidden;
+      position: relative;
+      transition: max-height 0.5s ease;
+    }
+    .media-excerpt.expanded {
+      max-height: 2000px;
+    }
+    .media-excerpt::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: linear-gradient(transparent, var(--soil-700));
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .media-excerpt.expanded::after {
+      opacity: 0;
+    }
+    .expand-btn {
+      background: none;
+      border: none;
+      color: var(--sillium);
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.9rem;
+      cursor: pointer;
+      margin-top: 0.75rem;
+      padding: 0;
+    }
+    .expand-btn:hover { color: var(--sillium-light); }
+    .media-specs {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .media-spec {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .media-spec strong {
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <header id="site-nav"></header>
+
+  <section class="page-hero container">
+    <h1>Seven Media Products</h1>
+    <p class="subtitle">A universe built to live everywhere &mdash; from screens to trading cards to podcast feeds.</p>
+  </section>
+
+  <section class="container" style="padding-bottom: 5rem;">
+
+    <!-- 1. DIGITAL STORY -->
+    <div class="media-card reveal" id="digital-story">
+      <div class="media-card-header">
+        <div class="media-number">01</div>
+        <div class="media-meta">
+          <span class="badge badge-a">List A</span>
+          <h3 style="margin-top: 0.5rem;">Digital Story: "My Fungal Adventure"</h3>
+          <div class="format">Full animated screenplay &bull; 3&ndash;4 minutes &bull; 8 voice actors</div>
+        </div>
+      </div>
+      <p class="media-desc">
+        A complete production-ready screenplay for a short animated film. Two kids step into a fairy ring, shrink to spore-size, meet Fun-Gus, tour the Sillium network, and help Spora send her first message. Includes full dialogue, visual directions, sound design cues, and narration.
+      </p>
+      <div class="media-excerpt" id="excerpt-1">
+        <strong>COLD OPEN:</strong><br><br>
+        <em>[Black screen. A single cyan dot pulses like a heartbeat. It sends a line of light to another dot. A web of glowing connections grows across the screen.]</em><br><br>
+        <strong>NARRATOR (V.O.):</strong> Beneath every forest... there's a secret. A network older than dinosaurs. Bigger than the internet. And today, two kids are about to find it.<br><br>
+        <em>[SMASH CUT to bright sunlight. TITLE CARD:]</em> <strong>MY FUNGAL ADVENTURE</strong><br><br>
+        <strong>SCENE 1 — THE FOREST WALK</strong><br><br>
+        <strong>BIRCH:</strong> Ms. Hawthorn! What's THAT mushroom? The one with the spots?<br><br>
+        <strong>MS. HAWTHORN:</strong> That's an amanita, Birch. Fungi are some of the oldest living things on Earth.<br><br>
+        <strong>FERN:</strong> How old?<br><br>
+        <strong>MS. HAWTHORN:</strong> Older than trees. Older than flowers. They were here before almost everything else.
+      </div>
+      <button class="expand-btn" onclick="toggleExcerpt('excerpt-1', this)">Read more</button>
+      <div class="media-specs">
+        <div class="media-spec"><strong>Runtime:</strong> 3:45&ndash;4:00</div>
+        <div class="media-spec"><strong>Scenes:</strong> 9</div>
+        <div class="media-spec"><strong>Characters:</strong> Birch, Fern, Ms. Hawthorn, Fun-Gus, Spora, Lumos, Puff</div>
+      </div>
+    </div>
+
+    <!-- 2. EXPLAINER VIDEO -->
+    <div class="media-card reveal" id="explainer-video">
+      <div class="media-card-header">
+        <div class="media-number">02</div>
+        <div class="media-meta">
+          <span class="badge badge-a">List A</span>
+          <h3 style="margin-top: 0.5rem;">Explainer Video: "The Real Science of Sillium"</h3>
+          <div class="format">Animated explainer script &bull; 90 seconds &bull; Classroom-ready</div>
+        </div>
+      </div>
+      <p class="media-desc">
+        A science bridge video that transitions from the fictional Fun-Gus world to real microscopy footage and scientific diagrams, then back. Designed to be paused and discussed in classrooms. All facts verified against peer-reviewed research with source citations.
+      </p>
+      <div class="media-excerpt" id="excerpt-2">
+        <strong>THE HOOK [0:00&ndash;0:15]:</strong><br><br>
+        <strong>FUN-GUS:</strong> Hey! Watch this. <em>[sends a golden pulse along a thread to a distant tree root]</em> I just told that oak tree it's going to rain tomorrow. Pretty cool, right? But here's the thing &mdash; I'm not making this up.<br><br>
+        <em>[The animated world FREEZES, then dissolves into real microscope footage of mycelium. The transition: animated thread &rarr; real hypha.]</em><br><br>
+        <strong>NARRATOR:</strong> This is real mycelium &mdash; the body of a fungus. The mushroom is just the tip.<br><br>
+        <em>[Animated diagram: tiny mushroom above ground, ENORMOUS web below labeled "MYCELIUM"]</em><br><br>
+        <strong>Key Fact:</strong> Trees share up to 40% of their sugar through the fungal network.
+      </div>
+      <button class="expand-btn" onclick="toggleExcerpt('excerpt-2', this)">Read more</button>
+      <div class="media-specs">
+        <div class="media-spec"><strong>Runtime:</strong> 1:25&ndash;1:30</div>
+        <div class="media-spec"><strong>Visual mix:</strong> 40% animation, 30% real footage, 30% diagrams</div>
+        <div class="media-spec"><strong>Pause points:</strong> 4 classroom discussion stops</div>
+      </div>
+    </div>
+
+    <!-- 3. PODCAST -->
+    <div class="media-card reveal" id="podcast">
+      <div class="media-card-header">
+        <div class="media-number">03</div>
+        <div class="media-meta">
+          <span class="badge badge-a">List A</span>
+          <h3 style="margin-top: 0.5rem;">Podcast: "Welcome to the Sillium"</h3>
+          <div class="format">Audio drama script &bull; 8 minutes &bull; 6 voice actors &bull; Original score</div>
+        </div>
+      </div>
+      <p class="media-desc">
+        An immersive audio drama told entirely through character dialogue and sound design &mdash; no narrator. Spora can't send her first message. Fun-Gus takes her on a tour of the network to meet Truff-Low, Lumos, Puff, and Chanty. Each encounter teaches her something about connection. Includes a post-credits tag with Truff-Low.
+      </p>
+      <div class="media-excerpt" id="excerpt-3">
+        <em>[SFX: Deep underground ambience. The faint, rhythmic pulse of the network.]</em><br><br>
+        <strong>SPORA:</strong> <em>(struggling)</em> Hello? Is... is anyone there?<br><br>
+        <em>[SFX: The signal sputters. Fades.]</em><br><br>
+        <strong>FUN-GUS:</strong> <em>(arriving gently)</em> Hey, hey. Easy. Don't force it.<br><br>
+        <strong>SPORA:</strong> I've been trying to send a message for HOURS. Everyone else makes it look so easy.<br><br>
+        <strong>FUN-GUS:</strong> Everyone else has been doing it for years. You've been alive for &mdash; what &mdash; three days?<br><br>
+        <strong>SPORA:</strong> Four.<br><br>
+        <strong>FUN-GUS:</strong> <em>(chuckling)</em> Four! A whole four days. Give yourself some time, little one.
+      </div>
+      <button class="expand-btn" onclick="toggleExcerpt('excerpt-3', this)">Read more</button>
+      <div class="media-specs">
+        <div class="media-spec"><strong>Characters:</strong> Fun-Gus, Spora, Truff-Low, Lumos, Puff, Chanty</div>
+        <div class="media-spec"><strong>Series plan:</strong> 10 episodes mapped</div>
+        <div class="media-spec"><strong>Discussion questions:</strong> 5 included</div>
+      </div>
+    </div>
+
+    <!-- 4. TRADING CARDS -->
+    <div class="media-card reveal" id="trading-cards">
+      <div class="media-card-header">
+        <div class="media-number">04</div>
+        <div class="media-meta">
+          <span class="badge badge-b">List B</span>
+          <h3 style="margin-top: 0.5rem;">Trading Cards: Sillium Network Set</h3>
+          <div class="format">12-card collectible set &bull; Standard poker size &bull; Stats, abilities &amp; science facts</div>
+        </div>
+      </div>
+      <p class="media-desc">
+        A complete 12-card character set with front portrait and back stats panel. Each card features five rated stats (Network Power, Knowledge, Courage, Speed, Resilience), a named special ability, a real science fact, and a signature quote. Includes rarity tiers, set bonuses for game play, and print specifications.
+      </p>
+      <div class="media-excerpt" id="excerpt-4">
+        <strong>CARD 01 &mdash; FUN-GUS &star; LEGENDARY</strong><br><br>
+        <em>Amanita muscaria</em> &mdash; Fly Agaric<br><br>
+        Network Power: 10 &bull; Knowledge: 9 &bull; Courage: 8 &bull; Speed: 5 &bull; Resilience: 9<br><br>
+        <strong>Special Ability: Network Heart</strong> &mdash; Can sense the health of every connection in the Sillium simultaneously and redirect resources where they're needed most.<br><br>
+        <strong>Science:</strong> The iconic red-and-white spotted mushroom forms mycorrhizal partnerships with birch and pine trees, trading minerals for sugar.<br><br>
+        <em>"Welcome to the network!"</em><br><br>
+        <hr style="border-color: var(--border-accent); margin: 1rem 0;"><br>
+        <strong>CARD 02 &mdash; SPORA &star; RARE</strong><br><br>
+        <strong>Special Ability: First Signal</strong> &mdash; When Spora connects for the first time, her pure signal resonates through the entire network &mdash; amplifying everyone else's power temporarily.
+      </div>
+      <button class="expand-btn" onclick="toggleExcerpt('excerpt-4', this)">Read more</button>
+      <div class="media-specs">
+        <div class="media-spec"><strong>Cards:</strong> 12 (2 Legendary, 4 Rare, 4 Uncommon, 2 Common)</div>
+        <div class="media-spec"><strong>Set bonuses:</strong> 5 combinations</div>
+        <div class="media-spec"><strong>Print:</strong> 300gsm coated, blue core, matte finish</div>
+      </div>
+    </div>
+
+    <!-- 5. FAKE REVIEWS -->
+    <div class="media-card reveal" id="reviews">
+      <div class="media-card-header">
+        <div class="media-number">05</div>
+        <div class="media-meta">
+          <span class="badge badge-b">List B</span>
+          <h3 style="margin-top: 0.5rem;">Fake Reviews Collection</h3>
+          <div class="format">Fictional reviews of the animated series &bull; Critics, parents &amp; kids</div>
+        </div>
+      </div>
+      <p class="media-desc">
+        A collection of fictional reviews demonstrating how the Fun-Gus universe would be received across demographics: professional critics (New York Times, IGN, Rotten Tomatoes), parent reviews (Amazon, Common Sense Media), kid reviews (ages 4&ndash;10), an NSTA educator review, and fictional social media reactions.
+      </p>
+      <div class="media-excerpt" id="excerpt-5">
+        <strong>&star;&star;&star;&star;&half; &mdash; THE NEW YORK TIMES</strong><br>
+        <em>"Underground, a Quiet Revolution in Children's Television"</em><br><br>
+        "In an era of hyper-saturated children's programming, 'Fun-Gus: The Forest Has WiFi' does something radical: it slows down. It looks at the dirt. And it finds, beneath that dirt, something extraordinary."<br><br>
+        <hr style="border-color: var(--border-accent); margin: 1rem 0;"><br>
+        <strong>9.2/10 &mdash; IGN FAMILY</strong><br>
+        "What I got was one of the most emotionally resonant pilots I've seen in children's television since the first season of Bluey."<br><br>
+        <hr style="border-color: var(--border-accent); margin: 1rem 0;"><br>
+        <strong>KID REVIEW &mdash; Zoe, age 7:</strong><br>
+        "Fun-Gus is my favorite. He's like if a mushroom was also a grandpa but not old, just nice. I want to be a mycologist when I grow up. That's a mushroom scientist. Fun-Gus taught me that word."
+      </div>
+      <button class="expand-btn" onclick="toggleExcerpt('excerpt-5', this)">Read more</button>
+      <div class="media-specs">
+        <div class="media-spec"><strong>Reviews:</strong> 3 critic, 3 parent, 3 kid, 1 educator, 6 social media</div>
+        <div class="media-spec"><strong>Rotten Tomatoes:</strong> 94% Fresh</div>
+      </div>
+    </div>
+
+    <!-- 6. NEWSLETTER -->
+    <div class="media-card reveal" id="newsletter">
+      <div class="media-card-header">
+        <div class="media-number">06</div>
+        <div class="media-meta">
+          <span class="badge badge-b">List B</span>
+          <h3 style="margin-top: 0.5rem;">Newsletter: "The Sillium Dispatch" Issue #1</h3>
+          <div class="format">In-universe monthly newsletter &bull; Email + printable PDF</div>
+        </div>
+      </div>
+      <p class="media-desc">
+        A full first issue of a monthly in-universe newsletter "written by" fungal characters. Includes an editor's letter from Fun-Gus, a feature story by Chanty ("The Day the Oak Called for Help"), Spora's journal entry about finding her signal, science facts compiled by Birdie, an "Ask Fun-Gus" Q&A section, a hands-on activity, and network alerts.
+      </p>
+      <div class="media-excerpt" id="excerpt-6">
+        <strong>FROM THE EDITOR:</strong><br><br>
+        "Hello, surface friends! Fun-Gus here. If you're reading this, congratulations &mdash; you've been connected to the Sillium Dispatch, the first (and only) newsletter delivered through a 450-million-year-old fungal network."<br><br>
+        <hr style="border-color: var(--border-accent); margin: 1rem 0;"><br>
+        <strong>FEATURE: "The Day the Oak Called for Help" by Chanty</strong><br><br>
+        "It started with a whisper. Not the kind you hear with ears &mdash; the kind you feel through the threads. A faint, golden pulse traveling through the deepest parts of the Sillium. Something was wrong..."<br><br>
+        <hr style="border-color: var(--border-accent); margin: 1rem 0;"><br>
+        <strong>SPORA'S JOURNAL &mdash; Entry #12:</strong><br>
+        "I DID IT. I know that probably doesn't sound like a big deal. Everyone else sends messages all the time. But for me, sending even ONE message has been... hard."
+      </div>
+      <button class="expand-btn" onclick="toggleExcerpt('excerpt-6', this)">Read more</button>
+      <div class="media-specs">
+        <div class="media-spec"><strong>Sections:</strong> 7 (Editor, Feature, Journal, Science, Q&A, Activity, Alerts)</div>
+        <div class="media-spec"><strong>Staff:</strong> Fun-Gus (editor), Chanty (storyteller), Birdie (fact-checker), Inky (scribe), Puff (enthusiasm)</div>
+      </div>
+    </div>
+
+    <!-- 7. COMIC -->
+    <div class="media-card reveal" id="comic">
+      <div class="media-card-header">
+        <div class="media-number">07</div>
+        <div class="media-meta">
+          <span class="badge badge-b">List B</span>
+          <h3 style="margin-top: 0.5rem;">Comic: "The Thirsty Tree"</h3>
+          <div class="format">Full 10-page comic script &bull; ~37 panels &bull; Full art directions</div>
+        </div>
+      </div>
+      <p class="media-desc">
+        A complete comic script with panel-by-panel descriptions, full dialogue, sound effects, and detailed art direction. Spora discovers a dying tree, can't save it alone, and learns that the network's power is cooperation. Features a full-page splash showing the entire cast converging to save the seedling.
+      </p>
+      <div class="media-excerpt" id="excerpt-7">
+        <strong>PAGE 1, PANEL 4:</strong><br>
+        <em>Spora's eyes snap open. Her filaments flare &mdash; something's wrong. One of the threads is dimming. The light is stuttering. Fading.</em><br><br>
+        <strong>SPORA:</strong> Wait &mdash; what's that?<br>
+        <strong>SFX:</strong> <em>fzzzt... fzzzt...</em><br><br>
+        <hr style="border-color: var(--border-accent); margin: 1rem 0;"><br>
+        <strong>PAGE 7 &mdash; FULL SPLASH:</strong><br>
+        <em>The network RESPONDS. From every direction, streams of luminous resources converge. Amber streams of sugar. Blue streams of deep water. Golden bursts from Puff. Lumos lighting the dark pathways. Birdie's nutrient packets in perfect arcs. At the center: the struggling tree's roots, now surrounded by help from every direction.</em><br><br>
+        <strong>NARRATION:</strong> "No single thread could carry enough. But the network isn't a single thread. The network is EVERYONE."
+      </div>
+      <button class="expand-btn" onclick="toggleExcerpt('excerpt-7', this)">Read more</button>
+      <div class="media-specs">
+        <div class="media-spec"><strong>Pages:</strong> 10 story + 1 back matter</div>
+        <div class="media-spec"><strong>Characters:</strong> Spora, Fun-Gus, Rhiza, Puff, Lumos, Birdie, Snapper, Chanty</div>
+        <div class="media-spec"><strong>Themes:</strong> Cooperation, asking for help, collective power</div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer id="site-footer"></footer>
+  <script src="js/main.js"></script>
+  <script>
+    function toggleExcerpt(id, btn) {
+      const el = document.getElementById(id);
+      el.classList.toggle('expanded');
+      btn.textContent = el.classList.contains('expanded') ? 'Show less' : 'Read more';
+    }
+  </script>
+</body>
+</html>
