@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍄</text></svg>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List A Products — My Fungal Adventure</title>
+  <meta name="description" content="List A digital media products: animated short film screenplay and explainer video script.">
+  <meta property="og:title" content="List A Products — My Fungal Adventure">
+  <meta property="og:description" content="List A digital media products: animated short film screenplay and explainer video script.">
+  <meta property="og:image" content="images/storyboard/5.png">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 640px) { .product-grid { grid-template-columns: 1fr; } }
+    .product-card {
+      background: var(--soil-600);
+      border: 1px solid var(--border-accent);
+      border-radius: 16px;
+      padding: 2.5rem;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+    }
+    .product-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 0 35px var(--sillium-dim);
+      transform: translateY(-4px);
+      color: inherit;
+    }
+    .product-card h3 { font-size: 1.3rem; margin-bottom: 0.25rem; }
+    .product-card .format { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    .product-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; flex: 1; }
+    .product-card .card-link {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-accent);
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.9rem;
+      color: var(--sillium);
+    }
+    .product-thumb {
+      width: 100%; border-radius: 12px; margin-bottom: 1.25rem;
+      border: 1px solid var(--border-accent); aspect-ratio: 16/9; object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <header id="site-nav"></header>
+
+  <section class="page-hero container">
+    <span class="badge badge-a" style="font-size: 0.9rem; margin-bottom: 1rem;">List A</span>
+    <h1>Digital Media Products</h1>
+    <p class="subtitle">Two production-ready scripts for animated digital media — a short film and an explainer video.</p>
+  </section>
+
+  <section class="container" style="padding-bottom: 5rem;">
+    <div class="product-grid">
+
+      <a href="digital-story.html" class="product-card reveal">
+        <img src="images/storyboard/5.png" alt="My Fungal Adventure — kids meet Fun-Gus" class="product-thumb" loading="lazy">
+        <span class="badge badge-a" style="align-self: flex-start;">Digital Story</span>
+        <h3 style="margin-top: 0.75rem;">"My Fungal Adventure"</h3>
+        <div class="format">Full animated screenplay &bull; 3&ndash;4 minutes &bull; 8 voices &bull; 9 scenes</div>
+        <p>A complete production-ready screenplay for an animated short. Two kids shrink into the Sillium, meet Fun-Gus, tour the network, and help Spora send her first message. Includes full dialogue, visual directions, and sound design.</p>
+        <div class="card-link">Read full screenplay &rarr;</div>
+      </a>
+
+      <a href="explainer-video.html" class="product-card reveal">
+        <img src="images/explainer/1.png" alt="The Real Science of Sillium" class="product-thumb" loading="lazy">
+        <span class="badge badge-a" style="align-self: flex-start;">Explainer Video</span>
+        <h3 style="margin-top: 0.75rem;">"The Real Science of Sillium"</h3>
+        <div class="format">Animated explainer script &bull; 90 seconds &bull; Classroom-ready &bull; 4 pause points</div>
+        <p>Transitions from the fictional Fun-Gus world to real microscopy footage and back. All facts verified against peer-reviewed research. Designed with four built-in classroom discussion stops.</p>
+        <div class="card-link">Read full script &rarr;</div>
+      </a>
+
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍄</text></svg>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>"The Thirsty Tree" — Comic Script</title>
+  <meta name="description" content="Complete 10-page comic script with panel directions, dialogue, and art direction for The Thirsty Tree.">
+  <meta property="og:title" content="&quot;The Thirsty Tree&quot; — Comic Script">
+  <meta property="og:description" content="Complete 10-page comic script with panel directions, dialogue, and art direction for The Thirsty Tree.">
+  <meta property="og:image" content="images/comic/panel7.png">
+  <meta property="og:type" content="article">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .comic-body { max-width: 800px; margin: 0 auto; }
+    .page-card {
+      background: var(--soil-600);
+      border: 1px solid var(--border-accent);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    .page-card h3 { color: var(--sillium); font-size: 1.2rem; margin-bottom: 1.5rem; }
+    .panel {
+      background: var(--soil-700);
+      border-radius: 8px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+      border-left: 3px solid var(--border-accent);
+    }
+    .panel.splash {
+      border-left-color: var(--sillium);
+      background: linear-gradient(135deg, var(--soil-700) 0%, rgba(34,211,184,0.05) 100%);
+    }
+    .panel-label { color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.75rem; }
+    .panel-dir { color: var(--text-muted); font-style: italic; font-size: 0.85rem; line-height: 1.7; margin-bottom: 0.75rem; }
+    .panel-dialogue { margin-bottom: 0.5rem; }
+    .panel-char { color: var(--amber); font-weight: 600; font-family: 'Fredoka', sans-serif; font-size: 0.85rem; }
+    .panel-line { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; }
+    .panel-sfx { color: var(--sillium); font-family: 'Fredoka', sans-serif; font-style: italic; font-size: 0.85rem; }
+    .panel-narration {
+      background: var(--sillium-dim);
+      border-radius: 4px;
+      padding: 0.5rem 0.75rem;
+      margin: 0.5rem 0;
+      font-style: italic;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }
+    .back-link { display: inline-block; margin-bottom: 2rem; color: var(--text-muted); font-size: 0.9rem; }
+    .back-link:hover { color: var(--sillium); }
+    .comic-scene-img {
+      width: 100%; border-radius: 12px; margin: 1rem 0 1.5rem;
+      border: 1px solid var(--border-accent);
+      box-shadow: 0 0 30px rgba(34,211,184,0.08);
+    }
+    .panel-img {
+      width: 100%; border-radius: 8px; margin: 0.75rem 0;
+      border: 1px solid var(--border-accent);
+    }
+    .panel-img-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 0.75rem 0;
+    }
+    .panel-img-grid img { border-radius: 6px; width: 100%; border: 1px solid var(--border-accent); }
+    .info-card {
+      background: var(--soil-600);
+      border: 1px solid var(--border-accent);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    .info-card h3 { color: var(--sillium); font-size: 1.2rem; margin-bottom: 1rem; }
+    .info-card p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem; font-size: 0.9rem; }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 540px) {
+      .page-card { padding: 1.5rem; }
+      .info-card { padding: 1.5rem; }
+      .specs-grid { grid-template-columns: 1fr; }
+    }
+    @media print {
+      #site-nav, #site-footer, .back-link { display: none !important; }
+      body, .page-card, .panel, .info-card { background: #fff !important; color: #000 !important; border-color: #ccc !important; box-shadow: none !important; }
+      .page-card h3 { color: #1a5c4c !important; }
+      .panel-char { color: #8b6914 !important; }
+      .panel-dir, .panel-line, .panel-sfx { color: #333 !important; }
+      .panel-narration { background: #f0f0f0 !important; color: #333 !important; }
+      .panel.splash { background: #f8f8f8 !important; }
+      .page-hero { background: #fff !important; padding-top: 1rem !important; }
+      .badge { border: 1px solid #ccc !important; background: #f0f0f0 !important; color: #333 !important; }
+      img { max-width: 100% !important; page-break-inside: avoid; }
+      .page-card { page-break-inside: avoid; }
+      .panel-img { border-color: #ccc !important; }
+    }
+  </style>
+</head>
+<body>
+  <header id="site-nav"></header>
+
+  <section class="page-hero container">
+    <a href="list-b.html" class="back-link">&larr; Back to List B</a>
+    <span class="badge badge-b" style="font-size: 0.9rem; margin-bottom: 1rem;">List B &mdash; Comic</span>
+    <h1>"The Thirsty Tree"</h1>
+    <p class="subtitle">10-page full-color comic script &bull; ~37 panels &bull; Complete art directions &bull; Issue #1</p>
+  </section>
+
+  <section class="container" style="padding-bottom: 5rem;">
+    <div class="comic-body">
+
+      <!-- PRODUCTION NOTES -->
+      <div class="info-card reveal">
+        <h3>Production Notes</h3>
+        <div class="specs-grid">
+          <div>
+            <h4 style="color: var(--amber); font-size: 0.85rem; margin-bottom: 0.5rem;">Visual Style</h4>
+            <ul style="color: var(--text-secondary); font-size: 0.85rem; padding-left: 1.25rem; line-height: 1.8;">
+              <li>Pixar-quality 3D adapted to panels</li>
+              <li>Bioluminescent lighting underground</li>
+              <li>Cool blues (wrong) &rarr; warm ambers (fixing) &rarr; full spectrum (resolved)</li>
+              <li>Mycelium thread panel borders</li>
+              <li>Speech bubbles glow with speaker's color</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="color: var(--amber); font-size: 0.85rem; margin-bottom: 0.5rem;">Specs</h4>
+            <ul style="color: var(--text-secondary); font-size: 0.85rem; padding-left: 1.25rem; line-height: 1.8;">
+              <li>Trim: 6.625" x 10.25" (standard US comic)</li>
+              <li>10 story + 1 back matter pages</li>
+              <li>Full color, CMYK</li>
+              <li>80lb glossy interior, 100lb cover</li>
+              <li>Saddle-stitched binding</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGE 1 -->
+      <div class="page-card reveal">
+        <h3>Page 1: The Happy Network</h3>
+        <div class="panel">
+          <div class="panel-label">Panel 1 &mdash; Establishing Wide Shot</div>
+          <img src="images/comic/panel1-1.png" alt="The Sillium in full health — cyan and amber threads pulsing" class="panel-img" loading="lazy">
+          <div class="panel-dir">Underground. A gorgeous section of the Sillium in full health. Mycelium threads pulse with cyan and amber light. Tree roots descend like cathedral pillars. Small spore particles drift like underwater snowflakes.</div>
+          <div class="panel-narration">Beneath every forest, there's a network.</div>
+          <div class="panel-narration">It's been here for 450 million years. And today, it's busy.</div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 2 &mdash; Medium Shot</div>
+          <img src="images/comic/panel1-2.png" alt="Spora bouncing along a glowing mycelium thread" class="panel-img" loading="lazy">
+          <div class="panel-dir">SPORA travels along a major thread, bouncing gently. Pale pink-white, enormous amber eyes, filaments flickering with soft light. She looks happy.</div>
+          <div class="panel-dialogue"><span class="panel-char">SPORA</span> <span style="color: var(--text-muted);">(thought)</span>: <span class="panel-line">Morning delivery route &mdash; check! Three nodes connected &mdash; check! Only tripped twice &mdash; personal best!</span></div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 3 &mdash; Close-Up</div>
+          <div class="panel-dir">Spora pauses at a junction node. Places her tendril against a thread, eyes closed, feeling the network's pulse. She smiles.</div>
+          <div class="panel-dialogue"><span class="panel-char">SPORA</span> <span style="color: var(--text-muted);">(thought)</span>: <span class="panel-line">The network sounds happy today.</span></div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 4 &mdash; Expression Shifts</div>
+          <img src="images/comic/panel1-4.png" alt="Spora's eyes snap open as a thread dims" class="panel-img" loading="lazy">
+          <div class="panel-dir">Her eyes snap open. Filaments flare. One of the threads is dimming. The light is stuttering. Fading.</div>
+          <div class="panel-dialogue"><span class="panel-char">SPORA:</span> <span class="panel-line">Wait &mdash; what's that?</span></div>
+          <div class="panel-sfx">fzzzt... fzzzt...</div>
+        </div>
+      </div>
+
+      <!-- PAGE 2 -->
+      <div class="page-card reveal">
+        <h3>Page 2: Something's Wrong</h3>
+        <div class="panel">
+          <div class="panel-label">Panel 1 &mdash; Wide Shot</div>
+          <img src="images/comic/panel2-1.png" alt="Spora follows the fading thread into darkness" class="panel-img" loading="lazy">
+          <div class="panel-dir">Spora follows the fading thread deeper. With each step, the light gets dimmer. Threads go from vibrant cyan to pale, sickly gray.</div>
+          <div class="panel-narration">When a thread goes dark, it means something's losing its connection.</div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 2 &mdash; Discovery</div>
+          <img src="images/comic/panel2-2.png" alt="Spora discovers pale, dying tree roots" class="panel-img" loading="lazy">
+          <div class="panel-dir">Spora arrives at the end. A tree's root system descends &mdash; but the roots are pale, almost white. The connection point barely flickers.</div>
+          <div class="panel-dialogue"><span class="panel-char">SPORA</span> <span style="color: var(--text-muted);">(whispered)</span>: <span class="panel-line">Oh no...</span></div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 3 &mdash; Close on Root</div>
+          <img src="images/comic/panel2-3.png" alt="Spora presses tendril against struggling root, listening" class="panel-img" loading="lazy">
+          <div class="panel-dir">Spora presses her tendril against the struggling root. She "listens." The message visualized as faint, wavering text:</div>
+          <div class="panel-dialogue"><span class="panel-char">ROOT SIGNAL:</span> <span class="panel-line" style="font-style: italic;">...thirsty... can't reach... water... too... deep...</span></div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 4 &mdash; Determination</div>
+          <div class="panel-dir">Spora pulls back. Filaments pulsing amber and pink. Fear shifts to determination.</div>
+          <div class="panel-dialogue"><span class="panel-char">SPORA:</span> <span class="panel-line">You need water. Okay. I can &mdash; I'll figure this out.</span></div>
+        </div>
+      </div>
+
+      <!-- PAGE 3 -->
+      <div class="page-card reveal">
+        <h3>Page 3: The Attempt</h3>
+        <div class="panel">
+          <div class="panel-label">Panel 1 &mdash; Action Shot</div>
+          <img src="images/comic/panel3-1.png" alt="Spora pushes nutrients through the thread with all her might" class="panel-img" loading="lazy">
+          <div class="panel-dir">Spora tries to push nutrients through the thread herself. Both tendrils planted, she PUSHES. Her body glows brighter with effort.</div>
+          <div class="panel-sfx">hhhnnnnn...</div>
+          <div class="panel-dialogue"><span class="panel-char">SPORA:</span> <span class="panel-line">Come on... come ON...</span></div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 2 &mdash; Strain</div>
+          <div class="panel-dir">Closer &mdash; Spora's face contorted with effort. Luminescent sweat beads. The thread brightens slightly but fades again.</div>
+          <div class="panel-dialogue"><span class="panel-char">SPORA:</span> <span class="panel-line">Almost... just a little more...</span></div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 3 &mdash; Failure</div>
+          <img src="images/comic/panel3-3.png" alt="Spora collapses, exhausted and too small" class="panel-img" loading="lazy">
+          <div class="panel-dir">Spora collapses, exhausted. The thread is exactly as dim as before. Filaments droop. She's too small.</div>
+          <div class="panel-dialogue"><span class="panel-char">SPORA</span> <span style="color: var(--text-muted);">(small, defeated)</span>: <span class="panel-line">I can't do it.</span></div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 4 &mdash; Realization</div>
+          <img src="images/comic/panel3-4.png" alt="Spora realizes she can't do it alone" class="panel-img" loading="lazy">
+          <div class="panel-dir">Beat. Spora sits looking up at thousands of connections. All bigger than her.</div>
+          <div class="panel-dialogue"><span class="panel-char">SPORA</span> <span style="color: var(--text-muted);">(thought)</span>: <span class="panel-line">I can't do it ALONE.</span></div>
+        </div>
+      </div>
+
+      <!-- PAGE 4 -->
+      <div class="page-card reveal">
+        <h3>Page 4: Finding Fun-Gus</h3>
+        <div class="panel">
+          <div class="panel-label">Panel 1 &mdash; Speed Lines</div>
+          <img src="images/comic/panel4-1.png" alt="Spora races through the network as a pink streak" class="panel-img" loading="lazy">
+          <div class="panel-dir">Spora RACES through the network &mdash; a small pink streak. She bounces off nodes, slides down curves, leaps gaps.</div>
+          <div class="panel-sfx">zip zip zip</div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 2 &mdash; Arrival</div>
+          <img src="images/comic/panel4-2.png" alt="Fun-Gus at the network hub, monitoring threads" class="panel-img" loading="lazy">
+          <div class="panel-dir">She skids to a halt at a major hub. FUN-GUS stands at center, monitoring threads. Messages pulse past in multiple colors.</div>
+          <div class="panel-dialogue"><span class="panel-char">SPORA</span> <span style="color: var(--text-muted);">(out of breath)</span>: <span class="panel-line">Fun-Gus! Fun-Gus, I need help!</span></div>
+          <div class="panel-dialogue"><span class="panel-char">FUN-GUS</span> <span style="color: var(--text-muted);">(calm but attentive)</span>: <span class="panel-line">Whoa &mdash; slow down. What happened?</span></div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 3 &mdash; Spora Explains</div>
+          <div class="panel-dir">Spora gestures wildly, filaments flickering. Faint holographic memory-flashes appear around her: the dim thread, pale roots, fading signal.</div>
+          <div class="panel-dialogue"><span class="panel-char">SPORA:</span> <span class="panel-line">There's a tree &mdash; on the East Ridge &mdash; its connection is dying! I tried to push nutrients through but I'm too small &mdash;</span></div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 4 &mdash; Fun-Gus Responds</div>
+          <div class="panel-dir">Fun-Gus places a gentle hand on Spora's cap. She stops. He smiles &mdash; knowing.</div>
+          <div class="panel-dialogue"><span class="panel-char">FUN-GUS:</span> <span class="panel-line">You found it. You listened. And you came for help.</span></div>
+          <div class="panel-dialogue"><span class="panel-char">FUN-GUS:</span> <span class="panel-line">That's three good decisions in a row.</span></div>
+        </div>
+      </div>
+
+      <!-- PAGE 5 -->
+      <div class="page-card reveal">
+        <h3>Page 5: The Lesson</h3>
+        <div class="panel">
+          <div class="panel-label">Panel 1 &mdash; Eye to Eye</div>
+          <img src="images/comic/panel5-1.png" alt="Fun-Gus kneels to Spora's level, eye to eye" class="panel-img" loading="lazy">
+          <div class="panel-dir">Fun-Gus kneels to Spora's level. Warm but serious.</div>
+          <div class="panel-dialogue"><span class="panel-char">FUN-GUS:</span> <span class="panel-line">Spora, you said you couldn't do it alone. You're right. One thread can't carry enough water for a whole tree.</span></div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 2 &mdash; Wide Shot</div>
+          <img src="images/comic/panel5-2.png" alt="Fun-Gus gestures across the vast glowing network" class="panel-img" loading="lazy">
+          <div class="panel-dir">He sweeps his arm across the vast network &mdash; threads stretching everywhere, pulsing, connecting hundreds of trees and fungi.</div>
+          <div class="panel-dialogue"><span class="panel-char">FUN-GUS:</span> <span class="panel-line">But what about ALL the threads?</span></div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 3 &mdash; Close on Spora</div>
+          <div class="panel-dir">Her eyes widen. Filaments stand upright. The idea lands.</div>
+          <div class="panel-dialogue"><span class="panel-char">SPORA:</span> <span class="panel-line">You mean... if EVERYONE sent a little...</span></div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 4 &mdash; Fun-Gus Grins</div>
+          <div class="panel-dir">He grins. Touches a thread. It glows amber &mdash; composing a signal.</div>
+          <div class="panel-dialogue"><span class="panel-char">FUN-GUS:</span> <span class="panel-line">Now you're thinking like a network.</span></div>
+        </div>
+      </div>
+
+      <!-- PAGE 6 -->
+      <div class="page-card reveal">
+        <h3>Page 6: The Call</h3>
+        <div class="panel">
+          <div class="panel-label">Panel 1 &mdash; The Signal</div>
+          <img src="images/comic/panel6-1.png" alt="Fun-Gus sends a massive amber signal pulse" class="panel-img" loading="lazy">
+          <div class="panel-dir">Fun-Gus places both hands on the central thread. His whole body glows amber. A massive pulse launches down every thread simultaneously.</div>
+          <div class="panel-sfx">WHOOOOOM</div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 2 &mdash; Network Map View</div>
+          <img src="images/comic/panel6-2.png" alt="Bird's eye view — pulse radiates through the entire network" class="panel-img" loading="lazy">
+          <div class="panel-dir">Bird's-eye view of the network. The pulse radiates outward in concentric waves, lighting up every junction.</div>
+          <div class="panel-dialogue"><span class="panel-char">FUN-GUS:</span> <span class="panel-line">"Calling all nodes. East Ridge tree losing connection. Send what you can."</span></div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 3 &mdash; Reactions (4 mini-panels)</div>
+          <div class="panel-img-grid">
+            <img src="images/comic/panel6-3a.png" alt="Rhiza nods with determination" loading="lazy">
+            <img src="images/comic/panel6-3b.png" alt="Puff lights up with excitement" loading="lazy">
+            <img src="images/comic/panel6-3c.png" alt="Lumos glows brighter in the dark" loading="lazy">
+            <img src="images/comic/panel6-3d.png" alt="Birdie checks clipboard at launch station" loading="lazy">
+          </div>
+          <div class="panel-dir" style="margin-bottom: 0.5rem;"><strong>Rhiza</strong> at her post between roots and threads. Nods with determination.</div>
+          <div class="panel-dialogue"><span class="panel-char">RHIZA:</span> <span class="panel-line">On it.</span></div>
+          <div class="panel-dir" style="margin-bottom: 0.5rem;"><strong>Puff</strong> receives the message, lights up. Golden spores billow.</div>
+          <div class="panel-dialogue"><span class="panel-char">PUFF:</span> <span class="panel-line">A MISSION! I LOVE MISSIONS!</span></div>
+          <div class="panel-dir" style="margin-bottom: 0.5rem;"><strong>Lumos</strong> in a dark tunnel, nervous but glowing brighter.</div>
+          <div class="panel-dialogue"><span class="panel-char">LUMOS:</span> <span class="panel-line">The East Ridge path is dark... I'll light the way.</span></div>
+          <div class="panel-dir" style="margin-bottom: 0.5rem;"><strong>Birdie</strong> at her launch station, loading spore-packets. Checks clipboard.</div>
+          <div class="panel-dialogue"><span class="panel-char">BIRDIE:</span> <span class="panel-line">Target coordinates received. Preparing payload.</span></div>
+        </div>
+      </div>
+
+      <!-- PAGE 7 — SPLASH -->
+      <div class="page-card reveal">
+        <h3>Page 7: The Response &mdash; FULL SPLASH PAGE</h3>
+        <div class="panel splash">
+          <div class="panel-label">Full Page Splash &mdash; The Most Beautiful Image in the Comic</div>
+          <img src="images/comic/panel7.png" alt="SPLASH — The entire network converges, Spora watches in awe" class="panel-img" style="border-color: var(--sillium); box-shadow: 0 0 30px rgba(34,211,184,0.15);" loading="lazy">
+          <div class="panel-dir">The network RESPONDS. From every direction, streams of luminous resources converge toward the East Ridge:</div>
+          <ul style="color: var(--text-muted); font-style: italic; font-size: 0.85rem; padding-left: 1.25rem; line-height: 2; margin: 1rem 0;">
+            <li><strong style="color: var(--amber);">Amber streams:</strong> Nearby trees sharing sugar</li>
+            <li><strong style="color: #60a5fa;">Blue streams:</strong> Fungi channeling deep water</li>
+            <li><strong style="color: #ffc966;">Golden bursts:</strong> Puff's spore-messages racing ahead</li>
+            <li><strong style="color: var(--sillium);">Cyan glow:</strong> Lumos lighting the dark pathways</li>
+            <li><strong style="color: var(--text-secondary);">Precise arcs:</strong> Birdie's nutrient packets in perfect trajectories</li>
+          </ul>
+          <div class="panel-dir">At the center: the struggling tree's roots, now surrounded by incoming help. Spora stands at the base, tiny against the spectacle, watching in awe.</div>
+          <div class="panel-narration">No single thread could carry enough.</div>
+          <div class="panel-narration">But the network isn't a single thread.</div>
+          <div class="panel-narration" style="font-weight: 600;">The network is EVERYONE.</div>
+        </div>
+      </div>
+
+      <!-- PAGE 8 -->
+      <div class="page-card reveal">
+        <h3>Page 8: The Rescue</h3>
+        <div class="panel">
+          <div class="panel-label">Panel 1 &mdash; Streams Arrive</div>
+          <img src="images/comic/panel8-1.png" alt="Rhiza directs streams of resources to the roots" class="panel-img" loading="lazy">
+          <div class="panel-dir">Resource streams reach the roots. Rhiza stands at the junction &mdash; translating, directing.</div>
+          <div class="panel-dialogue"><span class="panel-char">RHIZA:</span> <span class="panel-line">Sugar from the south oaks &mdash; routing to primary roots. Water from the deep wells &mdash; routing to fine roots.</span></div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 2 &mdash; Roots Come Alive</div>
+          <div class="panel-dir">Pale roots transform. Color flows back &mdash; ghostly white to warm tan to healthy golden-brown. The connection stabilizes.</div>
+          <div class="panel-sfx">THUMMM</div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 3 &mdash; Cross-Section View</div>
+          <img src="images/comic/panel8-3.png" alt="Cross-section: birch above, glowing network and Rhiza below" class="panel-img" loading="lazy">
+          <div class="panel-dir">Split panel: underground below, surface above. Above ground, a young birch with wilted leaves. As nutrients arrive, leaves uncurl. A new bud appears.</div>
+          <div class="panel-narration">Above ground, a tree that was dying... started to live again.</div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 4 &mdash; Spora's Face</div>
+          <img src="images/comic/panel8-4.png" alt="Close-up: Spora smiling, eyes reflecting golden light" class="panel-img" loading="lazy">
+          <div class="panel-dir">Close-up. Eyes reflecting golden light. Filaments steady, glowing amber. She's smiling.</div>
+          <div class="panel-dialogue"><span class="panel-char">SPORA</span> <span style="color: var(--text-muted);">(whispered)</span>: <span class="panel-line">We did it.</span></div>
+        </div>
+      </div>
+
+      <!-- PAGE 9 -->
+      <div class="page-card reveal">
+        <h3>Page 9: Celebration</h3>
+        <div class="panel">
+          <div class="panel-label">Panel 1 &mdash; The Cheer</div>
+          <img src="images/comic/panel9-1.png" alt="The network celebrates — Puff explodes in a burst of golden joy" class="panel-img" loading="lazy">
+          <div class="panel-dir">The network CELEBRATES. Pulses of joyful color race through every thread. Puff EXPLODES &mdash; the biggest burst yet.</div>
+          <div class="panel-dialogue"><span class="panel-char">PUFF:</span> <span class="panel-line">WE DID IIIIIIT!</span></div>
+          <div class="panel-sfx">POOF!</div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 2 &mdash; The Team</div>
+          <div class="panel-dir">The whole group at the healthy root junction. Fun-Gus has his arm around Spora. Lumos glowing from happiness. Chanty composing story-dust. Birdie with clipboard.</div>
+          <div class="panel-dialogue"><span class="panel-char">CHANTY:</span> <span class="panel-line">"The Day the Network Saved the Thirsty Tree." First draft by sundown.</span></div>
+          <div class="panel-dialogue"><span class="panel-char">BIRDIE:</span> <span class="panel-line">All deliveries confirmed. Zero misses.</span></div>
+          <div class="panel-dialogue"><span class="panel-char">LUMOS:</span> <span class="panel-line">That was... actually not that scary?</span></div>
+          <div class="panel-dialogue"><span class="panel-char">FUN-GUS:</span> <span class="panel-line">You know who found the tree, right?</span></div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 3 &mdash; Fun-Gus and Spora</div>
+          <img src="images/comic/panel9-3.png" alt="Fun-Gus looks at Spora with pride" class="panel-img" loading="lazy">
+          <div class="panel-dir">Close on them. He's looking at her with pride. She's embarrassed but glowing.</div>
+          <div class="panel-dialogue"><span class="panel-char">FUN-GUS:</span> <span class="panel-line">None of us are strong alone, Spora. But together? We're a forest.</span></div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 4 &mdash; Spora Responds</div>
+          <div class="panel-dir">Spora looks up. Filaments steady. Confident for the first time.</div>
+          <div class="panel-dialogue"><span class="panel-char">SPORA:</span> <span class="panel-line">I couldn't fix it by myself. But I could FIND it. And I could ask for help. Maybe that's enough.</span></div>
+          <div class="panel-dialogue"><span class="panel-char">FUN-GUS:</span> <span class="panel-line">That's everything.</span></div>
+        </div>
+      </div>
+
+      <!-- PAGE 10 -->
+      <div class="page-card reveal">
+        <h3>Page 10: Closing</h3>
+        <div class="panel">
+          <div class="panel-label">Panel 1 &mdash; Spora Alone</div>
+          <div class="panel-dir">Later. Celebration moved on. Spora sits at the healed roots, bathed in warm amber light. Connection pulses strong and steady.</div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 2 &mdash; Sending a Message</div>
+          <img src="images/comic/panel10-2.png" alt="Spora whispers 'You're not alone anymore' to the healed roots" class="panel-img" loading="lazy">
+          <div class="panel-dir">Close on her tendril touching the thread. A small golden message rises through the root system.</div>
+          <div class="panel-dialogue"><span class="panel-char">SPORA</span> <span style="color: var(--text-muted);">(small and warm)</span>: <span class="panel-line">You're not alone anymore.</span></div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 3 &mdash; Above Ground</div>
+          <img src="images/comic/panel10-3.png" alt="The young birch in golden sunlight, healthy and alive, faintest glow at the roots" class="panel-img" loading="lazy">
+          <div class="panel-dir">The young birch in afternoon sunlight, leaves full and green. At the base, where roots meet soil, the faintest glow &mdash; just visible if you know where to look.</div>
+          <div class="panel-narration">In Sillium, no one is ever alone.</div>
+        </div>
+        <div class="panel">
+          <div class="panel-label">Panel 4 &mdash; Final Wide Shot</div>
+          <img src="images/comic/panel10-4.png" alt="Final wide shot — the entire forest from above, glowing network beneath" class="panel-img" loading="lazy">
+          <div class="panel-dir">Widest possible shot. The entire forest from above. Trees, trails, streams. And beneath the surface &mdash; the faintest cyan and amber glow visible through the earth.</div>
+          <div class="panel-narration">The network was here before us. It'll be here after us. And right now &mdash; right this second &mdash; it's working.</div>
+          <div class="panel-narration">You just have to know where to look.</div>
+        </div>
+      </div>
+
+      <!-- BACK MATTER -->
+      <div class="info-card reveal">
+        <h3>Back Matter: The Real Science</h3>
+        <p><strong>Trees really do share water!</strong> In real forests, mycorrhizal networks redistribute water from trees with deep roots to trees with shallow roots. During droughts, this sharing can mean life or death for young trees.</p>
+        <p><strong>Mother trees are real!</strong> Research by Dr. Suzanne Simard proved that older "mother trees" preferentially send nutrients to their offspring and struggling neighbors through fungal networks.</p>
+        <p><strong>Chemical distress signals travel underground!</strong> When a tree is stressed, it releases compounds that travel through fungal threads. Neighbors can prepare defenses before the threat reaches them.</p>
+        <p><strong>The network coordinates responses!</strong> Multiple studies show forests respond as interconnected systems, not individual trees. Resources flow toward need, guided by chemical gradients.</p>
+      </div>
+
+      <!-- NEXT ISSUE -->
+      <div class="info-card reveal" style="text-align: center;">
+        <h3>Next Issue</h3>
+        <p><strong>"LUMOS GOES FIRST"</strong> &mdash; When the deepest tunnel in Sillium goes dark, only one character can light the way. But Lumos has never been this scared. Can courage be the same thing as fear?</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

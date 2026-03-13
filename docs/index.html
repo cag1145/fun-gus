@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍄</text></svg>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fun-Gus: The Forest Has WiFi — A Transmedia Children's Universe</title>
+  <title>My Fungal Adventure — Transmedia Portfolio</title>
   <meta name="description" content="A transmedia children's universe teaching real mycology through Pixar-quality characters. 34+ characters across three biological kingdoms.">
   <meta property="og:title" content="Fun-Gus: The Forest Has WiFi">
   <meta property="og:description" content="Nature invented the internet 450 million years before humans.">
@@ -157,6 +158,11 @@
       font-size: 1.4rem;
       margin-bottom: 1rem;
     }
+    .portfolio-thumb {
+      width: 100%; border-radius: 12px; margin-bottom: 1rem;
+      aspect-ratio: 16/9; object-fit: cover;
+      border: 1px solid var(--border-accent);
+    }
     .portfolio-card h3 {
       font-size: 1.15rem;
       margin-bottom: 0.25rem;
@@ -200,6 +206,11 @@
       max-width: 600px;
       margin: 0 auto;
     }
+    @media (max-width: 540px) {
+      .hook-section { padding: 1.5rem; }
+      .cta-banner { padding: 1.5rem; }
+      .portfolio-card { padding: 1.25rem; }
+    }
   </style>
 </head>
 <body>
@@ -209,7 +220,8 @@
   <section class="hero-section">
     <div class="hero-bg"></div>
     <div class="hero-content" style="max-width: 1200px; width: 100%;">
-      <h1 class="hero-title shimmer-text">The Transmedia Portfolio</h1>
+      <h1 class="hero-title shimmer-text">My Fungal Adventure</h1>
+      <h2 style="color: var(--text-secondary); font-size: clamp(1.1rem, 3vw, 1.6rem); margin-bottom: 0.5rem;">Transmedia Portfolio</h2>
       <p class="hero-subtitle">
         Six media products &mdash; two from List A, four from List B &mdash; proving this universe is built to live everywhere.
       </p>
@@ -221,8 +233,8 @@
     <div class="portfolio-grid">
 
       <!-- 1. Digital Story -->
-      <a href="media.html#digital-story" class="portfolio-card reveal">
-        <div class="portfolio-icon" style="background: var(--sillium-dim); color: var(--sillium);">&#9654;</div>
+      <a href="digital-story.html" class="portfolio-card reveal">
+        <img src="images/storyboard/5.png" alt="My Fungal Adventure — kids meet Fun-Gus" class="portfolio-thumb" loading="lazy">
         <span class="badge badge-a" style="align-self: flex-start;">List A &mdash; Digital Story</span>
         <h3 style="margin-top: 0.75rem;">"My Fungal Adventure"</h3>
         <div class="portfolio-subtitle">Full animated screenplay &bull; 3&ndash;4 minutes &bull; 8 voices</div>
@@ -234,8 +246,8 @@
       </a>
 
       <!-- 2. Explainer Video -->
-      <a href="media.html#explainer-video" class="portfolio-card reveal">
-        <div class="portfolio-icon" style="background: var(--amber-dim); color: var(--amber);">&#9881;</div>
+      <a href="explainer-video.html" class="portfolio-card reveal">
+        <img src="images/explainer/1.png" alt="The Real Science of Sillium" class="portfolio-thumb" loading="lazy">
         <span class="badge badge-a" style="align-self: flex-start;">List A &mdash; Explainer Video</span>
         <h3 style="margin-top: 0.75rem;">"The Real Science of Sillium"</h3>
         <div class="portfolio-subtitle">Animated explainer &bull; 90 seconds &bull; Classroom-ready</div>
@@ -247,8 +259,8 @@
       </a>
 
       <!-- 3. Trading Cards -->
-      <a href="media.html#trading-cards" class="portfolio-card reveal">
-        <div class="portfolio-icon" style="background: rgba(139,92,246,0.15); color: #8b5cf6;">&#9733;</div>
+      <a href="trading-cards.html" class="portfolio-card reveal">
+        <img src="images/trading-cards/fun-gus.png" alt="Trading Cards" class="portfolio-thumb" loading="lazy">
         <span class="badge badge-b" style="align-self: flex-start;">List B &mdash; Trading Cards</span>
         <h3 style="margin-top: 0.75rem;">Sillium Network Card Set</h3>
         <div class="portfolio-subtitle">12 collectible cards &bull; Stats &amp; abilities &bull; Real science facts</div>
@@ -260,8 +272,8 @@
       </a>
 
       <!-- 4. Fake Reviews -->
-      <a href="media.html#reviews" class="portfolio-card reveal">
-        <div class="portfolio-icon" style="background: rgba(236,72,153,0.15); color: #ec4899;">&#9998;</div>
+      <a href="reviews.html" class="portfolio-card reveal">
+        <img src="images/hero/fungal-forest.webp" alt="Critical Reception" class="portfolio-thumb" loading="lazy">
         <span class="badge badge-b" style="align-self: flex-start;">List B &mdash; Fake Reviews</span>
         <h3 style="margin-top: 0.75rem;">Critical Reception</h3>
         <div class="portfolio-subtitle">NYT, IGN, parents, kids &bull; 94% Rotten Tomatoes</div>
@@ -273,8 +285,8 @@
       </a>
 
       <!-- 5. Newsletter -->
-      <a href="media.html#newsletter" class="portfolio-card reveal">
-        <div class="portfolio-icon" style="background: var(--amber-dim); color: var(--gold);">&#9993;</div>
+      <a href="newsletter.html" class="portfolio-card reveal">
+        <img src="images/newsletter/1.png" alt="The Sillium Dispatch" class="portfolio-thumb" loading="lazy">
         <span class="badge badge-b" style="align-self: flex-start;">List B &mdash; Newsletter</span>
         <h3 style="margin-top: 0.75rem;">"The Sillium Dispatch" #1</h3>
         <div class="portfolio-subtitle">In-universe monthly newsletter &bull; 7 sections</div>
@@ -286,8 +298,8 @@
       </a>
 
       <!-- 6. Comic -->
-      <a href="media.html#comic" class="portfolio-card reveal">
-        <div class="portfolio-icon" style="background: var(--sillium-dim); color: var(--sillium-light);">&#9998;</div>
+      <a href="comic.html" class="portfolio-card reveal">
+        <img src="images/comic/panel7.png" alt="The Thirsty Tree splash page" class="portfolio-thumb" loading="lazy">
         <span class="badge badge-b" style="align-self: flex-start;">List B &mdash; Comic</span>
         <h3 style="margin-top: 0.75rem;">"The Thirsty Tree"</h3>
         <div class="portfolio-subtitle">10-page full-color comic &bull; 37 panels &bull; Full art directions</div>
@@ -300,8 +312,9 @@
 
     </div>
 
-    <div style="text-align: center; margin-top: 2.5rem;">
-      <a href="media.html" class="btn btn-primary">View Full Scripts &amp; Details</a>
+    <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 2.5rem;">
+      <a href="list-a.html" class="btn btn-primary">View List A Products</a>
+      <a href="list-b.html" class="btn btn-outline">View List B Products</a>
     </div>
   </section>
 

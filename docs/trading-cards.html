@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍄</text></svg>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sillium Network Trading Cards — 12-Card Set</title>
+  <meta name="description" content="Complete 12-card trading card set with stats, abilities, and real science facts for every character.">
+  <meta property="og:title" content="Sillium Network Trading Cards — 12-Card Set">
+  <meta property="og:description" content="Complete 12-card trading card set with stats, abilities, and real science facts for every character.">
+  <meta property="og:image" content="images/trading-cards/fun-gus.png">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .cards-body { max-width: 900px; margin: 0 auto; }
+    .tc-card {
+      background: var(--soil-600);
+      border: 1px solid var(--border-accent);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .tc-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+    .tc-card.legendary::before { background: linear-gradient(90deg, #9333ea, #c084fc, #9333ea); }
+    .tc-card.rare::before { background: linear-gradient(90deg, #d4a843, #ffc966, #d4a843); }
+    .tc-card.uncommon::before { background: linear-gradient(90deg, #3b82f6, #60a5fa, #3b82f6); }
+    .tc-card.common::before { background: linear-gradient(90deg, #22c55e, #4ade80, #22c55e); }
+    .tc-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+    .tc-header h3 { font-size: 1.3rem; }
+    .tc-rarity { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; padding: 0.25rem 0.75rem; border-radius: 100px; }
+    .rarity-legendary { background: rgba(147,51,234,0.15); color: #c084fc; }
+    .rarity-rare { background: var(--amber-dim); color: var(--amber); }
+    .rarity-uncommon { background: rgba(59,130,246,0.15); color: #60a5fa; }
+    .rarity-common { background: rgba(34,197,94,0.15); color: #4ade80; }
+    .tc-species { color: var(--text-muted); font-style: italic; font-size: 0.85rem; margin-bottom: 1.25rem; }
+    .tc-portrait { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; margin-bottom: 1.5rem; font-style: italic; }
+    .tc-media { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; align-items: flex-start; }
+    .tc-media img {
+      width: 140px; height: 140px; border-radius: 12px; object-fit: cover;
+      border: 2px solid var(--border-accent); flex-shrink: 0;
+    }
+    .tc-card.legendary .tc-media img { border-color: rgba(147,51,234,0.4); box-shadow: 0 0 20px rgba(147,51,234,0.15); }
+    .tc-card.rare .tc-media img { border-color: rgba(212,168,67,0.4); box-shadow: 0 0 20px rgba(212,168,67,0.15); }
+    .tc-card.uncommon .tc-media img { border-color: rgba(59,130,246,0.4); box-shadow: 0 0 20px rgba(59,130,246,0.15); }
+    .tc-card.common .tc-media img { border-color: rgba(34,197,94,0.4); box-shadow: 0 0 20px rgba(34,197,94,0.15); }
+    .tc-media video {
+      flex: 1; min-width: 0; border-radius: 12px;
+      border: 1px solid var(--border-accent); background: var(--soil-700);
+    }
+    @media (max-width: 540px) {
+      .tc-media { flex-direction: column; align-items: center; }
+      .tc-media img { width: 120px; height: 120px; }
+      .tc-media video { width: 100%; }
+    }
+    .stat-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+    .stat-label { width: 120px; font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .stat-bar-bg { flex: 1; height: 8px; background: var(--soil-700); border-radius: 4px; overflow: hidden; }
+    .stat-bar-fill { height: 100%; border-radius: 4px; background: var(--sillium); transition: width 0.5s; }
+    .stat-val { width: 24px; text-align: right; font-family: 'Fredoka', sans-serif; font-size: 0.85rem; color: var(--sillium); }
+    .tc-ability { background: var(--soil-700); border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0; }
+    .tc-ability h4 { color: var(--amber); font-size: 0.9rem; margin-bottom: 0.5rem; }
+    .tc-ability p { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; }
+    .tc-science { border-left: 3px solid var(--sillium); padding-left: 1rem; margin: 1rem 0; }
+    .tc-science p { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; }
+    .tc-quote { color: var(--text-muted); font-style: italic; font-size: 0.9rem; margin-top: 1rem; }
+    .back-link { display: inline-block; margin-bottom: 2rem; color: var(--text-muted); font-size: 0.9rem; }
+    .back-link:hover { color: var(--sillium); }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .info-card {
+      background: var(--soil-600);
+      border: 1px solid var(--border-accent);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    .info-card h3 { color: var(--sillium); font-size: 1.2rem; margin-bottom: 1rem; }
+    @media (max-width: 540px) {
+      .tc-card { padding: 1.5rem; }
+      .info-card { padding: 1.5rem; }
+      .specs-grid { grid-template-columns: 1fr; }
+      .stat-label { width: 90px; font-size: 0.75rem; }
+    }
+
+    /* Flip card styles */
+    .tc-card { cursor: pointer; }
+    .tc-front { text-align: center; }
+    .tc-front .tc-card-img {
+      width: 220px; height: auto; border-radius: 12px;
+      margin: 1rem auto; display: block;
+      border: 2px solid var(--border-accent);
+      transition: transform 0.3s;
+    }
+    .tc-card:hover .tc-front .tc-card-img { transform: scale(1.03); }
+    .tc-card.legendary .tc-front .tc-card-img { border-color: rgba(147,51,234,0.5); box-shadow: 0 0 25px rgba(147,51,234,0.2); }
+    .tc-card.rare .tc-front .tc-card-img { border-color: rgba(212,168,67,0.5); box-shadow: 0 0 25px rgba(212,168,67,0.2); }
+    .tc-card.uncommon .tc-front .tc-card-img { border-color: rgba(59,130,246,0.5); box-shadow: 0 0 25px rgba(59,130,246,0.2); }
+    .tc-card.common .tc-front .tc-card-img { border-color: rgba(34,197,94,0.5); box-shadow: 0 0 25px rgba(34,197,94,0.2); }
+    .flip-hint { color: var(--text-muted); font-size: 0.75rem; font-style: italic; text-align: center; margin-top: 0.5rem; }
+    .tc-back { display: none; }
+    .tc-card.flipped .tc-front { display: none; }
+    .tc-card.flipped .tc-back { display: block; }
+  </style>
+</head>
+<body>
+  <header id="site-nav"></header>
+
+  <section class="page-hero container">
+    <a href="list-b.html" class="back-link">&larr; Back to List B</a>
+    <span class="badge badge-b" style="font-size: 0.9rem; margin-bottom: 1rem;">List B &mdash; Trading Cards</span>
+    <h1>Sillium Network Trading Cards</h1>
+    <p class="subtitle">12-card collectible set &bull; Standard poker size &bull; Stats, abilities &amp; real science facts</p>
+  </section>
+
+  <section class="container" style="padding-bottom: 5rem;">
+    <div class="cards-body">
+
+      <!-- DESIGN SPECS -->
+      <div class="info-card reveal">
+        <h3>Card Design</h3>
+        <div class="specs-grid">
+          <div>
+            <h4 style="color: var(--amber); font-size: 0.85rem; margin-bottom: 0.5rem;">Front</h4>
+            <ul style="color: var(--text-secondary); font-size: 0.85rem; padding-left: 1.25rem; line-height: 1.8;">
+              <li>Character name in mycelium-thread font</li>
+              <li>Full character portrait</li>
+              <li>Role icon + Kingdom badge</li>
+              <li>Rarity glow indicator</li>
+              <li>Network thread border pattern</li>
+            </ul>
+          </div>
+          <div>
+            <h4 style="color: var(--amber); font-size: 0.85rem; margin-bottom: 0.5rem;">Back</h4>
+            <ul style="color: var(--text-secondary); font-size: 0.85rem; padding-left: 1.25rem; line-height: 1.8;">
+              <li>Species (real scientific name)</li>
+              <li>5 rated stats with visual bars</li>
+              <li>Named special ability</li>
+              <li>Verified real science fact</li>
+              <li>Signature quote</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 01 -->
+      <div class="tc-card legendary reveal">
+        <div class="tc-front">
+          <div class="tc-header">
+            <h3>Fun-Gus</h3>
+            <span class="tc-rarity rarity-legendary">Legendary</span>
+          </div>
+          <div class="tc-species"><em>Amanita muscaria</em> &mdash; Fly Agaric | Role: Guide | Kingdom: Fungal</div>
+          <img src="images/trading-cards/fun-gus.png" class="tc-card-img" alt="Fun-Gus trading card portrait" loading="lazy">
+          <div class="flip-hint">Click to flip</div>
+        </div>
+        <div class="tc-back">
+          <div class="tc-header">
+            <h3>Fun-Gus</h3>
+            <span class="tc-rarity rarity-legendary">Legendary</span>
+          </div>
+          <div class="tc-species"><em>Amanita muscaria</em> &mdash; Fly Agaric | Role: Guide | Kingdom: Fungal</div>
+          <div class="stat-row"><span class="stat-label">Network Power</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:100%"></div></div><span class="stat-val">10</span></div>
+          <div class="stat-row"><span class="stat-label">Knowledge</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:90%"></div></div><span class="stat-val">9</span></div>
+          <div class="stat-row"><span class="stat-label">Courage</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:80%"></div></div><span class="stat-val">8</span></div>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:50%"></div></div><span class="stat-val">5</span></div>
+          <div class="stat-row"><span class="stat-label">Resilience</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:90%"></div></div><span class="stat-val">9</span></div>
+          <div class="tc-ability"><h4>Special Ability: Network Heart</h4><p>Can sense the health of every connection in the Sillium simultaneously and redirect resources where they're needed most.</p></div>
+          <div class="tc-science"><p>The iconic red-and-white spotted mushroom is one of the most recognizable fungi on Earth. In real forests, amanita species form mycorrhizal partnerships with birch and pine trees, trading minerals for sugar.</p></div>
+          <div class="tc-quote">"Welcome to the network!"</div>
+          <video src="video/fun-gus.mp4" controls preload="metadata" poster="images/trading-cards/fun-gus.png" style="width:100%;border-radius:12px;margin-top:1.5rem;border:1px solid var(--border-accent);"></video>
+        </div>
+      </div>
+
+      <!-- CARD 02 -->
+      <div class="tc-card rare reveal">
+        <div class="tc-front">
+          <div class="tc-header">
+            <h3>Spora</h3>
+            <span class="tc-rarity rarity-rare">Rare</span>
+          </div>
+          <div class="tc-species"><em>Fungal Spore</em> &mdash; New Life | Role: Learner | Kingdom: Fungal</div>
+          <img src="images/trading-cards/spora.png" class="tc-card-img" alt="Spora trading card portrait" loading="lazy">
+          <div class="flip-hint">Click to flip</div>
+        </div>
+        <div class="tc-back">
+          <div class="tc-header">
+            <h3>Spora</h3>
+            <span class="tc-rarity rarity-rare">Rare</span>
+          </div>
+          <div class="tc-species"><em>Fungal Spore</em> &mdash; New Life | Role: Learner | Kingdom: Fungal</div>
+          <div class="stat-row"><span class="stat-label">Network Power</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:30%"></div></div><span class="stat-val">3</span></div>
+          <div class="stat-row"><span class="stat-label">Knowledge</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:20%"></div></div><span class="stat-val">2</span></div>
+          <div class="stat-row"><span class="stat-label">Courage</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:70%"></div></div><span class="stat-val">7</span></div>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:40%"></div></div><span class="stat-val">4</span></div>
+          <div class="stat-row"><span class="stat-label">Resilience</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:100%"></div></div><span class="stat-val">10</span></div>
+          <div class="tc-ability"><h4>Special Ability: First Signal</h4><p>When Spora connects for the first time, her pure signal resonates through the entire network &mdash; amplifying everyone else's power temporarily.</p></div>
+          <div class="tc-science"><p>A single mushroom can release BILLIONS of spores. Each spore is a potential new organism &mdash; but only a tiny fraction find the right conditions to grow. Every giant fungal network started as one tiny spore.</p></div>
+          <div class="tc-quote">"I'm new. I don't know how to do anything yet."</div>
+          <video src="video/spora.mp4" controls preload="metadata" poster="images/trading-cards/spora.png" style="width:100%;border-radius:12px;margin-top:1.5rem;border:1px solid var(--border-accent);"></video>
+        </div>
+      </div>
+
+      <!-- CARD 03 -->
+      <div class="tc-card legendary reveal">
+        <div class="tc-front">
+          <div class="tc-header">
+            <h3>Truff-Low</h3>
+            <span class="tc-rarity rarity-legendary">Legendary</span>
+          </div>
+          <div class="tc-species"><em>Tuber</em> sp. &mdash; Truffle | Role: Elder | Kingdom: Fungal</div>
+          <img src="images/trading-cards/truff-low.png" class="tc-card-img" alt="Truff-Low trading card portrait" loading="lazy">
+          <div class="flip-hint">Click to flip</div>
+        </div>
+        <div class="tc-back">
+          <div class="tc-header">
+            <h3>Truff-Low</h3>
+            <span class="tc-rarity rarity-legendary">Legendary</span>
+          </div>
+          <div class="tc-species"><em>Tuber</em> sp. &mdash; Truffle | Role: Elder | Kingdom: Fungal</div>
+          <div class="stat-row"><span class="stat-label">Network Power</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:80%"></div></div><span class="stat-val">8</span></div>
+          <div class="stat-row"><span class="stat-label">Knowledge</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:100%"></div></div><span class="stat-val">10</span></div>
+          <div class="stat-row"><span class="stat-label">Courage</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:70%"></div></div><span class="stat-val">7</span></div>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:10%"></div></div><span class="stat-val">1</span></div>
+          <div class="stat-row"><span class="stat-label">Resilience</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:100%"></div></div><span class="stat-val">10</span></div>
+          <div class="tc-ability"><h4>Special Ability: Deep Memory</h4><p>Can access any memory stored in the network throughout its entire history &mdash; centuries of forest knowledge available instantly.</p></div>
+          <div class="tc-science"><p>Truffles grow entirely underground and can take 7&ndash;10 years to produce their first fruiting body. They form some of the oldest and deepest mycorrhizal connections. Some truffle networks are hundreds of years old.</p></div>
+          <div class="tc-quote">"Someone has to remember, so the forest knows where it's been."</div>
+          <video src="video/truff-low.mp4" controls preload="metadata" poster="images/trading-cards/truff-low.png" style="width:100%;border-radius:12px;margin-top:1.5rem;border:1px solid var(--border-accent);"></video>
+        </div>
+      </div>
+
+      <!-- CARD 04 -->
+      <div class="tc-card uncommon reveal">
+        <div class="tc-front">
+          <div class="tc-header">
+            <h3>Lumos</h3>
+            <span class="tc-rarity rarity-uncommon">Uncommon</span>
+          </div>
+          <div class="tc-species"><em>Mycena chlorophos</em> &mdash; Bioluminescent Mycena | Role: Scout | Kingdom: Fungal</div>
+          <img src="images/trading-cards/lumos.png" class="tc-card-img" alt="Lumos trading card portrait" loading="lazy">
+          <div class="flip-hint">Click to flip</div>
+        </div>
+        <div class="tc-back">
+          <div class="tc-header">
+            <h3>Lumos</h3>
+            <span class="tc-rarity rarity-uncommon">Uncommon</span>
+          </div>
+          <div class="tc-species"><em>Mycena chlorophos</em> &mdash; Bioluminescent Mycena | Role: Scout | Kingdom: Fungal</div>
+          <div class="stat-row"><span class="stat-label">Network Power</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:50%"></div></div><span class="stat-val">5</span></div>
+          <div class="stat-row"><span class="stat-label">Knowledge</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:60%"></div></div><span class="stat-val">6</span></div>
+          <div class="stat-row"><span class="stat-label">Courage</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:90%"></div></div><span class="stat-val">9</span></div>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:80%"></div></div><span class="stat-val">8</span></div>
+          <div class="stat-row"><span class="stat-label">Resilience</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:40%"></div></div><span class="stat-val">4</span></div>
+          <div class="tc-ability"><h4>Special Ability: Fear Light</h4><p>The more afraid Lumos is, the brighter he glows &mdash; illuminating dangers and reactivating dormant network threads in his wake.</p></div>
+          <div class="tc-science"><p>Over 80 species of fungi are bioluminescent! Scientists believe the glow attracts insects that help spread spores. The brightest can be seen from 50 feet away in total darkness.</p></div>
+          <div class="tc-quote">"I get brighter when I'm scared. Which is&hellip; a lot."</div>
+          <video src="video/lumos.mp4" controls preload="metadata" poster="images/trading-cards/lumos.png" style="width:100%;border-radius:12px;margin-top:1.5rem;border:1px solid var(--border-accent);"></video>
+        </div>
+      </div>
+
+      <!-- CARD 05 -->
+      <div class="tc-card common reveal">
+        <div class="tc-front">
+          <div class="tc-header">
+            <h3>Puff</h3>
+            <span class="tc-rarity rarity-common">Common</span>
+          </div>
+          <div class="tc-species"><em>Calvatia gigantea</em> &mdash; Giant Puffball | Role: Messenger | Kingdom: Fungal</div>
+          <img src="images/trading-cards/puff.png" class="tc-card-img" alt="Puff trading card portrait" loading="lazy">
+          <div class="flip-hint">Click to flip</div>
+        </div>
+        <div class="tc-back">
+          <div class="tc-header">
+            <h3>Puff</h3>
+            <span class="tc-rarity rarity-common">Common</span>
+          </div>
+          <div class="tc-species"><em>Calvatia gigantea</em> &mdash; Giant Puffball | Role: Messenger | Kingdom: Fungal</div>
+          <div class="stat-row"><span class="stat-label">Network Power</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:70%"></div></div><span class="stat-val">7</span></div>
+          <div class="stat-row"><span class="stat-label">Knowledge</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:30%"></div></div><span class="stat-val">3</span></div>
+          <div class="stat-row"><span class="stat-label">Courage</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:60%"></div></div><span class="stat-val">6</span></div>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:100%"></div></div><span class="stat-val">10</span></div>
+          <div class="stat-row"><span class="stat-label">Resilience</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:50%"></div></div><span class="stat-val">5</span></div>
+          <div class="tc-ability"><h4>Special Ability: Joy Burst</h4><p>Explosive spore release that broadcasts messages across the entire network simultaneously &mdash; the fastest signal in Sillium.</p></div>
+          <div class="tc-science"><p>A single giant puffball can release up to 7 TRILLION spores in one burst! If every spore grew, they would weigh more than the entire Earth. Giant puffballs can grow to the size of a beach ball.</p></div>
+          <div class="tc-quote">"Sorry! I just get so EXCITED!"</div>
+          <video src="video/puff.mp4" controls preload="metadata" poster="images/trading-cards/puff.png" style="width:100%;border-radius:12px;margin-top:1.5rem;border:1px solid var(--border-accent);"></video>
+        </div>
+      </div>
+
+      <!-- CARD 06 -->
+      <div class="tc-card uncommon reveal">
+        <div class="tc-front">
+          <div class="tc-header">
+            <h3>Chanty</h3>
+            <span class="tc-rarity rarity-uncommon">Uncommon</span>
+          </div>
+          <div class="tc-species"><em>Cantharellus cibarius</em> &mdash; Golden Chanterelle | Role: Storyteller | Kingdom: Fungal</div>
+          <img src="images/trading-cards/chanty.png" class="tc-card-img" alt="Chanty trading card portrait" loading="lazy">
+          <div class="flip-hint">Click to flip</div>
+        </div>
+        <div class="tc-back">
+          <div class="tc-header">
+            <h3>Chanty</h3>
+            <span class="tc-rarity rarity-uncommon">Uncommon</span>
+          </div>
+          <div class="tc-species"><em>Cantharellus cibarius</em> &mdash; Golden Chanterelle | Role: Storyteller | Kingdom: Fungal</div>
+          <div class="stat-row"><span class="stat-label">Network Power</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:80%"></div></div><span class="stat-val">8</span></div>
+          <div class="stat-row"><span class="stat-label">Knowledge</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:90%"></div></div><span class="stat-val">9</span></div>
+          <div class="stat-row"><span class="stat-label">Courage</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:50%"></div></div><span class="stat-val">5</span></div>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:40%"></div></div><span class="stat-val">4</span></div>
+          <div class="stat-row"><span class="stat-label">Resilience</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:70%"></div></div><span class="stat-val">7</span></div>
+          <div class="tc-ability"><h4>Special Ability: Story Dust</h4><p>Golden particles from Chanty's cap can replay network memories as visible, hovering images &mdash; making the invisible past visible.</p></div>
+          <div class="tc-science"><p>Chanterelles grow in family groups and form long-term partnerships with specific trees &mdash; the same patch can produce mushrooms for decades. Their golden color comes from carotenoid pigments, similar to carrots!</p></div>
+          <div class="tc-quote">"I carry the stories the forest wants to remember."</div>
+          <video src="video/chanty.mp4" controls preload="metadata" poster="images/trading-cards/chanty.png" style="width:100%;border-radius:12px;margin-top:1.5rem;border:1px solid var(--border-accent);"></video>
+        </div>
+      </div>
+
+      <!-- CARD 07 -->
+      <div class="tc-card rare reveal">
+        <div class="tc-front">
+          <div class="tc-header">
+            <h3>Rhiza</h3>
+            <span class="tc-rarity rarity-rare">Rare</span>
+          </div>
+          <div class="tc-species"><em>Mycorrhizal Interface</em> &mdash; The Living Handshake | Role: Translator | Kingdom: Fungal</div>
+          <img src="images/trading-cards/rhiza.png" class="tc-card-img" alt="Rhiza trading card portrait" loading="lazy">
+          <div class="flip-hint">Click to flip</div>
+        </div>
+        <div class="tc-back">
+          <div class="tc-header">
+            <h3>Rhiza</h3>
+            <span class="tc-rarity rarity-rare">Rare</span>
+          </div>
+          <div class="tc-species"><em>Mycorrhizal Interface</em> &mdash; The Living Handshake | Role: Translator | Kingdom: Fungal</div>
+          <div class="stat-row"><span class="stat-label">Network Power</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:100%"></div></div><span class="stat-val">10</span></div>
+          <div class="stat-row"><span class="stat-label">Knowledge</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:80%"></div></div><span class="stat-val">8</span></div>
+          <div class="stat-row"><span class="stat-label">Courage</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:60%"></div></div><span class="stat-val">6</span></div>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:20%"></div></div><span class="stat-val">2</span></div>
+          <div class="stat-row"><span class="stat-label">Resilience</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:70%"></div></div><span class="stat-val">7</span></div>
+          <div class="tc-ability"><h4>Special Ability: Symbiotic Bridge</h4><p>Can establish or restore the connection between ANY tree and ANY fungus &mdash; the essential translator without whom the network falls silent.</p></div>
+          <div class="tc-science"><p>Mycorrhizae (my-cor-RY-zee) are the physical connection points between fungi and tree roots. The fungus wraps around and sometimes enters root cells. About 90% of all plants depend on mycorrhizal partnerships.</p></div>
+          <div class="tc-quote">"Without me, the whole network goes quiet."</div>
+          <video src="video/rhiza.mp4" controls preload="metadata" poster="images/trading-cards/rhiza.png" style="width:100%;border-radius:12px;margin-top:1.5rem;border:1px solid var(--border-accent);"></video>
+        </div>
+      </div>
+
+      <!-- CARD 08 -->
+      <div class="tc-card rare reveal">
+        <div class="tc-front">
+          <div class="tc-header">
+            <h3>Inky</h3>
+            <span class="tc-rarity rarity-rare">Rare</span>
+          </div>
+          <div class="tc-species"><em>Coprinus comatus</em> &mdash; Shaggy Ink Cap | Role: Scribe | Kingdom: Fungal</div>
+          <img src="images/trading-cards/inky.png" class="tc-card-img" alt="Inky trading card portrait" loading="lazy">
+          <div class="flip-hint">Click to flip</div>
+        </div>
+        <div class="tc-back">
+          <div class="tc-header">
+            <h3>Inky</h3>
+            <span class="tc-rarity rarity-rare">Rare</span>
+          </div>
+          <div class="tc-species"><em>Coprinus comatus</em> &mdash; Shaggy Ink Cap | Role: Scribe | Kingdom: Fungal</div>
+          <div class="stat-row"><span class="stat-label">Network Power</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:60%"></div></div><span class="stat-val">6</span></div>
+          <div class="stat-row"><span class="stat-label">Knowledge</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:100%"></div></div><span class="stat-val">10</span></div>
+          <div class="stat-row"><span class="stat-label">Courage</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:80%"></div></div><span class="stat-val">8</span></div>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:30%"></div></div><span class="stat-val">3</span></div>
+          <div class="stat-row"><span class="stat-label">Resilience</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:20%"></div></div><span class="stat-val">2</span></div>
+          <div class="tc-ability"><h4>Special Ability: Living Record</h4><p>Records network events permanently on cavern walls using her own dissolving cap as ink &mdash; each record costs her, making every entry a gift.</p></div>
+          <div class="tc-science"><p>Shaggy ink caps undergo "autodigestion" &mdash; they dissolve their own caps into black ink to help disperse spores. This real ink was historically used for writing. Creation through transformation.</p></div>
+          <div class="tc-quote">"Everything worth keeping costs something."</div>
+          <video src="video/inky.mp4" controls preload="metadata" poster="images/trading-cards/inky.png" style="width:100%;border-radius:12px;margin-top:1.5rem;border:1px solid var(--border-accent);"></video>
+        </div>
+      </div>
+
+      <!-- CARD 09 -->
+      <div class="tc-card uncommon reveal">
+        <div class="tc-front">
+          <div class="tc-header">
+            <h3>Stench</h3>
+            <span class="tc-rarity rarity-uncommon">Uncommon</span>
+          </div>
+          <div class="tc-species"><em>Phallales</em> &mdash; Stinkhorn | Role: Diplomat | Kingdom: Fungal</div>
+          <img src="images/trading-cards/stench.png" class="tc-card-img" alt="Stench trading card portrait" loading="lazy">
+          <div class="flip-hint">Click to flip</div>
+        </div>
+        <div class="tc-back">
+          <div class="tc-header">
+            <h3>Stench</h3>
+            <span class="tc-rarity rarity-uncommon">Uncommon</span>
+          </div>
+          <div class="tc-species"><em>Phallales</em> &mdash; Stinkhorn | Role: Diplomat | Kingdom: Fungal</div>
+          <div class="stat-row"><span class="stat-label">Network Power</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:50%"></div></div><span class="stat-val">5</span></div>
+          <div class="stat-row"><span class="stat-label">Knowledge</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:60%"></div></div><span class="stat-val">6</span></div>
+          <div class="stat-row"><span class="stat-label">Courage</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:80%"></div></div><span class="stat-val">8</span></div>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:60%"></div></div><span class="stat-val">6</span></div>
+          <div class="stat-row"><span class="stat-label">Resilience</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:80%"></div></div><span class="stat-val">8</span></div>
+          <div class="tc-ability"><h4>Special Ability: Insect Alliance</h4><p>His scent attracts insects from across the forest &mdash; creating an above-ground messaging network that complements the underground one.</p></div>
+          <div class="tc-science"><p>Stinkhorn fungi attract flies and beetles with their smell. The insects eat the spore-containing slime and carry spores to new locations. The smell is a brilliant dispersal strategy!</p></div>
+          <div class="tc-quote">"My smell brings helpers."</div>
+          <video src="video/stench.mp4" controls preload="metadata" poster="images/trading-cards/stench.png" style="width:100%;border-radius:12px;margin-top:1.5rem;border:1px solid var(--border-accent);"></video>
+        </div>
+      </div>
+
+      <!-- CARD 10 -->
+      <div class="tc-card common reveal">
+        <div class="tc-front">
+          <div class="tc-header">
+            <h3>Birdie</h3>
+            <span class="tc-rarity rarity-common">Common</span>
+          </div>
+          <div class="tc-species"><em>Nidulariaceae</em> &mdash; Bird's Nest Fungus | Role: Launcher | Kingdom: Fungal</div>
+          <img src="images/trading-cards/birdie.png" class="tc-card-img" alt="Birdie trading card portrait" loading="lazy">
+          <div class="flip-hint">Click to flip</div>
+        </div>
+        <div class="tc-back">
+          <div class="tc-header">
+            <h3>Birdie</h3>
+            <span class="tc-rarity rarity-common">Common</span>
+          </div>
+          <div class="tc-species"><em>Nidulariaceae</em> &mdash; Bird's Nest Fungus | Role: Launcher | Kingdom: Fungal</div>
+          <div class="stat-row"><span class="stat-label">Network Power</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:60%"></div></div><span class="stat-val">6</span></div>
+          <div class="stat-row"><span class="stat-label">Knowledge</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:60%"></div></div><span class="stat-val">6</span></div>
+          <div class="stat-row"><span class="stat-label">Courage</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:50%"></div></div><span class="stat-val">5</span></div>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:90%"></div></div><span class="stat-val">9</span></div>
+          <div class="stat-row"><span class="stat-label">Resilience</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:60%"></div></div><span class="stat-val">6</span></div>
+          <div class="tc-ability"><h4>Special Ability: Precision Strike</h4><p>Can launch spore-packets to exact network nodes with pinpoint accuracy &mdash; the Sillium's long-range delivery system. Never misses.</p></div>
+          <div class="tc-science"><p>Bird's nest fungi launch their "eggs" (peridioles) using falling raindrops. A single raindrop can launch a spore packet up to 1 meter away &mdash; over 100 times the fungus's own height!</p></div>
+          <div class="tc-quote">"Right on time. Every delivery matters."</div>
+          <video src="video/birdie.mp4" controls preload="metadata" poster="images/trading-cards/birdie.png" style="width:100%;border-radius:12px;margin-top:1.5rem;border:1px solid var(--border-accent);"></video>
+        </div>
+      </div>
+
+      <!-- CARD 11 -->
+      <div class="tc-card rare reveal">
+        <div class="tc-front">
+          <div class="tc-header">
+            <h3>Snapper</h3>
+            <span class="tc-rarity rarity-rare">Rare</span>
+          </div>
+          <div class="tc-species"><em>Pleurotus ostreatus</em> &mdash; Oyster Mushroom | Role: Protector | Kingdom: Fungal</div>
+          <img src="images/trading-cards/snapper.png" class="tc-card-img" alt="Snapper trading card portrait" loading="lazy">
+          <div class="flip-hint">Click to flip</div>
+        </div>
+        <div class="tc-back">
+          <div class="tc-header">
+            <h3>Snapper</h3>
+            <span class="tc-rarity rarity-rare">Rare</span>
+          </div>
+          <div class="tc-species"><em>Pleurotus ostreatus</em> &mdash; Oyster Mushroom | Role: Protector | Kingdom: Fungal</div>
+          <div class="stat-row"><span class="stat-label">Network Power</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:60%"></div></div><span class="stat-val">6</span></div>
+          <div class="stat-row"><span class="stat-label">Knowledge</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:50%"></div></div><span class="stat-val">5</span></div>
+          <div class="stat-row"><span class="stat-label">Courage</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:100%"></div></div><span class="stat-val">10</span></div>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:80%"></div></div><span class="stat-val">8</span></div>
+          <div class="stat-row"><span class="stat-label">Resilience</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:90%"></div></div><span class="stat-val">9</span></div>
+          <div class="tc-ability"><h4>Special Ability: Thread Trap</h4><p>Web-like threads detect and neutralize parasitic threats before they reach the network &mdash; the Sillium's immune system.</p></div>
+          <div class="tc-science"><p>Oyster mushrooms are real predators! They produce lasso-like loops that capture nematodes in less than a second. They're the only "carnivorous" mushroom most people eat!</p></div>
+          <div class="tc-quote">"Not everything in the forest plays fair. That's why I'm here."</div>
+          <video src="video/snapper.mp4" controls preload="metadata" poster="images/trading-cards/snapper.png" style="width:100%;border-radius:12px;margin-top:1.5rem;border:1px solid var(--border-accent);"></video>
+        </div>
+      </div>
+
+      <!-- CARD 12 -->
+      <div class="tc-card uncommon reveal">
+        <div class="tc-front">
+          <div class="tc-header">
+            <h3>Buzz</h3>
+            <span class="tc-rarity rarity-uncommon">Uncommon</span>
+          </div>
+          <div class="tc-species"><em>Apis mellifera</em> &mdash; Western Honeybee | Role: Connector | Kingdom: Insect</div>
+          <img src="images/trading-cards/buzz.png" class="tc-card-img" alt="Buzz trading card portrait" loading="lazy">
+          <div class="flip-hint">Click to flip</div>
+        </div>
+        <div class="tc-back">
+          <div class="tc-header">
+            <h3>Buzz</h3>
+            <span class="tc-rarity rarity-uncommon">Uncommon</span>
+          </div>
+          <div class="tc-species"><em>Apis mellifera</em> &mdash; Western Honeybee | Role: Connector | Kingdom: Insect</div>
+          <div class="stat-row"><span class="stat-label">Network Power</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:60%"></div></div><span class="stat-val">6</span></div>
+          <div class="stat-row"><span class="stat-label">Knowledge</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:70%"></div></div><span class="stat-val">7</span></div>
+          <div class="stat-row"><span class="stat-label">Courage</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:80%"></div></div><span class="stat-val">8</span></div>
+          <div class="stat-row"><span class="stat-label">Speed</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:100%"></div></div><span class="stat-val">10</span></div>
+          <div class="stat-row"><span class="stat-label">Resilience</span><div class="stat-bar-bg"><div class="stat-bar-fill" style="width:50%"></div></div><span class="stat-val">5</span></div>
+          <div class="tc-ability"><h4>Special Ability: Sky Bridge</h4><p>Links the above-ground world to the underground network &mdash; carries pollen, signals, and news between the two realms.</p></div>
+          <div class="tc-science"><p>Honeybees are essential pollinators &mdash; one-third of our food depends on them. A single bee visits up to 5,000 flowers daily. They communicate through "waggle dances" &mdash; the sky's version of the fungal network!</p></div>
+          <div class="tc-quote">"Someone has to connect the sky to the soil!"</div>
+          <video src="video/buzz.mp4" controls preload="metadata" poster="images/trading-cards/buzz.png" style="width:100%;border-radius:12px;margin-top:1.5rem;border:1px solid var(--border-accent);"></video>
+        </div>
+      </div>
+
+      <!-- COLLECTOR'S GUIDE -->
+      <div class="info-card reveal">
+        <h3>Collector's Guide</h3>
+        <h4 style="color: var(--amber); margin-bottom: 0.75rem;">Set Bonuses (for card game play)</h4>
+        <ul style="color: var(--text-secondary); font-size: 0.9rem; padding-left: 1.25rem; line-height: 2;">
+          <li><strong>The Original Three</strong> (Fun-Gus + Spora + Truff-Low): +2 Network Power to all</li>
+          <li><strong>The Bright Path</strong> (Lumos + Puff + Chanty): +3 Speed to all</li>
+          <li><strong>The Guardians</strong> (Snapper + Birdie + Stench): +2 Courage to all</li>
+          <li><strong>The Bridge</strong> (Rhiza + Buzz): +3 Network Power to all fungi in play</li>
+          <li><strong>Full Network</strong> (all 12): All stats +1, unlock "Sillium Pulse"</li>
+        </ul>
+        <h4 style="color: var(--amber); margin-top: 1.5rem; margin-bottom: 0.75rem;">Print Specifications</h4>
+        <table class="styled-table">
+          <tr><td>Card Size</td><td>2.5" x 3.5" (standard poker)</td></tr>
+          <tr><td>Cardstock</td><td>300gsm coated, blue core</td></tr>
+          <tr><td>Finish</td><td>Matte front, glossy highlights on art</td></tr>
+          <tr><td>Packaging</td><td>Foil booster pack (4) or complete set box (12)</td></tr>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+  <script src="js/main.js"></script>
+  <script>
+  document.querySelectorAll('.tc-card').forEach(card => {
+    card.addEventListener('click', e => {
+      if (e.target.tagName === 'VIDEO' || e.target.closest('video')) return;
+      card.classList.toggle('flipped');
+    });
+  });
+  </script>
+</body>
+</html>

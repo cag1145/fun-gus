@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍄</text></svg>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>"The Sillium Dispatch" Issue #1 — Newsletter</title>
+  <meta name="description" content="Complete first issue of an in-universe newsletter written by Fun-Gus characters with real science woven in.">
+  <meta property="og:title" content="&quot;The Sillium Dispatch&quot; Issue #1 — Newsletter">
+  <meta property="og:description" content="Complete first issue of an in-universe newsletter written by Fun-Gus characters with real science woven in.">
+  <meta property="og:image" content="images/newsletter/1.png">
+  <meta property="og:type" content="article">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .newsletter-body { max-width: 800px; margin: 0 auto; }
+    .nl-section {
+      background: var(--soil-600);
+      border: 1px solid var(--border-accent);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    .nl-section h3 { color: var(--sillium); font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .nl-section h4 { color: var(--amber); font-size: 1rem; margin-bottom: 0.75rem; margin-top: 1.5rem; }
+    .nl-section p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 1rem; font-size: 0.95rem; }
+    .nl-byline { color: var(--text-muted); font-size: 0.85rem; font-style: italic; margin-bottom: 1rem; }
+    .nl-header-box {
+      background: var(--soil-700);
+      border: 1px solid var(--border-accent);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .nl-header-box h2 { color: var(--sillium); font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .nl-header-box p { color: var(--text-muted); font-size: 0.9rem; }
+    .science-fact { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 0.75rem; }
+    .science-fact .fact-label { color: var(--text-secondary); font-size: 0.85rem; flex: 1; }
+    .science-fact .fact-number { color: var(--sillium); font-family: 'Fredoka', sans-serif; font-weight: 600; min-width: 140px; font-size: 0.85rem; }
+    .qa-question { color: var(--amber); font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 0.95rem; }
+    .activity-step { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.5rem; padding-left: 0.5rem; line-height: 1.7; }
+    .alert-item {
+      background: var(--soil-700);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .alert-item p { margin-bottom: 0; font-size: 0.9rem; }
+    .back-link { display: inline-block; margin-bottom: 2rem; color: var(--text-muted); font-size: 0.9rem; }
+    .back-link:hover { color: var(--sillium); }
+    .nl-avatar {
+      width: 48px; height: 48px; border-radius: 50%; object-fit: cover;
+      border: 2px solid var(--border-accent); vertical-align: middle; margin-right: 0.75rem;
+    }
+    .nl-byline-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; }
+    @media (max-width: 540px) {
+      .nl-section { padding: 1.5rem; }
+      .nl-header-box { padding: 1.25rem; }
+      .styled-table { font-size: 0.8rem; }
+      .styled-table th, .styled-table td { padding: 0.5rem 0.5rem; }
+      .science-fact { flex-direction: column; gap: 0.25rem; }
+      .science-fact .fact-number { min-width: auto; }
+    }
+    @media print {
+      #site-nav, #site-footer, .back-link { display: none !important; }
+      body, .nl-section, .nl-header-box { background: #fff !important; color: #000 !important; border-color: #ccc !important; box-shadow: none !important; }
+      .nl-section h3 { color: #1a5c4c !important; }
+      .nl-section h4 { color: #8b6914 !important; }
+      .nl-section p, .nl-byline, .activity-step { color: #333 !important; }
+      .page-hero { background: #fff !important; padding-top: 1rem !important; }
+      .badge { border: 1px solid #ccc !important; background: #f0f0f0 !important; color: #333 !important; }
+      img { max-width: 100% !important; page-break-inside: avoid; }
+      .nl-section { page-break-inside: avoid; }
+      .nl-avatar { border-color: #ccc !important; }
+    }
+  </style>
+</head>
+<body>
+  <header id="site-nav"></header>
+
+  <section class="page-hero container">
+    <a href="list-b.html" class="back-link">&larr; Back to List B</a>
+    <span class="badge badge-b" style="font-size: 0.9rem; margin-bottom: 1rem;">List B &mdash; Newsletter</span>
+    <h1>"The Sillium Dispatch"</h1>
+    <p class="subtitle">Issue #1: "First Transmissions" &bull; Spring Edition &bull; In-universe monthly newsletter</p>
+  </section>
+
+  <section class="container" style="padding-bottom: 5rem;">
+    <div class="newsletter-body">
+
+      <!-- HEADER -->
+      <div class="nl-header-box reveal">
+        <img src="images/newsletter/1.png" alt="The Sillium Dispatch — Fun-Gus newsletter header" style="width:100%;border-radius:12px;margin-bottom:1.5rem;" loading="lazy">
+        <h2>The Sillium Dispatch</h2>
+        <p>"Transmissions from the Underground Network"</p>
+        <p style="margin-top: 0.5rem;">Issue #1 &bull; Spring Edition</p>
+        <p style="margin-top: 0.5rem; font-style: italic;">Delivering messages from beneath your feet since 450,000,000 B.C.</p>
+      </div>
+
+      <!-- FROM THE EDITOR -->
+      <div class="nl-section reveal">
+        <h3>From the Editor</h3>
+        <div class="nl-byline-row">
+          <img src="images/characters/fun-gus.webp" alt="Fun-Gus" class="nl-avatar" loading="lazy">
+          <span class="nl-byline">A message from Fun-Gus</span>
+        </div>
+        <p>Hello, surface friends!</p>
+        <p>If you're reading this, congratulations &mdash; you've been connected to the Sillium Dispatch, the first (and only) newsletter delivered through a 450-million-year-old fungal network.</p>
+        <p>I'm Fun-Gus, your host and head correspondent. Every month, I'll bring you stories, science, and secrets from the world beneath the forest floor. You'll hear from my friends, learn things your teachers might not know yet, and maybe &mdash; just maybe &mdash; start seeing the forest a little differently.</p>
+        <p>This first issue is special. It's our launch. Our first signal. And if a tiny spore named Spora can send her first message, so can we.</p>
+        <p>Let's get connected.</p>
+        <p style="color: var(--amber);">&mdash; <strong>Fun-Gus</strong>, Editor-in-Chief</p>
+      </div>
+
+      <!-- FEATURE STORY -->
+      <div class="nl-section reveal">
+        <h3>Feature Story</h3>
+        <img src="images/newsletter/2.png" alt="Mother tree with glowing root network" style="width:100%;border-radius:12px;margin-bottom:1.5rem;border:1px solid var(--border-accent);" loading="lazy">
+        <h4>"The Day the Oak Called for Help"</h4>
+        <div class="nl-byline-row">
+          <img src="images/characters/chanty.webp" alt="Chanty" class="nl-avatar" loading="lazy">
+          <span class="nl-byline">By Chanty, Network Storyteller</span>
+        </div>
+        <p>It started with a whisper. Not the kind you hear with ears &mdash; the kind you feel through the threads. A faint, golden pulse traveling through the deepest parts of the Sillium. Something was wrong.</p>
+        <p>I was telling a story to a group of young sporelings when the signal hit. My story-dust flickered. The threads beneath me hummed with urgency.</p>
+        <p>The message came from the East Ridge: <strong>Old Grandmother Oak was under attack.</strong></p>
+        <p>Grandmother Oak is no ordinary tree. She's been standing for over 300 years. She feeds seedlings. She sends warnings. She is the heart of this part of the network.</p>
+        <p>And caterpillars &mdash; hundreds of them &mdash; were eating her leaves.</p>
+        <p>Here's the thing most surface-dwellers don't know: when a tree is attacked, it doesn't just sit there. Grandmother Oak sent a chemical distress signal through the network.</p>
+        <p>The signal raced through the threads. Within minutes, every tree within a quarter-mile had received the warning. The maples made their leaves taste bitter. The beeches thickened their leaf coatings. Even the young aspens started producing defensive chemicals &mdash; all before a single caterpillar reached them.</p>
+        <p>Meanwhile, Stench called in his insect allies. A squadron of parasitic wasps arrived within the hour.</p>
+        <p>By sunset, the attack was contained. And those seedlings she's been feeding? They kept getting their sugar deliveries the whole time. Because that's what the network does: it protects its own.</p>
+        <blockquote style="margin-top: 1rem;">The Real Science: Trees really do send chemical warning signals when attacked! Research by Dr. Suzanne Simard and others has shown these signals travel through mycorrhizal networks underground AND through the air. Neighboring trees begin producing defensive chemicals before the insects even arrive.</blockquote>
+      </div>
+
+      <!-- SPORA'S JOURNAL -->
+      <div class="nl-section reveal">
+        <h3>Spora's Journal</h3>
+        <img src="images/newsletter/3.png" alt="Spora reaches out to touch a glowing thread" style="width:100%;border-radius:12px;margin-bottom:1.5rem;border:1px solid var(--border-accent);" loading="lazy">
+        <h4>Entry #12: "I Found My Signal"</h4>
+        <div class="nl-byline-row">
+          <img src="images/characters/spora.webp" alt="Spora" class="nl-avatar" loading="lazy">
+          <span class="nl-byline">By Spora</span>
+        </div>
+        <p>Dear Journal,</p>
+        <p>I DID IT.</p>
+        <p>I know that probably doesn't sound like a big deal. Everyone else sends messages all the time. Puff sends about forty per hour (most of them are just "HI!" but still).</p>
+        <p>But for me, sending even ONE message has been... hard. My filaments would flicker. My signal would start to form and then &mdash; nothing.</p>
+        <p>Fun-Gus kept saying, "Don't force it." Chanty told me, "Say what you actually feel." Even Truff-Low said: "The forest doesn't just need its past. It needs its future. That's you."</p>
+        <p>Today, I went back to the same thread. I put my tendril against it. And instead of trying to send a perfect signal, I just... said what was true.</p>
+        <p><em>I'm here. I'm new. And I want to be part of this.</em></p>
+        <p>The thread lit up. A small, steady glow. Warm amber-gold. And it held. For the first time, my signal was stable.</p>
+        <p>And then I felt responses coming back. From EVERYWHERE. Little pulses of acknowledgment. Fun-Gus just looked at me and said, "Welcome to the network. For real this time."</p>
+        <p>Today, for the first time, I feel like I belong here. I feel connected.</p>
+        <p>&mdash; Spora</p>
+        <p style="color: var(--text-muted); font-style: italic; font-size: 0.85rem;">P.S. Puff says my signal was "THE BEST SIGNAL HE'S EVER SEEN" but I think he says that about everything.</p>
+      </div>
+
+      <!-- SCIENCE CORNER -->
+      <div class="nl-section reveal">
+        <h3>Science Corner</h3>
+        <h4>"Mushroom Math: Numbers That'll Blow Your Mind"</h4>
+        <div class="nl-byline-row">
+          <img src="images/characters/birdie.webp" alt="Birdie" class="nl-avatar" loading="lazy">
+          <span class="nl-byline">Compiled by Birdie (she likes precision)</span>
+        </div>
+        <table class="styled-table" style="margin-top: 1rem;">
+          <tr><th>Fact</th><th>Number</th></tr>
+          <tr><td>Spores released by one giant puffball</td><td style="color: var(--sillium); font-weight: 600;">7 trillion</td></tr>
+          <tr><td>Miles of mycelium in one teaspoon of soil</td><td style="color: var(--sillium); font-weight: 600;">Up to 6 miles</td></tr>
+          <tr><td>Plants connected by fungal networks</td><td style="color: var(--sillium); font-weight: 600;">~90%</td></tr>
+          <tr><td>Age of oldest fungal-plant partnerships</td><td style="color: var(--sillium); font-weight: 600;">450+ million years</td></tr>
+          <tr><td>Carbon trees share through fungal networks</td><td style="color: var(--sillium); font-weight: 600;">Up to 40%</td></tr>
+          <tr><td>Known fungal species</td><td style="color: var(--sillium); font-weight: 600;">~150,000</td></tr>
+          <tr><td>Estimated total fungal species on Earth</td><td style="color: var(--sillium); font-weight: 600;">2.2&ndash;3.8 million</td></tr>
+          <tr><td>Largest organism on Earth (honey fungus, Oregon)</td><td style="color: var(--sillium); font-weight: 600;">2,385 acres</td></tr>
+          <tr><td>Time for a mycorrhizal connection to form</td><td style="color: var(--sillium); font-weight: 600;">As little as 24 hours</td></tr>
+          <tr><td>Bioluminescent fungal species</td><td style="color: var(--sillium); font-weight: 600;">Over 80</td></tr>
+        </table>
+        <p style="color: var(--text-muted); font-style: italic; font-size: 0.85rem; margin-top: 1rem;">Birdie's note: I've triple-checked every number. Accuracy matters. Every delivery matters.</p>
+      </div>
+
+      <!-- ASK FUN-GUS -->
+      <div class="nl-section reveal">
+        <h3>Ask Fun-Gus</h3>
+        <div class="nl-byline-row">
+          <img src="images/characters/fun-gus.webp" alt="Fun-Gus" class="nl-avatar" loading="lazy">
+          <span class="nl-byline">Your questions, answered</span>
+        </div>
+
+        <p class="qa-question">"Why do mushrooms pop up after it rains?" &mdash; Ella, age 8, Portland</p>
+        <p>Great question! Mushrooms are the "fruit" of the fungus &mdash; like apples on a tree. The real organism is the mycelium underground, there ALL the time. When it rains, the soil gets saturated and the fungus says, "NOW'S our chance!" and pushes mushrooms up to release spores &mdash; sometimes overnight!</p>
+
+        <p class="qa-question">"Can trees really talk?" &mdash; James, age 6, Minneapolis</p>
+        <p>They don't use words like we do. But they absolutely communicate! Trees send chemical signals through the fungal network &mdash; kind of like text messages through underground cables. Scientists have measured these signals in labs and forests worldwide.</p>
+
+        <p class="qa-question">"Is Sillium a real place?" &mdash; Priya, age 9, Toronto</p>
+        <p>Sillium is our name for the fungal network in the Fun-Gus stories. In real life, scientists call it a <strong>mycorrhizal network</strong> &mdash; or sometimes the <strong>Wood Wide Web</strong>. The real one exists under every forest on the planet. You can't see it without a microscope, but it's there. Right under your feet.</p>
+      </div>
+
+      <!-- NETWORK ALERTS -->
+      <div class="nl-section reveal">
+        <h3>Network Alerts</h3>
+        <div class="nl-byline">What's happening in the Sillium this season</div>
+        <div class="alert-item">
+          <p><strong style="color: var(--sillium);">Spring Surge:</strong> The network is waking up! As soil temperatures rise above 10&deg;C, mycelium growth accelerates. New connections are forming daily.</p>
+        </div>
+        <div class="alert-item">
+          <p><strong style="color: var(--amber);">Morel Season:</strong> Morels fruit in spring, especially in areas that experienced fire. One of the most prized edible mushrooms &mdash; but NEVER eat a wild mushroom without expert identification!</p>
+        </div>
+        <div class="alert-item">
+          <p><strong style="color: var(--amber-light);">Caterpillar Watch:</strong> Early spring caterpillar activity is triggering defense signals across eastern forest networks. Soil antibiotic production is up 15%.</p>
+        </div>
+      </div>
+
+      <!-- ACTIVITY -->
+      <div class="nl-section reveal">
+        <img src="images/newsletter/4.png" alt="Kids building their own network with glowing connections" style="width:100%;border-radius:12px;margin-bottom:1.5rem;border:1px solid var(--border-accent);" loading="lazy">
+        <h3>Activity: Build Your Own Network</h3>
+        <h4>Materials Needed</h4>
+        <ul style="color: var(--text-secondary); padding-left: 1.25rem; line-height: 2; font-size: 0.9rem;">
+          <li>A ball of yarn or string</li>
+          <li>5&ndash;10 friends, family members, or stuffed animals</li>
+          <li>Index cards and markers</li>
+          <li>A room or outdoor space</li>
+        </ul>
+        <h4>Instructions</h4>
+        <ol style="color: var(--text-secondary); padding-left: 1.25rem; line-height: 2; font-size: 0.9rem;">
+          <li><strong>Assign roles.</strong> Each person picks a character.</li>
+          <li><strong>Create the network.</strong> One person (Fun-Gus) holds the yarn end and passes the ball to another, keeping hold of their end.</li>
+          <li><strong>Keep connecting.</strong> Each person holds their section and passes to someone new. Soon you'll have a web &mdash; just like mycelium!</li>
+          <li><strong>Test the network.</strong> One person tugs gently. Can the others feel it? That's how signals travel!</li>
+          <li><strong>Try removing a connection.</strong> What happens? The network weakens. Pick it back up &mdash; it recovers. THIS is why biodiversity matters.</li>
+        </ol>
+      </div>
+
+      <!-- COMING NEXT -->
+      <div class="nl-section reveal" style="text-align: center;">
+        <h3>Coming Next Issue</h3>
+        <p><strong>"The Deep Places"</strong> &mdash; Truff-Low shares a memory from 200 years ago. Lumos writes about what it's like to be the only light in the dark. Plus: summer mushroom guide, new Ask Fun-Gus questions, and a DIY spore print activity.</p>
+      </div>
+
+      <!-- FOOTER -->
+      <div style="text-align: center; color: var(--text-muted); font-size: 0.8rem; margin-top: 2rem;">
+        <p>Editor-in-Chief: Fun-Gus &bull; Storyteller: Chanty &bull; Fact-Checker: Birdie &bull; Scribe: Inky &bull; Enthusiasm: Puff</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

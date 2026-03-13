@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍄</text></svg>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>"My Fungal Adventure" — Digital Story Script</title>
+  <meta name="description" content="Full animated screenplay for My Fungal Adventure — a 3-4 minute Pixar-quality short film.">
+  <meta property="og:title" content="&quot;My Fungal Adventure&quot; — Digital Story Script">
+  <meta property="og:description" content="Full animated screenplay for My Fungal Adventure — a 3-4 minute Pixar-quality short film.">
+  <meta property="og:image" content="images/storyboard/5.png">
+  <meta property="og:type" content="article">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .script-body { max-width: 800px; margin: 0 auto; }
+    .scene-card {
+      background: var(--soil-600);
+      border: 1px solid var(--border-accent);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    .scene-card h3 { color: var(--sillium); font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .scene-card .timecode { color: var(--text-muted); font-size: 0.8rem; margin-bottom: 1.5rem; }
+    .stage-dir { color: var(--text-muted); font-style: italic; margin: 1rem 0; line-height: 1.7; }
+    .dialogue-char { color: var(--amber); font-weight: 600; font-family: 'Fredoka', sans-serif; margin-top: 1rem; }
+    .dialogue-dir { color: var(--text-muted); font-style: italic; font-size: 0.85rem; }
+    .dialogue-line { color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.7; }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 640px) { .specs-grid { grid-template-columns: 1fr; } }
+    .spec-card {
+      background: var(--soil-700);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+    .spec-card h4 { color: var(--sillium); font-size: 0.9rem; margin-bottom: 0.75rem; }
+    .spec-card p, .spec-card li { color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; }
+    .spec-card ul { padding-left: 1.25rem; }
+    .back-link { display: inline-block; margin-bottom: 2rem; color: var(--text-muted); font-size: 0.9rem; }
+    .back-link:hover { color: var(--sillium); }
+    .scene-image {
+      width: 100%; border-radius: 12px; margin: 1.5rem 0;
+      border: 1px solid var(--border-accent);
+      box-shadow: 0 0 30px rgba(34,211,184,0.08);
+    }
+    .scene-video {
+      width: 100%; border-radius: 12px; margin: 1.5rem 0;
+      border: 1px solid var(--border-accent);
+    }
+    .storyboard-img {
+      width: 100%; border-radius: 12px; margin: 1rem 0 1.5rem;
+      border: 1px solid var(--border-accent);
+      box-shadow: 0 0 30px rgba(34,211,184,0.08);
+    }
+    @media (max-width: 540px) {
+      .scene-card { padding: 1.5rem; }
+      .styled-table { font-size: 0.8rem; }
+      .styled-table th, .styled-table td { padding: 0.5rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header id="site-nav"></header>
+
+  <section class="page-hero container">
+    <a href="list-a.html" class="back-link">&larr; Back to List A</a>
+    <span class="badge badge-a" style="font-size: 0.9rem; margin-bottom: 1rem;">List A &mdash; Digital Story</span>
+    <h1>"My Fungal Adventure"</h1>
+    <p class="subtitle">Full animated screenplay &bull; 3&ndash;4 minutes &bull; Pixar-quality 3D &bull; 8 voice actors</p>
+  </section>
+
+  <section class="container" style="padding-bottom: 5rem;">
+    <div class="script-body">
+
+      <!-- PRODUCTION NOTES -->
+      <div class="scene-card reveal">
+        <h3>Production Notes</h3>
+        <div class="specs-grid" style="margin-top: 0;">
+          <div class="spec-card">
+            <h4>Technical</h4>
+            <ul>
+              <li>Aspect Ratio: 16:9 (1920x1080)</li>
+              <li>Runtime: 3:45&ndash;4:00</li>
+              <li>8 voice actors needed</li>
+              <li>4 music cues</li>
+            </ul>
+          </div>
+          <div class="spec-card">
+            <h4>Style</h4>
+            <ul>
+              <li>Pixar-quality 3D animation</li>
+              <li>Warm narration (nature doc for kids)</li>
+              <li>Orchestral-organic music blend</li>
+              <li>Warm greens/golds above &rarr; cyan/teal below</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLD OPEN -->
+      <div class="scene-card reveal">
+        <h3>Cold Open</h3>
+        <div class="timecode">[0:00&ndash;0:15]</div>
+        <p class="stage-dir">Black screen. A single cyan dot pulses like a heartbeat. It sends a line of light to another dot. A web of glowing connections grows across the screen &mdash; an underground network seen from above, like a constellation in the soil.</p>
+        <p class="dialogue-char">NARRATOR (V.O.):</p>
+        <p class="dialogue-line">Beneath every forest&hellip; there's a secret.</p>
+        <p class="stage-dir">The network pulses with warm amber light. The camera pulls back &mdash; the network stretches as far as we can see.</p>
+        <p class="dialogue-char">NARRATOR (V.O.):</p>
+        <p class="dialogue-line">A network older than dinosaurs. Bigger than the internet. And today, two kids are about to find it.</p>
+        <p class="stage-dir">SMASH CUT to bright sunlight. TITLE CARD: MY FUNGAL ADVENTURE</p>
+        <img src="images/storyboard/1.png" alt="Storyboard: glowing network constellation underground" class="storyboard-img" loading="lazy">
+        <video src="video/storyboard/1.mp4" class="scene-video" controls preload="metadata" poster="images/storyboard/1.png"></video>
+      </div>
+
+      <!-- SCENE 1 -->
+      <div class="scene-card reveal">
+        <h3>Scene 1: The Forest Walk</h3>
+        <div class="timecode">[0:15&ndash;0:45]</div>
+        <img src="images/storyboard/2.png" alt="Storyboard: Birch, Fern, and Ms. Hawthorn on the forest trail" class="storyboard-img" loading="lazy">
+        <video src="video/storyboard/2.mp4" class="scene-video" controls preload="metadata" poster="images/storyboard/2.png"></video>
+        <p class="stage-dir">A sun-dappled forest trail. Three figures walk: BIRCH (8, magnifying glass), FERN (7, nature journal), and MS. HAWTHORN (ageless, olive coat, robin on shoulder).</p>
+        <p class="dialogue-char">BIRCH:</p>
+        <p class="dialogue-dir">(running ahead, looking through magnifying glass)</p>
+        <p class="dialogue-line">Ms. Hawthorn! What's THAT mushroom? The one with the spots?</p>
+        <p class="dialogue-char">MS. HAWTHORN:</p>
+        <p class="dialogue-dir">(warmly)</p>
+        <p class="dialogue-line">That's an amanita, Birch. Beautiful, isn't it? Fungi are some of the oldest living things on Earth.</p>
+        <p class="dialogue-char">FERN:</p>
+        <p class="dialogue-dir">(writing in her journal, not looking up)</p>
+        <p class="dialogue-line">How old?</p>
+        <p class="dialogue-char">MS. HAWTHORN:</p>
+        <p class="dialogue-line">Older than trees. Older than flowers. They were here before almost everything else.</p>
+        <p class="dialogue-char">FERN:</p>
+        <p class="dialogue-line">That's&hellip; really old.</p>
+        <p class="dialogue-char">MS. HAWTHORN:</p>
+        <p class="dialogue-dir">(smiling, glancing toward something off-trail)</p>
+        <p class="dialogue-line">And they've been busy the whole time.</p>
+        <p class="stage-dir">ADULT HINT: Flowers along the trail lean subtly toward her as she passes.</p>
+      </div>
+
+      <!-- SCENE 2 -->
+      <div class="scene-card reveal">
+        <h3>Scene 2: The Fairy Ring</h3>
+        <div class="timecode">[0:45&ndash;1:10]</div>
+        <img src="images/storyboard/3.png" alt="Storyboard: The glowing fairy ring — Birch and Fern discover it" class="storyboard-img" loading="lazy">
+        <video src="video/storyboard/3.mp4" class="scene-video" controls preload="metadata" poster="images/storyboard/3.png"></video>
+        <p class="stage-dir">Birch pushes through a fern frond and stops. A perfect circle of mushrooms, each cap glowing faintly. Tiny motes of golden light drift from the center.</p>
+        <p class="dialogue-char">FERN:</p>
+        <p class="dialogue-dir">(eyes wide)</p>
+        <p class="dialogue-line">A fairy ring. They're real.</p>
+        <p class="dialogue-char">BIRCH:</p>
+        <p class="dialogue-line">And it's&hellip; glowing.</p>
+        <p class="dialogue-char">MS. HAWTHORN:</p>
+        <p class="dialogue-line">Go ahead. Some things you have to discover for yourselves.</p>
+        <p class="stage-dir">ADULT HINT: Ms. Hawthorn smiles BEFORE the ring glows brighter. She never enters the clearing.</p>
+        <p class="dialogue-char">BIRCH:</p>
+        <p class="dialogue-line">Ready?</p>
+        <p class="dialogue-char">FERN:</p>
+        <p class="dialogue-dir">(clutching her journal)</p>
+        <p class="dialogue-line">Ready.</p>
+        <p class="stage-dir">They step inside. A deep, resonant TONE &mdash; like a singing bowl crossed with a heartbeat. Golden light envelops them.</p>
+      </div>
+
+      <!-- SCENE 3 -->
+      <div class="scene-card reveal">
+        <h3>Scene 3: The Shrinking</h3>
+        <div class="timecode">[1:10&ndash;1:30]</div>
+        <img src="images/storyboard/4.png" alt="Storyboard: Birch and Fern shrink through golden light underground" class="storyboard-img" loading="lazy">
+        <video src="video/storyboard/4.mp4" class="scene-video" controls preload="metadata" poster="images/storyboard/4.png"></video>
+        <p class="stage-dir">DYNAMIC SEQUENCE. The world expands around them. Grass blades shoot up like redwoods. A beetle trundles past, now car-sized. Colors shift from warm greens to deep amber to cyan-teal below. They tumble through soil, past roots and tiny creatures, wrapped in golden light.</p>
+        <p class="dialogue-char">FERN:</p>
+        <p class="dialogue-dir">(laughing, falling through golden light)</p>
+        <p class="dialogue-line">We're shrinking!</p>
+        <p class="dialogue-char">BIRCH:</p>
+        <p class="dialogue-dir">(delighted)</p>
+        <p class="dialogue-line">We're REALLY shrinking!</p>
+        <p class="stage-dir">They land on a bed of mycelium threads in an enormous underground cavern. Tree roots descend like cathedral columns. Threads pulse with cyan and teal light everywhere.</p>
+        <p class="dialogue-char">FERN:</p>
+        <p class="dialogue-dir">(barely a whisper)</p>
+        <p class="dialogue-line">Where are we?</p>
+        <p class="dialogue-char">FUN-GUS (O.S.):</p>
+        <p class="dialogue-line">Welcome to the network!</p>
+      </div>
+
+      <!-- SCENE 4 -->
+      <div class="scene-card reveal">
+        <h3>Scene 4: Meeting Fun-Gus</h3>
+        <div class="timecode">[1:30&ndash;2:00]</div>
+        <img src="images/storyboard/5.png" alt="Storyboard: Birch and Fern meet Fun-Gus in the Sillium" class="storyboard-img" loading="lazy">
+        <video src="video/storyboard/5.mp4" class="scene-video" controls preload="metadata" poster="images/storyboard/5.png"></video>
+        <p class="stage-dir">FUN-GUS steps into the light. Three feet tall, warm red-orange cap with white spots, cream body, blue sash, kind glowing eyes. He walks with a gentle bounce.</p>
+        <p class="dialogue-char">FUN-GUS:</p>
+        <p class="dialogue-dir">(warm, enthusiastic)</p>
+        <p class="dialogue-line">I'm Fun-Gus! And you &mdash; you found the fairy ring! Not many surface-dwellers do.</p>
+        <p class="dialogue-char">BIRCH:</p>
+        <p class="dialogue-line">What IS this place?</p>
+        <p class="dialogue-char">FUN-GUS:</p>
+        <p class="dialogue-dir">(gesturing grandly)</p>
+        <p class="dialogue-line">This&hellip; is Sillium. The oldest, biggest network on the planet.</p>
+        <p class="stage-dir">He traces a glowing thread. Light pulses race away in both directions.</p>
+        <p class="dialogue-char">FUN-GUS:</p>
+        <p class="dialogue-line">See these threads? Each one is a conversation. Trees talking to each other. Sharing food. Sending warnings.</p>
+        <p class="dialogue-char">FERN:</p>
+        <p class="dialogue-dir">(scribbling furiously)</p>
+        <p class="dialogue-line">Trees&hellip; talk?</p>
+        <p class="dialogue-char">FUN-GUS:</p>
+        <p class="dialogue-line">They don't use words. They use chemistry. Tiny signals traveling through threads like these &mdash; for HUNDREDS of miles in every direction.</p>
+        <p class="stage-dir">Camera reveals the vast scope. Threads stretching everywhere, pulsing with light. Like a living galaxy underground.</p>
+        <p class="dialogue-char">FUN-GUS:</p>
+        <p class="dialogue-line">Scientists call it the "Wood Wide Web." We just call it home.</p>
+        <p class="dialogue-char">FUN-GUS:</p>
+        <p class="dialogue-line">But today, we have a problem. A little seedling is losing its connection. If we don't help, it'll be cut off from the whole forest. Want to help?</p>
+        <p class="dialogue-char">BIRCH:</p>
+        <p class="dialogue-line">Yes!</p>
+        <p class="dialogue-char">FERN:</p>
+        <p class="dialogue-dir">(closing her journal with purpose)</p>
+        <p class="dialogue-line">Absolutely.</p>
+      </div>
+
+      <!-- SCENE 5 -->
+      <div class="scene-card reveal">
+        <h3>Scene 5: The Tour &mdash; Meeting the Network</h3>
+        <div class="timecode">[2:00&ndash;2:45]</div>
+        <img src="images/storyboard/6.png" alt="Storyboard: Fun-Gus introduces the network characters" class="storyboard-img" loading="lazy">
+        <video src="video/storyboard/6.mp4" class="scene-video" controls preload="metadata" poster="images/storyboard/6.png"></video>
+        <p class="stage-dir">Fun-Gus leads them along the fading thread. Quick introductions as they meet network members.</p>
+
+        <p class="dialogue-char" style="color: var(--sillium);">SEQUENCE A &mdash; SPORA</p>
+        <img src="images/characters/spora.webp" alt="Spora" style="width:60px;height:60px;border-radius:50%;object-fit:cover;border:2px solid var(--border-accent);float:left;margin:0 1rem 0.5rem 0;" loading="lazy">
+        <p class="stage-dir">A tiny squeak from behind a root. SPORA floats into view &mdash; tiny, pale pink-white, enormous amber eyes.</p>
+        <p class="dialogue-char">SPORA:</p>
+        <p class="dialogue-dir">(barely audible)</p>
+        <p class="dialogue-line">I'm Spora. I'm new. I don't know how to do anything yet.</p>
+        <p class="dialogue-char">FUN-GUS:</p>
+        <p class="dialogue-dir">(gently)</p>
+        <p class="dialogue-line">That's where everyone starts.</p>
+
+        <p class="dialogue-char" style="color: var(--sillium);clear:both;">SEQUENCE B &mdash; LUMOS</p>
+        <img src="images/characters/lumos.webp" alt="Lumos" style="width:60px;height:60px;border-radius:50%;object-fit:cover;border:2px solid var(--border-accent);float:left;margin:0 1rem 0.5rem 0;" loading="lazy">
+        <p class="stage-dir">The path goes dark. A trembling blue-green glow appears.</p>
+        <p class="dialogue-char">LUMOS:</p>
+        <p class="dialogue-dir">(nervous but trying)</p>
+        <p class="dialogue-line">I'm Lumos. I light the way. I get brighter when I'm scared. Which is&hellip; a lot.</p>
+        <p class="dialogue-char">FERN:</p>
+        <p class="dialogue-line">Being brave doesn't mean you're not afraid.</p>
+        <p class="stage-dir">Lumos glows brighter. Dormant threads re-illuminate in his wake.</p>
+        <img src="images/storyboard/7.png" alt="Storyboard: Following the fading thread through the network" class="storyboard-img" style="clear:both;" loading="lazy">
+        <video src="video/storyboard/7.mp4" class="scene-video" controls preload="metadata" poster="images/storyboard/7.png"></video>
+
+        <p class="dialogue-char" style="color: var(--sillium);clear:both;">SEQUENCE C &mdash; PUFF</p>
+        <img src="images/characters/puff.webp" alt="Puff" style="width:60px;height:60px;border-radius:50%;object-fit:cover;border:2px solid var(--border-accent);float:left;margin:0 1rem 0.5rem 0;" loading="lazy">
+        <p class="stage-dir">A round, rosy creature BOUNCES toward them &mdash; and BURSTS in a cloud of golden spores.</p>
+        <p class="dialogue-char">PUFF:</p>
+        <p class="dialogue-dir">(ecstatic)</p>
+        <p class="dialogue-line">Sorry! I just get so EXCITED!</p>
+        <p class="stage-dir">Birch laughs. Fern sneezes. Spora peeks out, delighted.</p>
+        <p class="dialogue-char">NARRATOR (V.O.):</p>
+        <p class="dialogue-line">Each one different. Each one essential. And each one part of something bigger than themselves.</p>
+      </div>
+
+      <!-- SCENE 6 -->
+      <div class="scene-card reveal">
+        <h3>Scene 6: Spora's Moment</h3>
+        <div class="timecode">[2:45&ndash;3:15]</div>
+        <img src="images/storyboard/8.png" alt="Storyboard: Spora touches the fading thread — a new leaf unfurls above" class="storyboard-img" loading="lazy">
+        <video src="video/storyboard/8.mp4" class="scene-video" controls preload="metadata" poster="images/storyboard/8.png"></video>
+        <p class="stage-dir">They reach the struggling seedling. Pale roots, barely connected. A single thread sputters.</p>
+        <p class="dialogue-char">FUN-GUS:</p>
+        <p class="dialogue-line">This seedling needs us. All of us.</p>
+        <p class="stage-dir">MONTAGE: Lumos illuminates. Puff broadcasts the call. Fun-Gus coordinates. But the connection isn't complete. Everyone looks at Spora.</p>
+        <p class="dialogue-char">SPORA:</p>
+        <p class="dialogue-dir">(panicking)</p>
+        <p class="dialogue-line">Me? But I &mdash; I'm too small. I don't know how.</p>
+        <p class="dialogue-char">FUN-GUS:</p>
+        <p class="dialogue-dir">(kneeling to her level)</p>
+        <p class="dialogue-line">You don't have to be big, Spora. You just have to try.</p>
+        <p class="stage-dir">Spora trembles. Her filaments flicker. She reaches out one tiny tendril and touches the fading thread.</p>
+        <p class="stage-dir">SFX: A deep, warm TONE. Spora's filaments STABILIZE &mdash; glowing warm amber-gold. A pulse of golden light races through the entire network. Every thread blazes to life. The seedling's roots fill with color. Above ground, a tiny new leaf unfurls.</p>
+        <p class="dialogue-char">FUN-GUS:</p>
+        <p class="dialogue-dir">(beaming)</p>
+        <p class="dialogue-line">See? The network doesn't need you to be big. It needs you to be YOU.</p>
+      </div>
+
+      <!-- SCENE 7 -->
+      <div class="scene-card reveal">
+        <h3>Scene 7: Return</h3>
+        <div class="timecode">[3:15&ndash;3:40]</div>
+        <img src="images/storyboard/9.png" alt="Storyboard: Birch and Fern return to the surface, touching trees and soil" class="storyboard-img" loading="lazy">
+        <video src="video/storyboard/9.mp4" class="scene-video" controls preload="metadata" poster="images/storyboard/9.png"></video>
+        <p class="stage-dir">Fun-Gus guides them back to the fairy ring entrance. Golden light swirls. They grow. Same forest, same afternoon light. The fairy ring is just ordinary mushrooms now. Ms. Hawthorn waits, smiling.</p>
+        <p class="dialogue-char">MS. HAWTHORN:</p>
+        <p class="dialogue-dir">(knowingly)</p>
+        <p class="dialogue-line">Well? How was it?</p>
+        <p class="dialogue-char">BIRCH:</p>
+        <p class="dialogue-dir">(pressing his hand against an old oak)</p>
+        <p class="dialogue-line">The forest was talking this whole time.</p>
+        <p class="dialogue-char">FERN:</p>
+        <p class="dialogue-dir">(kneeling, touching the soil)</p>
+        <p class="dialogue-line">We just couldn't hear it.</p>
+        <p class="stage-dir">ADULT HINT: The robin returns. She hums an ancient melody. She doesn't seem surprised by anything they say.</p>
+      </div>
+
+      <!-- SCENE 8 -->
+      <div class="scene-card reveal">
+        <h3>Scene 8: Closing</h3>
+        <div class="timecode">[3:40&ndash;4:00]</div>
+        <img src="images/storyboard/10.png" alt="Storyboard: Three figures walking at sunset, network glowing below" class="storyboard-img" loading="lazy">
+        <video src="video/storyboard/10.mp4" class="scene-video" controls preload="metadata" poster="images/storyboard/10.png"></video>
+        <p class="stage-dir">Wide shot &mdash; three figures walking away, silhouetted against golden sunset. Camera pushes DOWN through the forest floor into the network. Fun-Gus waving, Spora glowing, Lumos lighting a path, Puff mid-burst. Connected.</p>
+        <p class="dialogue-char">NARRATOR (V.O.):</p>
+        <p class="dialogue-line">Beneath every forest, there's a network. It's been there for 450 million years. Connecting. Sharing. Talking.</p>
+        <p class="dialogue-line">You just have to know where to look.</p>
+        <p class="stage-dir">TITLE CARD: FUN-GUS: THE FOREST HAS WIFI</p>
+        <p class="stage-dir">END CARD: "The underground fungal networks in this story are real. Scientists call them mycorrhizae &mdash; and they connect over 90% of all plants on Earth. Next time you're in a forest, remember: there's a whole internet beneath your feet."</p>
+      </div>
+
+      <!-- SPECS -->
+      <div class="scene-card reveal">
+        <h3>Technical Specifications</h3>
+        <table class="styled-table">
+          <tr><th>Element</th><th>Detail</th></tr>
+          <tr><td>Runtime</td><td>3:45&ndash;4:00</td></tr>
+          <tr><td>Resolution</td><td>1920x1080 (16:9)</td></tr>
+          <tr><td>Animation Style</td><td>Pixar-quality 3D, warm lighting</td></tr>
+          <tr><td>Voice Actors</td><td>Narrator, Fun-Gus, Spora, Birch, Fern, Ms. Hawthorn, Lumos, Puff (8 voices)</td></tr>
+          <tr><td>Music Cues</td><td>4 (Forest, Shrinking, Sillium, Resolution)</td></tr>
+          <tr><td>SFX Design</td><td>Nature ambience, network hum, fairy ring tone, shrinking sequence, spore burst</td></tr>
+        </table>
+
+        <h3 style="margin-top: 2rem;">Character Appearances</h3>
+        <table class="styled-table">
+          <tr><th>Character</th><th>Scenes</th><th>Lines</th></tr>
+          <tr><td>Birch</td><td>1&ndash;8</td><td>5</td></tr>
+          <tr><td>Fern</td><td>1&ndash;8</td><td>5</td></tr>
+          <tr><td>Ms. Hawthorn</td><td>1&ndash;2, 7</td><td>3</td></tr>
+          <tr><td>Fun-Gus</td><td>4&ndash;7</td><td>8</td></tr>
+          <tr><td>Spora</td><td>5&ndash;6</td><td>2</td></tr>
+          <tr><td>Lumos</td><td>5</td><td>1</td></tr>
+          <tr><td>Puff</td><td>5</td><td>1</td></tr>
+          <tr><td>Narrator</td><td>Cold open, 5, 8</td><td>4 segments</td></tr>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

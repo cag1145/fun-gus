@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍄</text></svg>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List B Products — My Fungal Adventure</title>
+  <meta name="description" content="List B media products: trading cards, fake reviews, newsletter, and comic script.">
+  <meta property="og:title" content="List B Products — My Fungal Adventure">
+  <meta property="og:description" content="List B media products: trading cards, fake reviews, newsletter, and comic script.">
+  <meta property="og:image" content="images/trading-cards/fun-gus.png">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <style>
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 640px) { .product-grid { grid-template-columns: 1fr; } }
+    .product-card {
+      background: var(--soil-600);
+      border: 1px solid var(--border-accent);
+      border-radius: 16px;
+      padding: 2.5rem;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+    }
+    .product-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 0 35px var(--sillium-dim);
+      transform: translateY(-4px);
+      color: inherit;
+    }
+    .product-card h3 { font-size: 1.3rem; margin-bottom: 0.25rem; }
+    .product-card .format { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1rem; }
+    .product-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; flex: 1; }
+    .product-card .card-link {
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-accent);
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.9rem;
+      color: var(--sillium);
+    }
+    .product-thumb {
+      width: 100%; border-radius: 12px; margin-bottom: 1.25rem;
+      border: 1px solid var(--border-accent); aspect-ratio: 16/9; object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <header id="site-nav"></header>
+
+  <section class="page-hero container">
+    <span class="badge badge-b" style="font-size: 0.9rem; margin-bottom: 1rem;">List B</span>
+    <h1>Print &amp; Supplementary Products</h1>
+    <p class="subtitle">Four media products extending the universe into collectibles, critical reception, community, and sequential art.</p>
+  </section>
+
+  <section class="container" style="padding-bottom: 5rem;">
+    <div class="product-grid">
+
+      <a href="trading-cards.html" class="product-card reveal">
+        <img src="images/trading-cards/fun-gus.png" alt="Sillium Network Trading Cards" class="product-thumb" loading="lazy">
+        <span class="badge badge-b" style="align-self: flex-start;">Trading Cards</span>
+        <h3 style="margin-top: 0.75rem;">Sillium Network Card Set</h3>
+        <div class="format">12 collectible cards &bull; Stats &amp; abilities &bull; Real science facts</div>
+        <p>Each card features five rated stats, a named special ability, a verified science fact, and a signature quote. Includes rarity tiers, set bonuses, and full print specs.</p>
+        <div class="card-link">View full set &rarr;</div>
+      </a>
+
+      <a href="reviews.html" class="product-card reveal">
+        <img src="images/hero/fungal-forest.webp" alt="Critical Reception" class="product-thumb" loading="lazy">
+        <span class="badge badge-b" style="align-self: flex-start;">Fake Reviews</span>
+        <h3 style="margin-top: 0.75rem;">Critical Reception</h3>
+        <div class="format">NYT, IGN, parents, kids &bull; 94% Rotten Tomatoes</div>
+        <p>Fictional reviews from professional critics, parents, kids (ages 4&ndash;10), an NSTA educator review, and social media reactions &mdash; demonstrating reception across every demographic.</p>
+        <div class="card-link">Read reviews &rarr;</div>
+      </a>
+
+      <a href="newsletter.html" class="product-card reveal">
+        <img src="images/newsletter/1.png" alt="The Sillium Dispatch" class="product-thumb" loading="lazy">
+        <span class="badge badge-b" style="align-self: flex-start;">Newsletter</span>
+        <h3 style="margin-top: 0.75rem;">"The Sillium Dispatch" #1</h3>
+        <div class="format">In-universe monthly newsletter &bull; 7 sections</div>
+        <p>A complete first issue written by fungal characters. Features a story by Chanty, Spora's journal, science facts by Birdie, an "Ask Fun-Gus" Q&amp;A, and a hands-on activity.</p>
+        <div class="card-link">Read issue &rarr;</div>
+      </a>
+
+      <a href="comic.html" class="product-card reveal">
+        <img src="images/comic/panel7.png" alt="The Thirsty Tree — splash page" class="product-thumb" loading="lazy">
+        <span class="badge badge-b" style="align-self: flex-start;">Comic</span>
+        <h3 style="margin-top: 0.75rem;">"The Thirsty Tree"</h3>
+        <div class="format">10-page full-color comic &bull; 37 panels &bull; Full art directions</div>
+        <p>Spora discovers a dying tree, can't save it alone, and rallies the entire network. Complete with dialogue, SFX, panel descriptions, and a full-page splash.</p>
+        <div class="card-link">Read script &rarr;</div>
+      </a>
+
+    </div>
+  </section>
+
+  <footer id="site-footer"></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

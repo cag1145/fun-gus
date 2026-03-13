@@ -7,7 +7,8 @@ function loadNav() {
   if (!navEl) return;
 
   const links = [
-    { href: 'media.html', label: 'Portfolio' },
+    { href: 'list-a.html', label: 'List A' },
+    { href: 'list-b.html', label: 'List B' },
     { href: 'contact.html', label: 'Contact' },
   ];
 
@@ -18,7 +19,7 @@ function loadNav() {
   navEl.innerHTML = `
     <nav class="site-nav">
       <div class="nav-inner">
-        <a href="index.html" class="nav-logo">FUN-GUS</a>
+        <a href="index.html" class="nav-logo">MY FUNGAL ADVENTURE</a>
         <ul class="nav-links" id="nav-links">${navLinksHTML}</ul>
         <button class="nav-hamburger" id="nav-toggle" aria-label="Toggle menu">
           <span></span><span></span><span></span>
