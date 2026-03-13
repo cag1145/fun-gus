@@ -6,21 +6,39 @@ function loadNav() {
   const navEl = document.getElementById('site-nav');
   if (!navEl) return;
 
-  const links = [
-    { href: 'list-a.html', label: 'List A' },
-    { href: 'list-b.html', label: 'List B' },
-    { href: 'contact.html', label: 'Contact' },
+  const listA = [
+    { href: 'digital-story.html', label: 'Digital Story' },
+    { href: 'explainer-video.html', label: 'Explainer Video' },
+  ];
+  const listB = [
+    { href: 'trading-cards.html', label: 'Trading Cards' },
+    { href: 'reviews.html', label: 'Fake Reviews' },
+    { href: 'newsletter.html', label: 'Newsletter' },
+    { href: 'comic.html', label: 'Comic' },
   ];
 
-  const navLinksHTML = links
-    .map(l => `<li><a href="${l.href}" class="${currentPage === l.href ? 'active' : ''}">${l.label}</a></li>`)
-    .join('');
+  function dropdownHTML(label, href, items) {
+    const subLinks = items
+      .map(i => `<li><a href="${i.href}" class="${currentPage === i.href ? 'active' : ''}">${i.label}</a></li>`)
+      .join('');
+    const isActive = items.some(i => currentPage === i.href) || currentPage === href;
+    return `<li class="nav-dropdown">
+      <a href="${href}" class="${isActive ? 'active' : ''}">${label} <span class="nav-caret">&#9662;</span></a>
+      <ul class="nav-dropdown-menu">${subLinks}</ul>
+    </li>`;
+  }
+
+  const contactActive = currentPage === 'contact.html' ? 'active' : '';
 
   navEl.innerHTML = `
     <nav class="site-nav">
       <div class="nav-inner">
         <a href="index.html" class="nav-logo">MY FUNGAL ADVENTURE</a>
-        <ul class="nav-links" id="nav-links">${navLinksHTML}</ul>
+        <ul class="nav-links" id="nav-links">
+          ${dropdownHTML('List A', 'list-a.html', listA)}
+          ${dropdownHTML('List B', 'list-b.html', listB)}
+          <li><a href="contact.html" class="${contactActive}">Contact</a></li>
+        </ul>
         <button class="nav-hamburger" id="nav-toggle" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
