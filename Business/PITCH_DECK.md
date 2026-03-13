@@ -60,7 +60,7 @@ That's the magic of Fun-Gus.
 
 ### Shrink Down. Log On. Explore.
 
-Two curious girls and their teacher discover a glowing **fairy ring** of mushrooms. They step inside, **shrink to spore-size**, and enter **SILLIUM** — the living fungal network beneath the forest.
+Two curious kids — a boy and a girl — and their teacher discover a glowing **fairy ring** of mushrooms. They step inside, **shrink to spore-size**, and enter **SILLIUM** — the living fungal network beneath the forest.
 
 Underground, they meet a world of characters across **three biological kingdoms:**
 

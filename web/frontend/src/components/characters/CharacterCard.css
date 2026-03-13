@@ -1,0 +1,399 @@
+/* ==========================================================================
+   CharacterCard — Individual character display card
+   ========================================================================== */
+
+/* --- Grid Card (default state) --- */
+.character-card {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid rgba(34, 211, 184, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--transition-base), box-shadow var(--transition-base),
+    border-color var(--transition-base);
+  animation: fadeIn var(--transition-slow) ease forwards;
+}
+
+.character-card:hover {
+  transform: scale(1.02);
+  border-color: rgba(34, 211, 184, 0.25);
+  box-shadow: 0 0 16px rgba(34, 211, 184, 0.2);
+}
+
+.character-card:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Kingdom-specific hover glows */
+.character-card[data-kingdom='fungi']:hover {
+  border-color: rgba(34, 211, 184, 0.35);
+  box-shadow: 0 0 20px rgba(34, 211, 184, 0.25);
+}
+
+.character-card[data-kingdom='bacteria']:hover {
+  border-color: rgba(245, 158, 11, 0.35);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.25);
+}
+
+.character-card[data-kingdom='insects']:hover {
+  border-color: rgba(167, 139, 250, 0.35);
+  box-shadow: 0 0 20px rgba(167, 139, 250, 0.25);
+}
+
+/* --- Image Area --- */
+.character-card__image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background-color: var(--color-bg-tertiary);
+}
+
+.character-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.character-card__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  opacity: 0.35;
+}
+
+.character-card__placeholder--fungi {
+  background: linear-gradient(145deg, rgba(34, 211, 184, 0.08), rgba(34, 211, 184, 0.02));
+  color: var(--color-fungi);
+}
+
+.character-card__placeholder--bacteria {
+  background: linear-gradient(145deg, rgba(245, 158, 11, 0.08), rgba(245, 158, 11, 0.02));
+  color: var(--color-bacteria);
+}
+
+.character-card__placeholder--insects {
+  background: linear-gradient(145deg, rgba(167, 139, 250, 0.08), rgba(167, 139, 250, 0.02));
+  color: var(--color-insects);
+}
+
+/* --- Card Body --- */
+.character-card__body {
+  padding: var(--space-md);
+}
+
+.character-card__name {
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 0.125rem;
+  line-height: 1.3;
+}
+
+.character-card__species {
+  font-size: 0.8125rem;
+  font-style: italic;
+  color: var(--color-text-muted);
+  margin: 0 0 0.625rem;
+  line-height: 1.4;
+}
+
+/* --- Meta Row (badge + alignment) --- */
+.character-card__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.character-card__kingdom-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+.character-card__kingdom-badge--fungi {
+  background-color: rgba(34, 211, 184, 0.15);
+  color: var(--color-fungi);
+  border: 1px solid rgba(34, 211, 184, 0.25);
+}
+
+.character-card__kingdom-badge--bacteria {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: var(--color-bacteria);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.character-card__kingdom-badge--insects {
+  background-color: rgba(167, 139, 250, 0.15);
+  color: var(--color-insects);
+  border: 1px solid rgba(167, 139, 250, 0.25);
+}
+
+.character-card__alignment {
+  font-size: 0.8125rem;
+  line-height: 1;
+}
+
+/* ==========================================================================
+   CharacterModal — Expanded detail overlay
+   ========================================================================== */
+
+.character-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: var(--space-lg);
+  animation: fadeIn 200ms ease forwards;
+}
+
+.character-modal {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid rgba(34, 211, 184, 0.15);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
+  animation: slideUp 300ms ease forwards;
+}
+
+.character-modal__close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.character-modal__close:hover {
+  color: var(--color-text);
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* --- Modal Layout --- */
+.character-modal__layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 0;
+}
+
+.character-modal__media {
+  position: relative;
+  background-color: var(--color-bg-tertiary);
+}
+
+.character-modal__image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+}
+
+.character-modal__video {
+  width: 100%;
+  border-radius: 0;
+  display: block;
+}
+
+.character-modal__placeholder {
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  opacity: 0.3;
+}
+
+/* --- Modal Info --- */
+.character-modal__info {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.character-modal__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.character-modal__name {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.character-modal__species {
+  font-size: 0.9375rem;
+  font-style: italic;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.character-modal__badges {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-top: var(--space-xs);
+}
+
+/* --- Sections --- */
+.character-modal__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.character-modal__section-title {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.character-modal__backstory {
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* --- Teaches List --- */
+.character-modal__teaches-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding-left: var(--space-md);
+}
+
+.character-modal__teaches-item {
+  position: relative;
+  font-size: 0.875rem;
+  color: var(--color-text);
+  line-height: 1.5;
+  list-style: disc;
+}
+
+.character-modal__teaches-item::marker {
+  color: var(--color-primary);
+}
+
+/* --- Relationships List --- */
+.character-modal__relationships-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.character-modal__relationship {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.875rem;
+  color: var(--color-text);
+}
+
+.character-modal__relationship-name {
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.character-modal__relationship-type {
+  color: var(--color-text-muted);
+  font-size: 0.8125rem;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .character-modal__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .character-modal__media {
+    max-height: 280px;
+    overflow: hidden;
+  }
+
+  .character-modal__image {
+    aspect-ratio: auto;
+    max-height: 280px;
+  }
+
+  .character-modal__placeholder {
+    aspect-ratio: auto;
+    height: 200px;
+  }
+
+  .character-modal__info {
+    padding: var(--space-lg);
+  }
+
+  .character-modal__name {
+    font-size: 1.5rem;
+  }
+
+  .character-modal-backdrop {
+    padding: var(--space-sm);
+  }
+
+  .character-modal {
+    max-height: 95vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .character-modal__info {
+    padding: var(--space-md);
+  }
+
+  .character-modal__name {
+    font-size: 1.25rem;
+  }
+
+  .character-modal__close {
+    top: var(--space-sm);
+    right: var(--space-sm);
+  }
+}

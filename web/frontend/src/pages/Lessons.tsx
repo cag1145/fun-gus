@@ -1,0 +1,3 @@
+import Lessons from '../components/lessons/Lessons';
+
+export default Lessons;

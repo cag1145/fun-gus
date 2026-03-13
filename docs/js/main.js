@@ -7,12 +7,7 @@ function loadNav() {
   if (!navEl) return;
 
   const links = [
-    { href: 'about.html', label: 'Universe' },
-    { href: 'characters.html', label: 'Characters' },
-    { href: 'media.html', label: 'Media' },
-    { href: 'book.html', label: 'Book' },
-    { href: 'pilot.html', label: 'Pilot' },
-    { href: 'science.html', label: 'Science' },
+    { href: 'media.html', label: 'Portfolio' },
     { href: 'contact.html', label: 'Contact' },
   ];
 

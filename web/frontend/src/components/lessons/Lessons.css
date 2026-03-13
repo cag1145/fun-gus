@@ -1,0 +1,292 @@
+/* ============================================================
+   Lessons Browser — Track-based lesson catalog
+   Bioluminescent Forest Theme
+   ============================================================ */
+
+/* --- Page Layout --- */
+.lessons {
+  padding: var(--space-xl);
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
+
+/* --- Loading --- */
+.lessons--loading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.lessons__skeleton-title {
+  height: 36px;
+  width: 180px;
+  border-radius: var(--radius-md);
+}
+
+.lessons__skeleton-subtitle {
+  height: 20px;
+  width: 280px;
+  border-radius: var(--radius-sm);
+}
+
+.lessons__skeleton-track {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.lessons__skeleton-track-header {
+  height: 28px;
+  width: 200px;
+  border-radius: var(--radius-md);
+}
+
+.lessons__skeleton-cards {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.lessons__skeleton-card {
+  height: 180px;
+  flex: 1;
+  border-radius: var(--radius-lg);
+}
+
+/* --- Error State --- */
+.lessons--error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-2xl);
+  text-align: center;
+}
+
+.lessons__error-text {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+}
+
+/* ============================================================
+   Header
+   ============================================================ */
+.lessons__header {
+  margin-bottom: var(--space-2xl);
+}
+
+.lessons__title {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.lessons__subtitle {
+  font-size: 1.0625rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ============================================================
+   Tracks
+   ============================================================ */
+.lessons__tracks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.lessons__track {
+  border-left: 4px solid var(--color-primary);
+  padding-left: var(--space-lg);
+}
+
+.lessons__track-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--space-lg);
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.lessons__track-title {
+  font-family: var(--font-heading);
+  font-size: 1.375rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.lessons__track-progress {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+/* ============================================================
+   Lesson Cards
+   ============================================================ */
+.lessons__track-lessons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
+
+.lessons__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-lg);
+  background-color: var(--color-bg-secondary);
+  border: 1px solid rgba(34, 211, 184, 0.1);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition-base);
+}
+
+.lessons__card:hover {
+  border-color: rgba(34, 211, 184, 0.3);
+  box-shadow: var(--shadow-glow-primary);
+  transform: translateY(-2px);
+  text-decoration: none;
+  color: inherit;
+}
+
+.lessons__card--complete {
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+.lessons__card--complete:hover {
+  border-color: rgba(34, 197, 94, 0.4);
+  box-shadow: 0 0 16px rgba(34, 197, 94, 0.2);
+}
+
+/* --- Completion Badge --- */
+.lessons__card-badge {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background-color: rgba(34, 197, 94, 0.15);
+  color: var(--color-success);
+  font-size: 0.875rem;
+  font-weight: 700;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+/* --- Card Content --- */
+.lessons__card-title {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+  padding-right: var(--space-xl);
+  line-height: 1.3;
+}
+
+.lessons__card-description {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+  flex: 1;
+}
+
+/* --- Meta (duration + section count) --- */
+.lessons__card-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.lessons__card-meta-item {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+/* --- Card Progress Bar --- */
+.lessons__card-progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-bg-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.lessons__card-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), #2eecd0);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow);
+}
+
+.lessons__card--complete .lessons__card-progress-fill {
+  background: linear-gradient(90deg, var(--color-success), #4ade80);
+}
+
+/* ============================================================
+   Responsive — Tablet & Below
+   ============================================================ */
+@media (max-width: 768px) {
+  .lessons {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .lessons__title {
+    font-size: 1.75rem;
+  }
+
+  .lessons__track {
+    padding-left: var(--space-md);
+  }
+
+  .lessons__track-lessons {
+    grid-template-columns: 1fr;
+  }
+
+  .lessons__track-header {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+}
+
+/* ============================================================
+   Responsive — Small Phone
+   ============================================================ */
+@media (max-width: 480px) {
+  .lessons {
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  .lessons__title {
+    font-size: 1.5rem;
+  }
+
+  .lessons__subtitle {
+    font-size: 0.9375rem;
+  }
+
+  .lessons__track {
+    border-left-width: 3px;
+    padding-left: var(--space-sm);
+  }
+
+  .lessons__card {
+    padding: var(--space-md);
+  }
+
+  .lessons__card-title {
+    font-size: 1rem;
+  }
+}

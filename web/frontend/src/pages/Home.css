@@ -1,0 +1,278 @@
+/* ==========================================================================
+   Home — Public Landing Page
+   ========================================================================== */
+
+.home {
+  min-height: 100vh;
+  background: var(--color-bg-primary, #0a0f0d);
+  color: var(--color-text-primary, #e0ebe7);
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  overflow: hidden;
+  background: linear-gradient(
+    160deg,
+    #040a07 0%,
+    #0a1a12 25%,
+    #0d2218 50%,
+    #081710 75%,
+    #030806 100%
+  );
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(34, 211, 184, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(34, 211, 184, 0.04) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 900px;
+  width: 100%;
+}
+
+.hero-title {
+  font-family: var(--font-heading, 'Fredoka', sans-serif);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  color: var(--color-primary, #22d3b8);
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+  text-shadow: 0 0 40px rgba(34, 211, 184, 0.25);
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.375rem);
+  color: var(--color-text-secondary, #a3b8b0);
+  margin: 0 0 2.5rem;
+  max-width: 540px;
+  line-height: 1.6;
+}
+
+/* ---------- Video Player ---------- */
+.hero-video-wrapper {
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow:
+    0 0 30px rgba(34, 211, 184, 0.12),
+    0 8px 32px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(34, 211, 184, 0.15);
+  margin-bottom: 2.5rem;
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* ---------- CTA Button ---------- */
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  font-family: var(--font-heading, 'Fredoka', sans-serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #0a0f0d;
+  background: var(--color-primary, #22d3b8);
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 0 20px rgba(34, 211, 184, 0.3);
+  animation: cta-glow 3s ease-in-out infinite;
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(34, 211, 184, 0.5);
+  color: #0a0f0d;
+}
+
+.hero-cta:active {
+  transform: translateY(0);
+}
+
+@keyframes cta-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(34, 211, 184, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(34, 211, 184, 0.5), 0 0 60px rgba(34, 211, 184, 0.15);
+  }
+}
+
+/* ==========================================================================
+   Feature Cards Section
+   ========================================================================== */
+.features {
+  padding: 5rem 2rem;
+  background: var(--color-bg-secondary, #101a16);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: var(--color-bg-tertiary, #162420);
+  border: 1px solid rgba(34, 211, 184, 0.1);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(34, 211, 184, 0.1);
+  border-color: rgba(34, 211, 184, 0.3);
+}
+
+.feature-card-emoji {
+  display: block;
+  font-size: 2.5rem;
+  margin-bottom: 0.875rem;
+  line-height: 1;
+}
+
+.feature-card-title {
+  font-family: var(--font-heading, 'Fredoka', sans-serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text-primary, #e0ebe7);
+  margin: 0 0 0.5rem;
+}
+
+.feature-card-desc {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--color-text-muted, #6b7f78);
+  margin: 0;
+}
+
+/* ==========================================================================
+   About Section
+   ========================================================================== */
+.about {
+  padding: 5rem 2rem;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-title {
+  font-family: var(--font-heading, 'Fredoka', sans-serif);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-primary, #22d3b8);
+  margin: 0 0 1.5rem;
+}
+
+.about-text {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary, #a3b8b0);
+  margin: 0 0 1rem;
+}
+
+.about-text:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.home-footer {
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid rgba(34, 211, 184, 0.08);
+}
+
+.home-footer-text {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted, #6b7f78);
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+/* ==========================================================================
+   Responsive — Tablet (<=900px)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero {
+    padding: 3rem 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   Responsive — Mobile (<=600px)
+   ========================================================================== */
+@media (max-width: 600px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 3rem 1rem 2.5rem;
+  }
+
+  .hero-video-wrapper {
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+  }
+
+  .features {
+    padding: 3rem 1rem;
+  }
+
+  .about {
+    padding: 3rem 1rem;
+  }
+
+  .about-title {
+    font-size: 1.625rem;
+  }
+}

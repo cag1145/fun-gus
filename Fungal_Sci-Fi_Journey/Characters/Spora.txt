@@ -1,8 +1,0 @@
-ROLE:
-Newborn spore learning how intelligence works.
-
-TRAITS:
-Curious, unstable glow, forming connections.
-
-ARC:
-From floating observer to stable network participant.

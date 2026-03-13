@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <rect width="400" height="400" fill="#0f1a16"/>
+  <circle cx="200" cy="150" r="50" fill="#162420" stroke="#22d3b8" stroke-width="2" opacity="0.5"/>
+  <path d="M170 150 Q185 100 200 110 Q215 100 230 150 Q235 165 220 175 Q200 185 180 175 Q165 165 170 150Z" fill="#162420" stroke="#22d3b8" stroke-width="1.5" opacity="0.6"/>
+  <ellipse cx="200" cy="200" rx="35" ry="8" fill="#162420" stroke="#22d3b8" stroke-width="1" opacity="0.3"/>
+  <text x="200" y="270" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="14" fill="#7a9e8c">Unknown Species</text>
+</svg>

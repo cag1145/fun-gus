@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Media Products — Fun-Gus: The Forest Has WiFi</title>
+  <title>Transmedia Products — Fun-Gus: The Forest Has WiFi</title>
   <meta name="description" content="Six media products spanning digital story, explainer video, trading cards, fake reviews, newsletter, and comic — a universe built to live everywhere.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -105,14 +105,46 @@
     .media-spec strong {
       color: var(--text-secondary);
     }
+    .product-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin: 2rem 0 3rem;
+    }
+    .product-tab {
+      padding: 0.5rem 1rem;
+      border-radius: 100px;
+      border: 1px solid var(--border-accent);
+      background: transparent;
+      color: var(--text-muted);
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    .product-tab:hover {
+      border-color: var(--sillium);
+      color: var(--sillium);
+      background: var(--sillium-dim);
+    }
   </style>
 </head>
 <body>
   <header id="site-nav"></header>
 
   <section class="page-hero container">
-    <h1>Six Media Products</h1>
-    <p class="subtitle">A universe built to live everywhere &mdash; from screens to trading cards to print.</p>
+    <h1>Transmedia Portfolio</h1>
+    <p class="subtitle">Six media products &mdash; a universe built to live everywhere.</p>
+    <nav class="product-tabs">
+      <a href="#digital-story" class="product-tab">01 Digital Story</a>
+      <a href="#explainer-video" class="product-tab">02 Explainer Video</a>
+      <a href="#trading-cards" class="product-tab">03 Trading Cards</a>
+      <a href="#reviews" class="product-tab">04 Fake Reviews</a>
+      <a href="#newsletter" class="product-tab">05 Newsletter</a>
+      <a href="#comic" class="product-tab">06 Comic</a>
+    </nav>
   </section>
 
   <section class="container" style="padding-bottom: 5rem;">

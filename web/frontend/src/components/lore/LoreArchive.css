@@ -1,0 +1,335 @@
+/* ==========================================================================
+   LoreArchive — Three-tab lore page
+   ========================================================================== */
+
+/* ---------- Header ---------- */
+.lore-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.lore-header h1 {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.lore-header p {
+  font-size: 1.0625rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin: 0;
+}
+
+/* ---------- Tabs ---------- */
+.lore-tabs {
+  display: flex;
+  gap: var(--space-xs);
+  border-bottom: 1px solid rgba(34, 211, 184, 0.12);
+  margin-bottom: var(--space-xl);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.lore-tab {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.75rem 1.25rem;
+  font-family: var(--font-heading);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-base);
+}
+
+.lore-tab:hover {
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.lore-tab--active {
+  color: var(--color-text);
+}
+
+.lore-tab--active.lore-tab--world {
+  border-bottom-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.lore-tab--active.lore-tab--episodes {
+  border-bottom-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.lore-tab--active.lore-tab--hidden {
+  border-bottom-color: var(--color-lore);
+  color: var(--color-lore);
+}
+
+/* ---------- Content Container ---------- */
+.lore-content {
+  animation: fadeIn var(--transition-slow) ease;
+}
+
+/* ==========================================================================
+   World Tab — Location Cards
+   ========================================================================== */
+.world-intro {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  max-width: 700px;
+  margin: 0 auto var(--space-xl);
+  text-align: center;
+  line-height: 1.7;
+}
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.location-card {
+  padding: var(--space-lg);
+  background: var(--color-bg-secondary);
+  border: 1px solid rgba(34, 211, 184, 0.1);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+}
+
+.location-card:hover {
+  border-color: rgba(34, 211, 184, 0.25);
+  box-shadow: 0 0 16px rgba(34, 211, 184, 0.1);
+}
+
+.location-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.location-icon {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.location-name {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.location-desc {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Episodes Tab — Season sections with episode list
+   ========================================================================== */
+.episodes-tab {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.season-block {
+  /* Each season section */
+}
+
+.season-title {
+  font-family: var(--font-heading);
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid rgba(245, 166, 35, 0.2);
+}
+
+.episode-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.episode-item {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-bg-secondary);
+  border: 1px solid rgba(245, 166, 35, 0.08);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+}
+
+.episode-item:hover {
+  border-color: rgba(245, 166, 35, 0.2);
+  background: rgba(245, 166, 35, 0.03);
+}
+
+.episode-number {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgba(245, 166, 35, 0.35);
+  min-width: 3rem;
+  flex-shrink: 0;
+  line-height: 1.3;
+}
+
+.episode-body {
+  flex: 1;
+}
+
+.episode-title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.episode-summary {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Hidden Tab — Folklore / adult depth layer
+   ========================================================================== */
+.hidden-intro {
+  font-size: 1rem;
+  color: var(--color-lore);
+  max-width: 700px;
+  margin: 0 auto var(--space-xl);
+  text-align: center;
+  line-height: 1.7;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.hidden-entries {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.hidden-card {
+  padding: var(--space-lg) var(--space-xl);
+  background: var(--color-bg-secondary);
+  border: 1px solid rgba(192, 132, 252, 0.15);
+  border-left: 3px solid rgba(192, 132, 252, 0.4);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+}
+
+.hidden-card:hover {
+  border-color: rgba(192, 132, 252, 0.3);
+  box-shadow: 0 0 20px rgba(192, 132, 252, 0.1);
+}
+
+.hidden-title {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-lore);
+  margin-bottom: var(--space-md);
+}
+
+.hidden-text {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  font-style: italic;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Responsive — Tablet (<=1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .locations-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+}
+
+/* ==========================================================================
+   Responsive — Mobile (<=768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .lore-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .lore-tabs {
+    gap: 0;
+  }
+
+  .lore-tab {
+    padding: 0.625rem 0.875rem;
+    font-size: 0.8125rem;
+  }
+
+  .locations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .episode-item {
+    padding: var(--space-md);
+  }
+
+  .episode-number {
+    font-size: 1.25rem;
+    min-width: 2.25rem;
+  }
+
+  .hidden-card {
+    padding: var(--space-lg);
+  }
+}
+
+/* ==========================================================================
+   Responsive — Small Mobile (<=480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .lore-tabs {
+    flex-wrap: wrap;
+  }
+
+  .lore-tab {
+    flex: 1;
+    justify-content: center;
+    padding: 0.5rem 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .location-card {
+    padding: var(--space-md);
+  }
+
+  .episode-item {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .episode-number {
+    font-size: 1rem;
+  }
+}

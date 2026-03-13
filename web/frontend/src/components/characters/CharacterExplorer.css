@@ -1,0 +1,368 @@
+/* ==========================================================================
+   CharacterExplorer — Full character browser page
+   ========================================================================== */
+
+.character-explorer {
+  padding: var(--space-xl) var(--space-lg);
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  animation: fadeIn var(--transition-slow) ease forwards;
+}
+
+/* --- Page Header --- */
+.character-explorer__header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.character-explorer__title {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 0.375rem;
+}
+
+.character-explorer__subtitle {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Filters Bar
+   ========================================================================== */
+.character-explorer__filters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.character-explorer__filter-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+/* --- Tab Buttons --- */
+.character-explorer__tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.4375rem 0.875rem;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.character-explorer__tab:hover {
+  color: var(--color-text);
+  background-color: var(--color-bg-tertiary);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.character-explorer__tab--active {
+  color: var(--color-text);
+  background-color: var(--color-bg-tertiary);
+  border-color: var(--color-primary);
+}
+
+/* Kingdom-specific active states */
+.character-explorer__tab--fungi.character-explorer__tab--active {
+  border-color: var(--color-fungi);
+  color: var(--color-fungi);
+  background-color: rgba(34, 211, 184, 0.08);
+}
+
+.character-explorer__tab--bacteria.character-explorer__tab--active {
+  border-color: var(--color-bacteria);
+  color: var(--color-bacteria);
+  background-color: rgba(245, 158, 11, 0.08);
+}
+
+.character-explorer__tab--insects.character-explorer__tab--active {
+  border-color: var(--color-insects);
+  color: var(--color-insects);
+  background-color: rgba(167, 139, 250, 0.08);
+}
+
+/* --- Alignment Tabs --- */
+.character-explorer__tab--hero.character-explorer__tab--active {
+  border-color: var(--color-success);
+  color: var(--color-success);
+  background-color: rgba(34, 197, 94, 0.08);
+}
+
+.character-explorer__tab--villain.character-explorer__tab--active {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+  background-color: rgba(239, 68, 68, 0.08);
+}
+
+.character-explorer__tab--complex.character-explorer__tab--active {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background-color: rgba(245, 166, 35, 0.08);
+}
+
+/* --- Search Bar --- */
+.character-explorer__search-wrapper {
+  position: relative;
+  max-width: 320px;
+  width: 100%;
+}
+
+.character-explorer__search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+.character-explorer__search {
+  width: 100%;
+  padding: 0.5rem 0.75rem 0.5rem 2.125rem;
+  font-size: 0.875rem;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  border: 1px solid rgba(34, 211, 184, 0.15);
+  border-radius: var(--radius-full);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.character-explorer__search::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+.character-explorer__search:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(34, 211, 184, 0.12);
+}
+
+/* --- Filter Separator --- */
+.character-explorer__filter-sep {
+  width: 1px;
+  height: 24px;
+  background-color: rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Count Display
+   ========================================================================== */
+.character-explorer__count {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.character-explorer__count-number {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   Character Grid
+   ========================================================================== */
+.character-explorer__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+/* ==========================================================================
+   Skeleton Loading
+   ========================================================================== */
+.character-explorer__skeleton-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.character-explorer__skeleton-card {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid rgba(34, 211, 184, 0.06);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.character-explorer__skeleton-image {
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-secondary) 25%,
+    var(--color-bg-tertiary) 50%,
+    var(--color-bg-secondary) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.character-explorer__skeleton-body {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.character-explorer__skeleton-line {
+  height: 14px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-secondary) 25%,
+    var(--color-bg-tertiary) 50%,
+    var(--color-bg-secondary) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.character-explorer__skeleton-line--short {
+  width: 60%;
+}
+
+.character-explorer__skeleton-line--tiny {
+  width: 40%;
+  height: 10px;
+}
+
+/* ==========================================================================
+   Empty State
+   ========================================================================== */
+.character-explorer__empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--space-2xl) var(--space-lg);
+}
+
+.character-explorer__empty-icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-md);
+  opacity: 0.4;
+}
+
+.character-explorer__empty-text {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Error State
+   ========================================================================== */
+.character-explorer__error {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-lg);
+  color: var(--color-danger);
+}
+
+.character-explorer__error-text {
+  font-size: 1rem;
+  margin: 0 0 var(--space-md);
+}
+
+.character-explorer__error-retry {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 0.5rem 1.25rem;
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+  background-color: var(--color-bg-tertiary);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.character-explorer__error-retry:hover {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.5);
+}
+
+/* ==========================================================================
+   Responsive — Tablet (<=1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .character-explorer__grid,
+  .character-explorer__skeleton-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ==========================================================================
+   Responsive — Small Tablet (<=768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .character-explorer {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .character-explorer__title {
+    font-size: 1.75rem;
+  }
+
+  .character-explorer__grid,
+  .character-explorer__skeleton-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .character-explorer__filter-row {
+    justify-content: center;
+  }
+
+  .character-explorer__search-wrapper {
+    max-width: 100%;
+  }
+
+  .character-explorer__filter-sep {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Responsive — Mobile (<=480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .character-explorer {
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  .character-explorer__title {
+    font-size: 1.5rem;
+  }
+
+  .character-explorer__header {
+    margin-bottom: var(--space-lg);
+  }
+
+  .character-explorer__grid,
+  .character-explorer__skeleton-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .character-explorer__tab {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.8125rem;
+  }
+}

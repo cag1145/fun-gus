@@ -1,0 +1,277 @@
+/* ==========================================================================
+   NetworkMap — Interactive SVG relationship map
+   ========================================================================== */
+
+/* ---------- Header ---------- */
+.network-header {
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.network-header h1 {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.network-header p {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin: 0;
+}
+
+/* ---------- SVG Container ---------- */
+.network-svg-container {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto var(--space-xl);
+  background: var(--color-bg-secondary);
+  border: 1px solid rgba(34, 211, 184, 0.1);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.network-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- Connection Lines ---------- */
+.connection-line {
+  transition: stroke-opacity 0.3s ease, stroke-width 0.3s ease;
+  pointer-events: none;
+}
+
+/* ---------- Nodes ---------- */
+.network-node {
+  transition: opacity 0.3s ease;
+}
+
+.network-node circle {
+  transition: all 0.25s ease;
+}
+
+.network-node:hover circle {
+  filter: drop-shadow(0 0 6px currentColor);
+}
+
+/* Glow pulse on hovered node */
+.node-glow {
+  animation: nodeGlowPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes nodeGlowPulse {
+  0%, 100% {
+    stroke-opacity: 0.2;
+    r: inherit;
+  }
+  50% {
+    stroke-opacity: 0.5;
+  }
+}
+
+/* ---------- Node Labels ---------- */
+.node-label {
+  pointer-events: none;
+  user-select: none;
+  transition: fill 0.3s ease;
+}
+
+/* ---------- Mini-Profile Popup ---------- */
+.node-popup {
+  position: absolute;
+  z-index: 20;
+  transform: translate(-50%, -110%);
+  pointer-events: auto;
+  animation: slideUp var(--transition-base) ease;
+}
+
+.node-popup-inner {
+  background: var(--color-bg-secondary);
+  border: 1px solid rgba(34, 211, 184, 0.25);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+  min-width: 220px;
+  max-width: 280px;
+  box-shadow: var(--shadow-lg), 0 0 20px rgba(34, 211, 184, 0.1);
+}
+
+.node-popup-name {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 2px;
+}
+
+.node-popup-species {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-bottom: var(--space-sm);
+}
+
+.node-popup-personality {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin-bottom: var(--space-sm);
+}
+
+.node-popup-link {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.node-popup-link:hover {
+  color: #2eecd0;
+  text-decoration: none;
+}
+
+/* ---------- Legend ---------- */
+.network-legend {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2xl);
+  padding: var(--space-lg);
+  background: var(--color-bg-secondary);
+  border: 1px solid rgba(34, 211, 184, 0.08);
+  border-radius: var(--radius-lg);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.legend-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.legend-title {
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.legend-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.legend-line {
+  width: 24px;
+  height: 2px;
+  flex-shrink: 0;
+  border-radius: 1px;
+}
+
+.legend-line--ally {
+  background-color: #22d3b8;
+}
+
+.legend-line--rival {
+  background-color: #ef4444;
+  background-image: repeating-linear-gradient(
+    90deg,
+    #ef4444 0px,
+    #ef4444 4px,
+    transparent 4px,
+    transparent 7px
+  );
+  background-color: transparent;
+}
+
+.legend-line--mentor {
+  background-color: #f5a623;
+}
+
+/* ==========================================================================
+   Responsive — Tablet (<=1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .network-svg-container {
+    max-width: 100%;
+  }
+}
+
+/* ==========================================================================
+   Responsive — Mobile (<=768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .network-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .network-legend {
+    flex-direction: column;
+    gap: var(--space-md);
+    align-items: center;
+  }
+
+  .legend-group {
+    align-items: center;
+  }
+
+  .legend-items {
+    flex-direction: row;
+    gap: var(--space-md);
+  }
+
+  .node-popup {
+    position: fixed;
+    top: auto !important;
+    left: var(--space-md) !important;
+    right: var(--space-md);
+    bottom: var(--space-md);
+    transform: none;
+    width: auto;
+  }
+
+  .node-popup-inner {
+    max-width: none;
+    min-width: auto;
+  }
+}
+
+/* ==========================================================================
+   Responsive — Small Mobile (<=480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .network-svg-container {
+    border-radius: var(--radius-md);
+  }
+
+  .legend-items {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+}

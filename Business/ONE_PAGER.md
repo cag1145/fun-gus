@@ -22,7 +22,7 @@ Beneath every forest is a living communication network — fungi and trees conne
 
 ## THE STORY
 
-Two curious girls and their teacher discover a glowing fairy ring. They step inside, shrink to spore-size, and enter the living network beneath the forest. Guided by **Fun-Gus** — a warm, funny mushroom mentor — they discover a world of heroes, villains, and alliances spanning fungi, bacteria, and insects.
+Two curious kids — a boy and a girl — and their teacher discover a glowing fairy ring. They step inside, shrink to spore-size, and enter the living network beneath the forest. Guided by **Fun-Gus** — a warm, funny mushroom mentor — they discover a world of heroes, villains, and alliances spanning fungi, bacteria, and insects.
 
 Every character is based on real science. Every episode teaches something true. And a hidden folklore layer gives adults their own reason to keep watching.
 
