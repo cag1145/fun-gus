@@ -154,7 +154,7 @@ function renderGrid(filter = 'all') {
   const filtered = filter === 'all' ? characters : characters.filter(c => c.kingdom === filter);
 
   grid.innerHTML = filtered.map((c, i) => `
-    <div class="char-card reveal" data-index="${characters.indexOf(c)}" style="animation-delay: ${(i % 8) * 0.05}s">
+    <div class="char-card reveal" data-index="${characters.indexOf(c)}" style="animation-delay: ${(i % 8) * 0.05}s" role="button" tabindex="0">
       ${c.img
         ? `<img src="${c.img}" alt="${c.name}" class="card-img" loading="lazy">`
         : `<div class="placeholder-img">?</div>`}
@@ -179,16 +179,26 @@ function renderGrid(filter = 'all') {
   }, { threshold: 0.05 });
   reveals.forEach(el => observer.observe(el));
 
-  // Click handlers for modal
+  // Click and keyboard handlers for modal
   grid.querySelectorAll('.char-card').forEach(card => {
     card.addEventListener('click', () => openModal(parseInt(card.dataset.index)));
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModal(parseInt(card.dataset.index));
+      }
+    });
   });
 }
 
 // ===== Modal =====
+let previouslyFocusedElement = null;
+
 function openModal(index) {
   const c = characters[index];
   const modal = document.getElementById('char-modal');
+
+  previouslyFocusedElement = document.activeElement;
 
   document.getElementById('modal-img').src = c.img || '';
   document.getElementById('modal-img').style.display = c.img ? 'block' : 'none';
@@ -204,11 +214,21 @@ function openModal(index) {
 
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
+
+  // Move focus into the modal
+  const closeBtn = document.getElementById('modal-close');
+  closeBtn.focus();
 }
 
 function closeModal() {
   document.getElementById('char-modal').classList.remove('open');
   document.body.style.overflow = '';
+
+  // Restore focus to the element that opened the modal
+  if (previouslyFocusedElement) {
+    previouslyFocusedElement.focus();
+    previouslyFocusedElement = null;
+  }
 }
 
 // ===== Filter Buttons =====
@@ -229,5 +249,27 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeModal();
+  });
+
+  // Focus trap within modal
+  document.getElementById('char-modal').addEventListener('keydown', (e) => {
+    if (e.key !== 'Tab') return;
+    const modal = document.getElementById('char-modal');
+    if (!modal.classList.contains('open')) return;
+    const focusable = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+    if (focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey) {
+      if (document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      }
+    } else {
+      if (document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
   });
 });

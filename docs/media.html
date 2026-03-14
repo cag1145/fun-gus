@@ -139,7 +139,7 @@
 <body>
   <header id="site-nav"></header>
 
-  <section class="page-hero container">
+  <section class="page-hero container" id="main-content">
     <h1>Transmedia Portfolio</h1>
     <p class="subtitle">Six media products &mdash; a universe built to live everywhere.</p>
     <nav class="product-tabs">
@@ -178,7 +178,7 @@
         <strong>FERN:</strong> How old?<br><br>
         <strong>MS. HAWTHORN:</strong> Older than trees. Older than flowers. They were here before almost everything else.
       </div>
-      <button class="expand-btn" onclick="toggleExcerpt('excerpt-1', this)">Read more</button>
+      <button class="expand-btn" aria-expanded="false" onclick="toggleExcerpt('excerpt-1', this)">Read more</button>
       <div class="media-specs">
         <div class="media-spec"><strong>Runtime:</strong> 3:45&ndash;4:00</div>
         <div class="media-spec"><strong>Scenes:</strong> 9</div>
@@ -207,7 +207,7 @@
         <em>[Animated diagram: tiny mushroom above ground, ENORMOUS web below labeled "MYCELIUM"]</em><br><br>
         <strong>Key Fact:</strong> Trees share up to 40% of their sugar through the fungal network.
       </div>
-      <button class="expand-btn" onclick="toggleExcerpt('excerpt-2', this)">Read more</button>
+      <button class="expand-btn" aria-expanded="false" onclick="toggleExcerpt('excerpt-2', this)">Read more</button>
       <div class="media-specs">
         <div class="media-spec"><strong>Runtime:</strong> 1:25&ndash;1:30</div>
         <div class="media-spec"><strong>Visual mix:</strong> 40% animation, 30% real footage, 30% diagrams</div>
@@ -239,7 +239,7 @@
         <strong>CARD 02 &mdash; SPORA &star; RARE</strong><br><br>
         <strong>Special Ability: First Signal</strong> &mdash; When Spora connects for the first time, her pure signal resonates through the entire network &mdash; amplifying everyone else's power temporarily.
       </div>
-      <button class="expand-btn" onclick="toggleExcerpt('excerpt-4', this)">Read more</button>
+      <button class="expand-btn" aria-expanded="false" onclick="toggleExcerpt('excerpt-4', this)">Read more</button>
       <div class="media-specs">
         <div class="media-spec"><strong>Cards:</strong> 12 (2 Legendary, 4 Rare, 4 Uncommon, 2 Common)</div>
         <div class="media-spec"><strong>Set bonuses:</strong> 5 combinations</div>
@@ -271,7 +271,7 @@
         <strong>KID REVIEW &mdash; Zoe, age 7:</strong><br>
         "Fun-Gus is my favorite. He's like if a mushroom was also a grandpa but not old, just nice. I want to be a mycologist when I grow up. That's a mushroom scientist. Fun-Gus taught me that word."
       </div>
-      <button class="expand-btn" onclick="toggleExcerpt('excerpt-5', this)">Read more</button>
+      <button class="expand-btn" aria-expanded="false" onclick="toggleExcerpt('excerpt-5', this)">Read more</button>
       <div class="media-specs">
         <div class="media-spec"><strong>Reviews:</strong> 3 critic, 3 parent, 3 kid, 1 educator, 6 social media</div>
         <div class="media-spec"><strong>Rotten Tomatoes:</strong> 94% Fresh</div>
@@ -301,7 +301,7 @@
         <strong>SPORA'S JOURNAL &mdash; Entry #12:</strong><br>
         "I DID IT. I know that probably doesn't sound like a big deal. Everyone else sends messages all the time. But for me, sending even ONE message has been... hard."
       </div>
-      <button class="expand-btn" onclick="toggleExcerpt('excerpt-6', this)">Read more</button>
+      <button class="expand-btn" aria-expanded="false" onclick="toggleExcerpt('excerpt-6', this)">Read more</button>
       <div class="media-specs">
         <div class="media-spec"><strong>Sections:</strong> 7 (Editor, Feature, Journal, Science, Q&A, Activity, Alerts)</div>
         <div class="media-spec"><strong>Staff:</strong> Fun-Gus (editor), Chanty (storyteller), Birdie (fact-checker), Inky (scribe), Puff (enthusiasm)</div>
@@ -331,7 +331,7 @@
         <em>The network RESPONDS. From every direction, streams of luminous resources converge. Amber streams of sugar. Blue streams of deep water. Golden bursts from Puff. Lumos lighting the dark pathways. Birdie's nutrient packets in perfect arcs. At the center: the struggling tree's roots, now surrounded by help from every direction.</em><br><br>
         <strong>NARRATION:</strong> "No single thread could carry enough. But the network isn't a single thread. The network is EVERYONE."
       </div>
-      <button class="expand-btn" onclick="toggleExcerpt('excerpt-7', this)">Read more</button>
+      <button class="expand-btn" aria-expanded="false" onclick="toggleExcerpt('excerpt-7', this)">Read more</button>
       <div class="media-specs">
         <div class="media-spec"><strong>Pages:</strong> 10 story + 1 back matter</div>
         <div class="media-spec"><strong>Characters:</strong> Spora, Fun-Gus, Rhiza, Puff, Lumos, Birdie, Snapper, Chanty</div>
@@ -347,7 +347,9 @@
     function toggleExcerpt(id, btn) {
       const el = document.getElementById(id);
       el.classList.toggle('expanded');
-      btn.textContent = el.classList.contains('expanded') ? 'Show less' : 'Read more';
+      const isExpanded = el.classList.contains('expanded');
+      btn.textContent = isExpanded ? 'Show less' : 'Read more';
+      btn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
     }
   </script>
 </body>

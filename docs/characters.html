@@ -173,7 +173,7 @@
 <body>
   <header id="site-nav"></header>
 
-  <section class="page-hero container">
+  <section class="page-hero container" id="main-content">
     <h1>Meet the Cast</h1>
     <p class="subtitle">34+ characters across three biological kingdoms &mdash; every one based on real biology.</p>
   </section>
@@ -190,9 +190,9 @@
   </section>
 
   <!-- Modal -->
-  <div class="modal-overlay" id="char-modal">
+  <div class="modal-overlay" id="char-modal" role="dialog" aria-modal="true" aria-labelledby="modal-name">
     <div class="modal-content" style="position: relative;">
-      <button class="modal-close" id="modal-close">&times;</button>
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
       <img class="modal-img" id="modal-img" src="" alt="">
       <div class="modal-body">
         <h2 id="modal-name"></h2>
